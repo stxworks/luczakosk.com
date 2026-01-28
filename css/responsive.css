@@ -1,0 +1,2155 @@
+/**
+ * OSK Łuczak - Responsive Styles
+ */
+
+/* ===================================
+   MEDIUM DESKTOP (max-width: 1600px)
+   Fix hero floating card cutoff on 1920x1080
+=================================== */
+@media (max-width: 1600px) and (min-width: 1367px) {
+    .hero__float-card--middle {
+        right: -40px;
+    }
+
+    .hero__float-card--top {
+        left: -40px;
+    }
+
+    .hero__float-card--bottom {
+        left: -30px;
+    }
+}
+
+/* ===================================
+   POPULAR LAPTOPS (max-width: 1366px)
+   Most common laptop resolution: 1366×768
+=================================== */
+@media (max-width: 1366px) and (min-width: 1281px) {
+
+    /* Container adjustments */
+    .container,
+    .hero__container,
+    .why-us__container,
+    .courses__container,
+    .locations__container,
+    .testimonials__container,
+    .news__container,
+    .footer__container {
+        max-width: 1280px;
+    }
+
+    /* Navigation - slightly smaller gaps */
+    .osk-menu {
+        gap: 28px;
+    }
+
+    .osk-link {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    /* Hero floating cards positioning */
+    .hero__float-card--middle {
+        right: -35px;
+    }
+
+    .hero__float-card--top {
+        left: -35px;
+    }
+
+    .hero__float-card--bottom {
+        left: -25px;
+    }
+
+    /* Hero card slightly smaller */
+    .hero__card {
+        width: 600px;
+        padding: var(--spacing-10) var(--spacing-8);
+    }
+
+    /* Courses grid adjustment */
+    .courses__grid {
+        gap: var(--spacing-5);
+    }
+
+    /* Why-us grid */
+    .why-us__grid {
+        gap: var(--spacing-5);
+    }
+}
+
+/* ===================================
+   SMALL DESKTOP (max-width: 1280px)
+   Fix hero floating card cutoff
+=================================== */
+@media (max-width: 1280px) and (min-width: 1201px) {
+    .hero__float-card--middle {
+        right: -40px;
+    }
+
+    .hero__float-card--top {
+        left: -40px;
+    }
+
+    .hero__float-card--bottom {
+        left: -30px;
+    }
+
+    /* Container adjustments */
+    .container,
+    .hero__container,
+    .why-us__container,
+    .courses__container,
+    .locations__container,
+    .testimonials__container,
+    .news__container,
+    .footer__container {
+        max-width: 1180px;
+    }
+
+    /* Navigation adjustments */
+    .osk-menu {
+        gap: 24px;
+    }
+
+    .osk-link {
+        font-size: 11px;
+    }
+}
+
+/* ===================================
+   LAPTOPS & MONITORS (max-width: 1200px)
+   Standard laptop resolution breakpoint
+=================================== */
+@media (max-width: 1200px) and (min-width: 1025px) {
+
+    /* Container width */
+    .container,
+    .hero__container,
+    .why-us__container,
+    .courses__container,
+    .locations__container,
+    .testimonials__container,
+    .news__container,
+    .footer__container {
+        max-width: 1100px;
+        padding-left: var(--spacing-6);
+        padding-right: var(--spacing-6);
+    }
+
+    /* Navigation - compact */
+    .osk-menu {
+        gap: 20px;
+    }
+
+    .osk-link {
+        font-size: 11px;
+        letter-spacing: 0.8px;
+    }
+
+    .osk-nav {
+        padding: 16px var(--spacing-6);
+    }
+
+    /* Hero adjustments */
+    .hero__float-card--middle {
+        right: -30px;
+    }
+
+    .hero__float-card--top {
+        left: -30px;
+    }
+
+    .hero__float-card--bottom {
+        left: -20px;
+    }
+
+    .hero__card {
+        width: 580px;
+        padding: var(--spacing-10) var(--spacing-8);
+    }
+
+    /* Section headers - slightly smaller */
+    .why-us__title,
+    .courses__title,
+    .locations__title,
+    .testimonials__title,
+    .news__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    /* Grid adjustments */
+    .courses__grid {
+        gap: var(--spacing-5);
+    }
+
+    .why-us__grid {
+        gap: var(--spacing-5);
+    }
+
+    /* Course cards */
+    .course-card {
+        padding: var(--spacing-6);
+    }
+
+    /* Footer */
+    .footer__main {
+        grid-template-columns: 1.2fr 1fr 1fr 1fr;
+        gap: var(--spacing-6);
+    }
+}
+
+/* ===================================
+   TABLET (max-width: 1024px)
+=================================== */
+@media (max-width: 1024px) {
+    :root {
+        --container-padding: var(--spacing-5);
+    }
+
+    /* Footer grid adjustment */
+    .footer__main {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-8) var(--spacing-6);
+    }
+
+    .footer__brand {
+        grid-column: 1 / -1;
+        padding-right: 0;
+        max-width: 500px;
+    }
+
+    /* Hide hero visual on tablets */
+    .hero__visual {
+        display: none;
+    }
+
+    /* Why Us - 2 columns on tablet */
+    .why-us__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Testimonials - 2 columns on tablet */
+    .testimonials__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-card {
+        flex: none;
+        max-width: none;
+    }
+}
+
+/* ===================================
+   TABLETS (max-width: 800px)
+   Transitional breakpoint for tablets
+=================================== */
+@media (max-width: 800px) and (min-width: 769px) {
+
+    /* Typography adjustments */
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+
+    /* Navigation - prepare for mobile */
+    .osk-menu {
+        gap: 16px;
+    }
+
+    .osk-link {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+    }
+
+    .osk-nav {
+        padding: 14px var(--spacing-5);
+    }
+
+    /* CTA button - smaller */
+    .osk-cta {
+        padding: 10px 20px;
+        font-size: 11px;
+    }
+
+    /* Grids - 2 columns */
+    .courses__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-4);
+    }
+
+    .why-us__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-4);
+    }
+
+    .locations__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Cards - smaller padding */
+    .course-card {
+        padding: var(--spacing-5);
+    }
+
+    .why-us__card {
+        padding: var(--spacing-5);
+    }
+
+    /* Footer - 2 columns */
+    .footer__main {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-6);
+    }
+
+    .footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    /* Section titles */
+    .why-us__title,
+    .courses__title,
+    .locations__title,
+    .testimonials__title,
+    .news__title {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* ===================================
+   MOBILE LANDSCAPE (max-width: 768px)
+=================================== */
+@media (max-width: 768px) {
+
+    /* Typography scale down */
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-2xl);
+    }
+
+    /* ===================================
+       MOBILE NAVIGATION - SLIDE FROM TOP
+    =================================== */
+
+    .osk-nav {
+        gap: 12px;
+        padding: 12px 18px;
+    }
+
+    .osk-burger {
+        display: flex;
+        order: 3;
+    }
+
+    /* Hide main CTA in header on mobile - it's in the hamburger menu now */
+    .osk-cta {
+        display: none;
+    }
+
+    /* Mobile Menu - Slides from TOP, below header */
+    .osk-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        max-height: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 24px;
+        box-shadow: none;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.3s ease;
+        z-index: 999;
+        overflow: hidden;
+        display: flex;
+        border-top: none;
+    }
+
+    .osk-menu.is-open {
+        max-height: calc(100vh - 60px);
+        padding: 24px;
+        overflow-y: auto;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        border-top: 3px solid var(--osk-blue);
+    }
+
+    /* Mobile menu links */
+    .osk-menu .osk-link {
+        display: block;
+        padding: 16px 0;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--color-gray-100);
+    }
+
+    .osk-menu .osk-link::after {
+        display: none;
+    }
+
+    .osk-menu .osk-link.is-active {
+        color: var(--osk-blue);
+        font-weight: 800;
+    }
+
+    /* Mobile Dropdown - Fix alignment */
+    .osk-dropdown {
+        width: 100%;
+        display: block;
+    }
+
+    .osk-dropdown__trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 0;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--color-gray-100);
+        text-align: left;
+        white-space: nowrap;
+        color: var(--osk-dark) !important;
+        transition: color 0.3s ease;
+    }
+
+    /* Reset is-active styling on mobile - don't persist blue color */
+    .osk-dropdown__trigger.is-active {
+        color: var(--osk-dark) !important;
+    }
+
+    /* Only show blue when dropdown is open */
+    .osk-dropdown.is-open .osk-dropdown__trigger,
+    .osk-dropdown.is-open .osk-dropdown__trigger.is-active {
+        color: var(--osk-blue) !important;
+    }
+
+    .osk-dropdown__trigger::after {
+        display: none;
+    }
+
+    /* Arrow positioned next to text inline */
+    .osk-dropdown__arrow {
+        flex-shrink: 0;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .osk-dropdown__menu {
+        position: static !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: none !important;
+        padding: 0;
+        margin: 0;
+        min-width: auto !important;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--color-gray-50);
+        border-radius: var(--radius-md);
+        transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    }
+
+    .osk-dropdown__menu::before {
+        display: none;
+    }
+
+    .osk-dropdown.is-open .osk-dropdown__menu {
+        max-height: 300px;
+        padding: 12px 16px 12px 24px;
+        margin: 8px 0 12px 0;
+    }
+
+    .osk-dropdown.is-open .osk-dropdown__arrow {
+        transform: rotate(180deg);
+    }
+
+    .osk-dropdown__item {
+        padding: 12px 12px;
+        border-radius: var(--radius-sm);
+        border-bottom: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--osk-dark);
+    }
+
+    /* Dropdown badge positioning */
+    .osk-dropdown__badge {
+        min-width: 40px;
+        flex-shrink: 0;
+    }
+
+    /* Soon label alignment */
+    .osk-dropdown__soon-label {
+        margin-left: auto;
+    }
+
+    .osk-dropdown__item:hover:not(.osk-dropdown__item--soon) {
+        background: var(--color-primary-100);
+    }
+
+    /* Mobile CTA - Same as desktop style */
+    .osk-menu-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+        padding: 14px 28px;
+        background: var(--osk-yellow);
+        color: #000;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 0;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .osk-menu-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: left 0.6s ease;
+    }
+
+    .osk-menu-cta:hover::before {
+        left: 100%;
+    }
+
+    .osk-menu-cta:hover {
+        background: var(--osk-blue);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(39, 100, 234, 0.4);
+    }
+
+    .osk-menu-cta svg {
+        flex-shrink: 0;
+    }
+
+    /* Hero adjustments - Overlay Card on mobile */
+    .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        /* Small viewport height - more stable on mobile */
+        padding: 0;
+    }
+
+    .hero__overlay {
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.7) 100%);
+    }
+
+    .hero__card {
+        margin: 100px var(--spacing-4) var(--spacing-10);
+        max-width: none;
+        padding: var(--spacing-8);
+        text-align: center;
+    }
+
+    .hero__cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero__cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero__trust {
+        justify-content: center;
+    }
+
+    .hero__stats {
+        flex-wrap: wrap;
+        gap: var(--spacing-4);
+        padding: var(--spacing-8) var(--spacing-6);
+    }
+
+    .hero__stat {
+        flex: 0 0 calc(50% - var(--spacing-3));
+        padding: var(--spacing-3) var(--spacing-2);
+    }
+
+    .hero__stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero__stat-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .hero__stat-number {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero__stat-label {
+        font-size: var(--font-size-xs);
+        white-space: normal;
+    }
+
+    .hero__stat-divider {
+        display: none;
+    }
+
+    .hero__card {
+        margin-bottom: 40px;
+    }
+
+    /* Hide hero scroll indicator on mobile - prevents overlap */
+    .hero__scroll {
+        display: none;
+    }
+
+    /* Hide section dividers on mobile for cleaner look */
+    .section-divider {
+        display: none;
+    }
+
+    /* Hide hero visual on mobile */
+    .hero__visual {
+        display: none;
+    }
+
+    /* Why Us - 1 column on mobile */
+    .why-us {
+        padding: var(--spacing-16) 0;
+    }
+
+    .why-us__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+
+    .why-us__card {
+        padding: var(--spacing-6);
+    }
+
+    /* Courses - 1 column on mobile */
+    .courses {
+        padding: var(--spacing-16) 0;
+    }
+
+    .courses__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-6);
+    }
+
+    .course-card {
+        padding: var(--spacing-6);
+    }
+
+    /* Refresher card - mobile layout */
+    .course-card__refresher-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-6);
+    }
+
+    .course-card__refresher-left {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .course-card__refresher-right {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .course-card__price--refresher {
+        text-align: center;
+    }
+
+    .course-card--refresher .course-card__desc {
+        max-width: none;
+    }
+
+    .course-card--refresher .course-card__btn {
+        width: 100%;
+    }
+
+    /* Refresher Compact - Stack on mobile */
+    .course-card__refresher-compact-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-4);
+    }
+
+    .course-card__refresher-compact-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-4);
+    }
+
+    .course-card__refresher-compact-header {
+        width: 100%;
+    }
+
+    .course-card__refresher-compact-right {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-4);
+        width: 100%;
+    }
+
+    .course-card__refresher-compact-price {
+        text-align: center;
+    }
+
+    .course-card--refresher-compact .course-card__btn {
+        width: 100%;
+    }
+
+    /* Testimonials - 1 column on mobile */
+    .testimonials {
+        padding: var(--spacing-16) 0;
+    }
+
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-6);
+    }
+
+    .testimonial-card:last-child {
+        max-width: none;
+    }
+
+    .testimonial-card {
+        padding: var(--spacing-6);
+    }
+
+    .testimonials__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .course-card__popular {
+        font-size: 10px;
+        padding: var(--spacing-1) var(--spacing-3);
+    }
+
+    /* Footer mobile */
+    .footer__cta-banner {
+        padding: var(--spacing-10) var(--spacing-4);
+    }
+
+    .footer__cta-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-6);
+    }
+
+    .footer__cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footer__cta-buttons .btn,
+    .footer__cta-buttons .btn--outline-light {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer__main {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+    }
+
+    .footer__brand {
+        max-width: none;
+        text-align: center;
+    }
+
+    .footer__logo {
+        justify-content: center;
+    }
+
+    .footer__social {
+        justify-content: center;
+    }
+
+    .footer__title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer__column {
+        text-align: center;
+    }
+
+    .footer__links a {
+        padding-left: 0;
+    }
+
+    .footer__links a:hover {
+        padding-left: 0;
+    }
+
+    .footer__contact {
+        align-items: center;
+    }
+
+    .footer__bottom {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+        text-align: center;
+    }
+
+    .footer__credit {
+        text-align: center;
+    }
+
+    /* Useful links row - mobile */
+    .footer__useful {
+        flex-direction: column;
+        gap: var(--spacing-2);
+        text-align: center;
+    }
+
+    .footer__useful-label {
+        margin-right: 0;
+        margin-bottom: var(--spacing-1);
+    }
+
+    .footer__useful-divider {
+        display: none;
+    }
+
+    /* CTA Banner - mobile layout */
+    .cta-banner__container {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-8);
+    }
+
+    .cta-banner__left {
+        max-width: none;
+    }
+
+    .cta-banner__trust {
+        justify-content: center;
+    }
+
+    .cta-banner__card {
+        min-width: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* CTA banner buttons - stack vertically on mobile */
+    .cta-banner__actions {
+        flex-direction: column;
+        gap: var(--spacing-3);
+    }
+
+    .cta-banner__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Hero card - override fixed dimensions */
+    .hero__card {
+        width: auto;
+        height: auto;
+        max-width: none;
+        margin: 100px var(--spacing-4) var(--spacing-8);
+        padding: var(--spacing-8);
+    }
+
+    .hero__title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Locations - 1 column on mobile */
+    .locations {
+        padding: var(--spacing-12) 0;
+    }
+
+    .locations__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+
+    .location-card {
+        padding: var(--spacing-5);
+    }
+
+    .location-card__icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .location-card__city {
+        font-size: var(--font-size-lg);
+    }
+
+    /* News - 1 column on mobile */
+    .news {
+        padding: var(--spacing-12) 0;
+    }
+
+    .news__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
+    }
+
+    .news-card {
+        max-width: none;
+    }
+
+    .news-card__image {
+        height: 160px;
+    }
+
+    .news-card__title {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Section dividers - smaller on mobile */
+    .section-divider {
+        height: 40px;
+    }
+
+    .section-divider__line {
+        height: 2px;
+    }
+
+    /* Section badges - centered */
+    .section-badge,
+    .why-us__badge,
+    .courses__badge,
+    .locations__badge,
+    .testimonials__badge,
+    .news__badge {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    /* Section headers - smaller */
+    .why-us__title,
+    .courses__title,
+    .locations__title,
+    .testimonials__title,
+    .news__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .why-us__subtitle,
+    .courses__subtitle,
+    .locations__subtitle,
+    .testimonials__subtitle,
+    .news__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Why-us cards - simpler layout */
+    .why-us__card-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .why-us__card-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .why-us__card-text {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Loader - smaller on mobile */
+    .loader__content {
+        padding: var(--spacing-6);
+    }
+
+    .loader__car {
+        width: 60px;
+        height: 30px;
+    }
+
+    .loader__text {
+        font-size: var(--font-size-base);
+    }
+
+    /* Hide animated road lines on mobile */
+    .road-line,
+    .road-dash,
+    .road-flow,
+    .page-hero__road-lines,
+    .page-hero__road-line {
+        display: none;
+    }
+
+    /* Reduce blue glow effects on mobile */
+    .why-us__card::before,
+    .course-card::before,
+    .course-card--featured::after {
+        opacity: 0.3;
+    }
+
+    /* === MOBILE HERO FIXES === */
+    /* Show hero background on mobile with overlay */
+    .hero__background {
+        display: block;
+    }
+
+    /* Hero section with background visible */
+    .hero {
+        background: none;
+        min-height: 100vh;
+        min-height: 100svh;
+        /* Small viewport height for mobile */
+        padding-top: 80px;
+        padding-bottom: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    /* Darker overlay for better text readability on mobile */
+    .hero__overlay {
+        display: block;
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0.6) 100%);
+    }
+
+    /* Hero container stacks vertically on mobile */
+    .hero__container {
+        flex-direction: column;
+        padding: 0 var(--spacing-4);
+        width: 100%;
+        max-width: 100%;
+        flex: 1;
+        justify-content: center;
+        padding-top: var(--spacing-8);
+        padding-bottom: var(--spacing-8);
+    }
+
+    /* Hero card adjustments for mobile */
+    .hero__card {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        margin: var(--spacing-8) 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Stats bar adjustments - full width using calc */
+    .hero__stats {
+        position: relative;
+        margin-top: auto;
+        border-radius: 0;
+        width: calc(100% + 2 * var(--spacing-4));
+        margin-left: calc(-1 * var(--spacing-4));
+        margin-right: calc(-1 * var(--spacing-4));
+        padding: var(--spacing-8) var(--spacing-6);
+    }
+
+
+    /* Scroll indicator - slightly smaller on mobile */
+    .scroll-indicator {
+        bottom: 20px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+    }
+
+    /* === MOBILE COURSE CARD FIXES === */
+    /* Hide pseudo-elements on mobile - they don't work well */
+    .course-card--animated-border::before,
+    .course-card--animated-border::after {
+        display: none;
+    }
+
+    /* Use simple animated border color instead */
+    .course-card--featured {
+        border: 3px solid var(--osk-yellow);
+        animation: borderPulseYellow 3s ease-in-out infinite;
+    }
+
+    .course-card--blue {
+        border: 3px solid var(--osk-blue);
+        animation: borderPulseBlue 3s ease-in-out infinite;
+    }
+
+    .course-card--refresher {
+        border: 3px solid var(--color-gray-200);
+        animation: borderPulseGray 3s ease-in-out infinite;
+    }
+
+    @keyframes borderPulseYellow {
+
+        0%,
+        100% {
+            border-color: var(--osk-yellow);
+            box-shadow: 0 0 15px rgba(249, 204, 24, 0.3);
+        }
+
+        50% {
+            border-color: var(--osk-blue);
+            box-shadow: 0 0 15px rgba(39, 100, 234, 0.3);
+        }
+    }
+
+    @keyframes borderPulseBlue {
+
+        0%,
+        100% {
+            border-color: var(--osk-blue);
+            box-shadow: 0 0 15px rgba(39, 100, 234, 0.3);
+        }
+
+        50% {
+            border-color: var(--osk-yellow);
+            box-shadow: 0 0 15px rgba(249, 204, 24, 0.3);
+        }
+    }
+
+    @keyframes borderPulseGray {
+
+        0%,
+        100% {
+            border-color: var(--color-gray-200);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        50% {
+            border-color: var(--osk-blue);
+            box-shadow: 0 0 15px rgba(39, 100, 234, 0.2);
+        }
+    }
+
+    /* Fix card widths to prevent overflow */
+    .course-card {
+        max-width: 100%;
+        overflow: visible;
+        /* Allow badge to show above card */
+        margin-top: var(--spacing-4);
+        /* Make room for "NAJPOPULARNIEJSZY" badge */
+    }
+
+    /* Ensure buttons don't overflow */
+    .course-card__buttons {
+        flex-direction: column;
+    }
+
+    .course-card__btn {
+        width: 100%;
+    }
+
+    /* === PREVENT HORIZONTAL OVERFLOW === */
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Constrain all containers */
+    .container,
+    .courses__container,
+    .why-us__container,
+    .locations__container,
+    .testimonials__container,
+    .news__container,
+    .footer__container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* === REFRESHER CARDS - MOBILE LAYOUT === */
+    .refresher-card__content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .refresher-card__price {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .refresher-card__btn {
+        width: 100%;
+    }
+}
+
+/* ===================================
+   MOBILE PORTRAIT (max-width: 480px)
+=================================== */
+@media (max-width: 480px) {
+    :root {
+        --container-padding: var(--spacing-4);
+    }
+
+    /* Typography further scale */
+    h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Hero card smaller padding */
+    .hero__card {
+        padding: var(--spacing-6);
+        margin: var(--spacing-4) var(--spacing-3);
+    }
+
+    /* Stats bar - even smaller on tiny screens */
+    .hero__stats {
+        gap: var(--spacing-2);
+        padding: var(--spacing-4) var(--spacing-3);
+    }
+
+    .hero__stat {
+        flex: 0 0 calc(50% - var(--spacing-1));
+        padding: var(--spacing-2);
+        gap: var(--spacing-2);
+    }
+
+    .hero__stat-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero__stat-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hero__stat-number {
+        font-size: var(--font-size-lg);
+    }
+
+    .hero__stat-label {
+        font-size: 10px;
+    }
+
+    /* Stats - 2x2 grid layout */
+    .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Hide dividers in grid layout */
+    .hero__stat-divider {
+        display: none;
+    }
+
+    /* Left column (1st and 3rd stat - child 1 and 5) - left alignment */
+    .hero__stats>.hero__stat:nth-child(1),
+    .hero__stats>.hero__stat:nth-child(5) {
+        flex-direction: row !important;
+    }
+
+    .hero__stats>.hero__stat:nth-child(1) .hero__stat-content,
+    .hero__stats>.hero__stat:nth-child(5) .hero__stat-content {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+
+    /* Right column (2nd and 4th stat - child 3 and 7) - right alignment */
+    .hero__stats>.hero__stat:nth-child(3),
+    .hero__stats>.hero__stat:nth-child(7) {
+        flex-direction: row-reverse !important;
+    }
+
+    .hero__stats>.hero__stat:nth-child(3) .hero__stat-content,
+    .hero__stats>.hero__stat:nth-child(7) .hero__stat-content {
+        text-align: right !important;
+        align-items: flex-end !important;
+    }
+
+    /* Buttons full width */
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Why-us cards - compact 2x2 grid for 320px */
+    .why-us__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-2);
+    }
+
+    .why-us__card {
+        padding: var(--spacing-3);
+        text-align: center;
+    }
+
+    .why-us__icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto var(--spacing-2);
+    }
+
+    .why-us__icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .why-us__card-title {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-1);
+    }
+
+    .why-us__card-text {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    /* News cards - full width for 320px */
+    .news__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-3);
+    }
+
+    .news-card {
+        padding: var(--spacing-3);
+    }
+
+    .news-card__image {
+        height: 120px;
+        margin-bottom: var(--spacing-2);
+    }
+
+    .news-card__category {
+        font-size: 9px;
+        padding: 3px 8px;
+        margin-bottom: var(--spacing-1);
+    }
+
+    .news-card__title {
+        font-size: var(--font-size-sm);
+        line-height: 1.3;
+        margin-bottom: var(--spacing-1);
+    }
+
+    .news-card__excerpt {
+        display: none;
+    }
+
+    .news-card__footer {
+        padding-top: var(--spacing-2);
+    }
+
+    .news-card__date {
+        font-size: 10px;
+    }
+
+    .news-card__link {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    /* Course cards - ultra compact for 320px */
+    .courses__grid {
+        gap: var(--spacing-4);
+    }
+
+    .course-card {
+        padding: var(--spacing-3);
+        margin-bottom: var(--spacing-1);
+    }
+
+    .course-card__header {
+        gap: var(--spacing-2);
+        margin-bottom: var(--spacing-1);
+    }
+
+    .course-card__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .course-card__icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .course-card__badge {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .course-card__name {
+        font-size: var(--font-size-sm);
+    }
+
+    .course-card__desc {
+        font-size: 11px;
+        margin-bottom: var(--spacing-2);
+        line-height: 1.3;
+    }
+
+    .course-card__price {
+        padding: var(--spacing-2);
+        margin-bottom: var(--spacing-2);
+    }
+
+    .course-card__price-label {
+        font-size: 8px;
+        margin-bottom: 2px;
+    }
+
+    .course-card__price-value strong {
+        font-size: var(--font-size-lg);
+    }
+
+    .course-card__price-express {
+        font-size: 9px;
+        flex-wrap: wrap;
+        gap: 3px;
+        margin-top: 4px;
+    }
+
+    .course-card__features {
+        margin-bottom: var(--spacing-2);
+    }
+
+    .course-card__features li {
+        font-size: 11px;
+        padding: 3px 0;
+        gap: 6px;
+    }
+
+    .course-card__features svg {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+    }
+
+    .course-card__buttons {
+        gap: var(--spacing-2);
+    }
+
+    .course-card__btn {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+
+    .course-card__popular {
+        font-size: 8px;
+        padding: 3px 10px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Refresher cards - compact */
+    .refresher-card {
+        padding: var(--spacing-3);
+    }
+
+    .refresher-card__content {
+        gap: var(--spacing-3);
+    }
+
+    .refresher-card__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .refresher-card__icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .refresher-card__title {
+        font-size: var(--font-size-sm);
+    }
+
+    .refresher-card__desc {
+        font-size: var(--font-size-xs);
+        line-height: 1.4;
+    }
+
+    .refresher-card__price-value {
+        font-size: var(--font-size-lg);
+    }
+
+    .refresher-card__price-note {
+        font-size: 10px;
+    }
+
+    .refresher-card__btn {
+        padding: var(--spacing-2) var(--spacing-3);
+        font-size: 10px;
+    }
+
+    /* Courses notice - compact */
+    .courses__notice {
+        font-size: 10px;
+        line-height: 1.4;
+        padding: var(--spacing-2) var(--spacing-3);
+        margin-top: var(--spacing-2);
+    }
+
+    /* Locations section - compact */
+    .locations {
+        padding: var(--spacing-6) 0;
+    }
+
+    .locations__header {
+        margin-bottom: var(--spacing-3);
+    }
+
+    .locations__badge {
+        font-size: 9px;
+        padding: 4px 10px;
+        margin-bottom: var(--spacing-2);
+    }
+
+    .locations__title {
+        font-size: var(--font-size-base);
+        margin-bottom: 4px;
+    }
+
+    .locations__subtitle {
+        font-size: 11px;
+    }
+
+    .locations__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-2);
+    }
+
+    .location-card {
+        padding: var(--spacing-3) !important;
+    }
+
+    .location-card__icon {
+        width: 36px !important;
+        height: 36px !important;
+        margin-bottom: var(--spacing-1) !important;
+    }
+
+    .location-card__icon svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .location-card__city {
+        font-size: 12px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .location-card__desc {
+        font-size: 10px !important;
+        margin-bottom: var(--spacing-2) !important;
+        line-height: 1.3 !important;
+    }
+
+    .location-card__link {
+        font-size: 10px !important;
+        padding: 4px 10px !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+    }
+
+    /* COMPACT REVIEW CARDS FOR MOBILE */
+    .reviews-grid,
+    .reviews-section .reviews-grid {
+        gap: 8px !important;
+    }
+
+    .review-card {
+        padding: 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .review-card__header {
+        margin-bottom: 4px !important;
+    }
+
+    .review-card__stars {
+        gap: 1px !important;
+    }
+
+    .review-card__stars svg,
+    .review-card .review-star {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .review-card__category {
+        font-size: 9px !important;
+        padding: 2px 6px !important;
+    }
+
+    .review-card__quote {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .review-card__author {
+        padding-top: 8px !important;
+        gap: 8px !important;
+    }
+
+    .review-card__avatar {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        font-size: 11px !important;
+    }
+
+    .review-card__name {
+        font-size: 12px !important;
+    }
+
+    .review-card__date {
+        font-size: 10px !important;
+    }
+
+    .review-verified-badge {
+        font-size: 9px !important;
+        padding: 1px 5px !important;
+    }
+
+    /* Footer contact stack */
+    .footer__contact li {
+        flex-direction: column;
+        gap: var(--spacing-2);
+    }
+
+    .footer__contact svg {
+        margin-top: 0;
+    }
+
+    /* Extra width constraints for iPhone */
+    .courses__grid,
+    .why-us__grid,
+    .locations__grid,
+    .testimonials__grid,
+    .news__grid {
+        max-width: 100%;
+    }
+
+    /* COMPACT TESTIMONIAL CARDS ON INDEX.HTML */
+    .testimonials__grid {
+        gap: 8px !important;
+    }
+
+    .testimonial-card {
+        padding: 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .testimonial-card__stars {
+        margin-bottom: 4px !important;
+        gap: 1px !important;
+    }
+
+    .testimonial-card__stars svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .testimonial-card__quote {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .testimonial-card__author {
+        padding-top: 8px !important;
+        gap: 8px !important;
+    }
+
+    .testimonial-card__avatar {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+    }
+
+    .testimonial-card__avatar svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .testimonial-card__name {
+        font-size: 12px !important;
+    }
+
+    .testimonial-card__date {
+        font-size: 10px !important;
+    }
+
+    /* COMPACT CTA BANNER FOR MOBILE */
+    .cta-banner {
+        padding: 32px 0 !important;
+    }
+
+    .cta-banner__left {
+        margin-bottom: 12px !important;
+    }
+
+    .cta-banner__title {
+        font-size: 1.5rem !important;
+    }
+
+    .cta-banner__text {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+
+    .cta-banner__trust {
+        gap: 6px !important;
+    }
+
+    .cta-banner__trust-item {
+        font-size: 11px !important;
+        gap: 6px !important;
+    }
+
+    .cta-banner__trust-item svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .cta-banner__card {
+        padding: 16px !important;
+    }
+
+    .cta-banner__card-title {
+        font-size: 14px !important;
+    }
+
+    .cta-banner__card-subtitle {
+        font-size: 11px !important;
+    }
+
+    .cta-banner__actions .btn {
+        padding: 10px 16px !important;
+        font-size: 12px !important;
+    }
+
+    /* COMPACT FOOTER FOR MOBILE - simple single column, centered */
+    .footer {
+        padding: 32px 0 16px !important;
+    }
+
+    .footer__main {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        text-align: center !important;
+    }
+
+    .footer__column {
+        text-align: center !important;
+    }
+
+    .footer__title {
+        font-size: 13px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .footer__text {
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+
+    .footer__links a {
+        font-size: 11px !important;
+        padding: 3px 0 !important;
+    }
+
+    .footer__contact li {
+        font-size: 11px !important;
+        gap: 6px !important;
+    }
+
+    .footer__contact svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .footer__social a {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .footer__social svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .footer__bottom {
+        padding-top: 12px !important;
+        margin-top: 16px !important;
+        font-size: 10px !important;
+    }
+}
+
+/* ===================================
+   SMALL SMARTPHONES (max-width: 320px)
+   For very small devices like iPhone SE
+=================================== */
+@media (max-width: 376px) {
+
+    /* Ultra compact typography */
+    h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Navigation - minimal */
+    .osk-nav {
+        padding: 10px 12px;
+    }
+
+    .osk-brand-name {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .osk-badge {
+        padding: 6px 16px;
+    }
+
+    .osk-badge-text {
+        font-size: 14px;
+    }
+
+    /* Hero - ultra compact and centered */
+    .hero__container {
+        min-height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+    .hero__card {
+        padding: 20px 14px 16px;
+        margin: auto var(--spacing-3);
+        max-width: calc(100% - 24px);
+        min-height: auto;
+    }
+
+    .hero__title {
+        font-size: 1.1rem;
+        line-height: 1.25;
+        margin-bottom: 6px;
+    }
+
+    .hero__subtitle {
+        font-size: 0.65rem;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    /* Hero buttons - smaller and more compact */
+    .hero__cta {
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+
+    .hero__cta .btn {
+        padding: 8px 12px;
+        font-size: 0.7rem;
+    }
+
+    /* Trust badges - inline style, very compact */
+    .hero__trust {
+        gap: 6px;
+        margin-top: 8px;
+        padding-top: 8px;
+        flex-wrap: wrap;
+    }
+
+    .hero__trust-item {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+        gap: 4px;
+    }
+
+    .hero__trust-item svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Stats - 2x2 grid layout - full width */
+    .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-3);
+        padding: var(--spacing-4) var(--spacing-6);
+        width: calc(100% + 2 * var(--spacing-4));
+        margin-left: calc(-1 * var(--spacing-4));
+        margin-right: calc(-1 * var(--spacing-4));
+    }
+
+    .hero__stat {
+        flex: none;
+    }
+
+    /* Left column (1st and 3rd stat - child 1 and 5) - left alignment */
+    .hero__stats>.hero__stat:nth-child(1),
+    .hero__stats>.hero__stat:nth-child(5) {
+        flex-direction: row !important;
+    }
+
+    .hero__stats>.hero__stat:nth-child(1) .hero__stat-content,
+    .hero__stats>.hero__stat:nth-child(5) .hero__stat-content {
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+
+    /* Right column (2nd and 4th stat - child 3 and 7) - right alignment */
+    .hero__stats>.hero__stat:nth-child(3),
+    .hero__stats>.hero__stat:nth-child(7) {
+        flex-direction: row-reverse !important;
+    }
+
+    .hero__stats>.hero__stat:nth-child(3) .hero__stat-content,
+    .hero__stats>.hero__stat:nth-child(7) .hero__stat-content {
+        text-align: right !important;
+        align-items: flex-end !important;
+    }
+
+    .hero__stat-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero__stat-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .hero__stat-number {
+        font-size: var(--font-size-base);
+    }
+
+    .hero__stat-label {
+        font-size: 9px;
+    }
+
+    /* Cards - minimal padding */
+    .course-card {
+        padding: var(--spacing-4);
+    }
+
+    .why-us__card {
+        padding: var(--spacing-4);
+    }
+
+    .testimonial-card {
+        padding: var(--spacing-4);
+    }
+
+    /* Buttons - smaller */
+    .btn {
+        padding: var(--spacing-2) var(--spacing-3);
+        font-size: 0.75rem;
+    }
+
+    /* Section badges */
+    .section-badge,
+    .why-us__badge,
+    .courses__badge,
+    .locations__badge,
+    .testimonials__badge,
+    .news__badge {
+        font-size: 9px;
+        padding: 5px 10px;
+    }
+
+    /* Section titles */
+    .why-us__title,
+    .courses__title,
+    .locations__title,
+    .testimonials__title,
+    .news__title {
+        font-size: var(--font-size-xl);
+    }
+
+    /* Footer */
+    .footer__title {
+        font-size: var(--font-size-sm);
+    }
+
+    .footer__links a {
+        font-size: var(--font-size-xs);
+    }
+
+    /* Mobile menu CTA */
+    .osk-menu-cta {
+        padding: 12px 20px;
+        font-size: 11px;
+    }
+
+    /* Location card links - always single line */
+    .location-card__link {
+        white-space: nowrap !important;
+        font-size: 11px !important;
+    }
+
+    /* FOOTER - Compact layout for 320px */
+    .footer__main {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-4) !important;
+    }
+
+    .footer__brand {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .footer__description {
+        font-size: 11px;
+        margin-bottom: var(--spacing-3);
+    }
+
+    /* Hide less important columns on tiny screens */
+    .footer__column:nth-child(4) {
+        display: none;
+        /* Hide "Przydatne linki" on 320px */
+    }
+
+    .footer__column {
+        text-align: center;
+    }
+
+    .footer__title {
+        font-size: 11px;
+        padding-bottom: var(--spacing-2);
+        margin-bottom: var(--spacing-3);
+    }
+
+    .footer__title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer__links {
+        gap: var(--spacing-2);
+    }
+
+    .footer__links a,
+    .footer__soon {
+        font-size: 10px !important;
+    }
+
+    .footer__contact {
+        align-items: center;
+        gap: var(--spacing-2);
+    }
+
+    .footer__contact li {
+        font-size: 10px;
+        gap: var(--spacing-2);
+    }
+
+    .footer__contact-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .footer__contact-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .footer__bottom {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2);
+        text-align: center;
+        padding: var(--spacing-4) 0;
+    }
+
+    .footer__legal {
+        flex-direction: column;
+        gap: var(--spacing-1);
+    }
+
+    .footer__legal-divider {
+        display: none;
+    }
+
+    .footer__legal a,
+    .footer__legal button {
+        font-size: 10px;
+    }
+
+    .footer__copyright,
+    .footer__credit {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .footer__divider {
+        margin-bottom: var(--spacing-3);
+    }
+}
