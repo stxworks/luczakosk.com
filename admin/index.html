@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Hostname check: Ensure admin panel is accessed from admin subdomain -->
+    <script>
+        (function () {
+            const hostname = window.location.hostname;
+            const isAdminSubdomain = hostname === "admin.luczakosk.com";
+
+            // If not on admin subdomain, redirect to admin subdomain
+            if (!isAdminSubdomain && hostname !== "localhost" && !hostname.startsWith("127.0.0.1") && !hostname.startsWith("192.168.")) {
+                const currentPath = window.location.pathname;
+                window.location.href = `https://admin.luczakosk.com${currentPath}`;
+            }
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Logowanie | OSK Łuczak</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <!-- LOGIN PAGE ONLY -->
+    <div class="login-page is-visible" id="login-page">
+        <div class="login-card">
+            <div class="login-logo">
+                <div class="login-logo__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="9" />
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 3v6" />
+                        <path d="M5.6 16.5l5.2-3" />
+                        <path d="M18.4 16.5l-5.2-3" />
+                    </svg>
+                </div>
+                <h1 class="login-logo__title">OSK Łuczak</h1>
+                <p class="login-logo__subtitle">Panel Administracyjny</p>
+            </div>
+
+            <div class="login-alert login-alert--error" id="login-alert"></div>
+
+            <form class="login-form" id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="login-email">Email</label>
+                    <input type="email" class="form-input" id="login-email" placeholder="admin@luczakosk.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Hasło</label>
+                    <input type="password" class="form-input" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="login-btn" id="login-btn">
+                    Zaloguj się
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <a href="https://luczakosk.com" class="login-footer__link">← Wróć do strony głównej</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/admin-security.js"></script>
+
+    <script>
+        // ============================================
+        // LOGIN PAGE - ONLY HANDLES LOGIN
+        // After successful login, redirects to admin-panel.html
+        // ============================================
+
+        const loginForm = document.getElementById('login-form');
+        const loginEmail = document.getElementById('login-email');
+        const loginPassword = document.getElementById('login-password');
+        const loginBtn = document.getElementById('login-btn');
+        const loginAlert = document.getElementById('login-alert');
+
+        // Check if already logged in
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (isSupabaseConfigured()) {
+                const user = await getCurrentUser();
+                if (user && window.AdminSecurity && AdminSecurity.isAuthorizedAdmin(user.email)) {
+                    // Already logged in - redirect to panel
+                    window.location.href = '/admin/panel';
+                    return;
+                }
+            }
+        });
+
+        // Handle login
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = loginEmail.value.trim();
+            const password = loginPassword.value;
+
+            if (!email || !password) {
+                showError('Wprowadź email i hasło');
+                return;
+            }
+
+            // Check lockout
+            if (window.AdminSecurity) {
+                const lockoutStatus = await AdminSecurity.checkLockout(email);
+                if (lockoutStatus.locked) {
+                    showError(lockoutStatus.message || 'Zbyt wiele nieudanych prób.');
+                    return;
+                }
+            }
+
+            // Check if email is authorized
+            if (window.AdminSecurity && !AdminSecurity.isAuthorizedAdmin(email)) {
+                await AdminSecurity.recordLoginAttempt(email, false);
+                showError('Nieprawidłowy email lub hasło');
+                return;
+            }
+
+            if (!isSupabaseConfigured()) {
+                showError('System logowania niedostępny');
+                return;
+            }
+
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'Logowanie...';
+
+            try {
+                const data = await signIn(email, password);
+
+                // Verify admin access
+                if (window.AdminSecurity && !AdminSecurity.verifyAdminAccess(data.user)) {
+                    await signOut();
+                    await AdminSecurity.recordLoginAttempt(email, false);
+                    showError('Brak uprawnień administratora');
+                    return;
+                }
+
+                // Record successful login
+                if (window.AdminSecurity) {
+                    await AdminSecurity.recordLoginAttempt(email, true);
+                }
+
+                // SUCCESS - Redirect to admin panel
+                window.location.href = '/admin/panel';
+
+            } catch (error) {
+                console.error('Login error:', error);
+
+                if (window.AdminSecurity) {
+                    await AdminSecurity.recordLoginAttempt(email, false);
+                    const lockoutStatus = await AdminSecurity.checkLockout(email);
+                    showError(AdminSecurity.getSecureErrorMessage(lockoutStatus));
+                } else {
+                    showError('Nieprawidłowy email lub hasło');
+                }
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'Zaloguj się';
+            }
+        });
+
+        function showError(message) {
+            loginAlert.textContent = message;
+            loginAlert.classList.add('is-visible');
+        }
+    </script>
+</body>
+
+</html>

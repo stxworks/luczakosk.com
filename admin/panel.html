@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Hostname check: Ensure admin panel is accessed from admin subdomain -->
+    <script>
+        (function () {
+            const hostname = window.location.hostname;
+            const isAdminSubdomain = hostname === "admin.luczakosk.com";
+
+            // If not on admin subdomain, redirect to admin subdomain
+            if (!isAdminSubdomain && hostname !== "localhost" && !hostname.startsWith("127.0.0.1") && !hostname.startsWith("192.168.")) {
+                const currentPath = window.location.pathname;
+                window.location.href = `https://admin.luczakosk.com${currentPath}`;
+            }
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Panel Administracyjny | OSK Łuczak</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Quill Editor CSS -->
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <!-- EKRAN BŁĘDU - widoczny gdy nie zalogowany -->
+    <div id="auth-denied" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0f172a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        flex-direction: column;
+        gap: 20px;
+        font-family: 'Montserrat', sans-serif;
+    ">
+        <div style="
+            width: 60px;
+            height: 60px;
+            background: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        ">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+        </div>
+        <h1 style="color: white; margin: 0; font-size: 24px;">Brak dostępu</h1>
+        <p style="color: #94a3b8; margin: 0; text-align: center;">Musisz się zalogować aby uzyskać dostęp do panelu.</p>
+        <a href="/admin/" id="login-redirect-link" style="
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+        ">Przejdź do logowania</a>
+        <script>
+            if (window.location.hostname === 'admin.luczakosk.com') {
+                document.getElementById('login-redirect-link').href = '/';
+            }
+        </script>
+    </div>
+    <style>
+        /* Ukryj panel domyślnie */
+        #admin-layout {
+            display: none !important;
+        }
+
+        #admin-layout.auth-verified {
+            display: flex !important;
+        }
+
+        /* Ukryj błąd gdy auth przeszedł */
+        #auth-denied.auth-passed {
+            display: none !important;
+        }
+    </style>
+
+    <!-- ========================================
+         ADMIN LAYOUT (ukryty do weryfikacji)
+         ======================================== -->
+    <div class="admin-layout" id="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar__header">
+                <a href="https://luczakosk.com" class="admin-sidebar__logo" title="Wróć do strony głównej">
+                    <div class="admin-sidebar__logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M12 3v6" />
+                            <path d="M5.6 16.5l5.2-3" />
+                            <path d="M18.4 16.5l-5.2-3" />
+                        </svg>
+                    </div>
+                    <span class="admin-sidebar__logo-text">OSK Łuczak</span>
+                </a>
+            </div>
+
+            <nav class="admin-sidebar__nav">
+                <div class="admin-nav__section">
+                    <div class="admin-nav__title">Menu</div>
+                    <a class="admin-nav__link is-active" data-view="dashboard">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="9" />
+                            <rect x="14" y="3" width="7" height="5" />
+                            <rect x="14" y="12" width="7" height="9" />
+                            <rect x="3" y="16" width="7" height="5" />
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a class="admin-nav__link" data-view="news-list">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                        </svg>
+                        Aktualności
+                    </a>
+                    <a class="admin-nav__link" data-view="categories">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                            <line x1="7" y1="7" x2="7.01" y2="7" />
+                        </svg>
+                        Kategorie
+                    </a>
+                    <a class="admin-nav__link" data-view="registrations">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        Zapisy na kurs
+                        <span class="admin-nav__badge" id="new-registrations-badge" style="display: none;">0</span>
+                    </a>
+                    <a class="admin-nav__link" data-view="reviews">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        Opinie
+                    </a>
+                    <a class="admin-nav__link" data-view="verification-codes">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        Kody weryfikacyjne
+                    </a>
+                    <a class="admin-nav__link" data-view="prices">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                        Cennik
+                    </a>
+                </div>
+
+                <div class="admin-nav__section">
+                    <div class="admin-nav__title">Szybkie akcje</div>
+                    <a class="admin-nav__link" id="new-article-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Nowy artykuł
+                    </a>
+                    <a class="admin-nav__link" id="new-review-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Nowa opinia
+                    </a>
+                    <a class="admin-nav__link" href="https://luczakosk.com/aktualnosci.html" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        Zobacz stronę
+                    </a>
+                </div>
+            </nav>
+
+            <div class="admin-sidebar__footer">
+                <div class="admin-user">
+                    <div class="admin-user__avatar" id="user-avatar">A</div>
+                    <div class="admin-user__info">
+                        <div class="admin-user__name" id="user-name">Administrator</div>
+                        <div class="admin-user__role">Admin</div>
+                    </div>
+                    <button class="admin-user__logout" id="logout-btn" title="Wyloguj">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <button class="admin-menu-btn" id="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                </button>
+                <h1 class="admin-header__title" id="page-title">Dashboard</h1>
+                <div class="admin-header__actions" id="header-actions">
+                    <button class="btn btn--primary" id="header-new-article-btn" onclick="openEditor()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Nowy artykuł
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="admin-content">
+                <!-- ========================================
+                     DASHBOARD VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-dashboard">
+                    <!-- Stats Row 1: Overview -->
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-card__icon stat-card__icon--warning">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="8.5" cy="7" r="4" />
+                                    <path d="M20 8v6M23 11h-6" />
+                                </svg>
+                            </div>
+                            <div class="stat-card__content">
+                                <div class="stat-card__value" id="stat-registrations">0</div>
+                                <div class="stat-card__label">Nowe zapisy</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon stat-card__icon--info">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                            <div class="stat-card__content">
+                                <div class="stat-card__value" id="stat-pending-reviews">0</div>
+                                <div class="stat-card__label">Opinie do akceptacji</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon stat-card__icon--success">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                            </div>
+                            <div class="stat-card__content">
+                                <div class="stat-card__value" id="stat-active-codes">0</div>
+                                <div class="stat-card__label">Aktywne kody</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon stat-card__icon--primary">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                </svg>
+                            </div>
+                            <div class="stat-card__content">
+                                <div class="stat-card__value" id="stat-total">0</div>
+                                <div class="stat-card__label">Artykuły</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Grid -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+
+                        <!-- Recent Registrations -->
+                        <div class="admin-card">
+                            <div class="admin-card__header">
+                                <h2 class="admin-card__title">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="margin-right: 8px; vertical-align: -3px;">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="8.5" cy="7" r="4" />
+                                        <path d="M20 8v6M23 11h-6" />
+                                    </svg>
+                                    Ostatnie zapisy
+                                </h2>
+                                <button class="btn btn--secondary btn--sm" onclick="navigateTo('registrations')">
+                                    Zobacz wszystkie
+                                </button>
+                            </div>
+                            <div class="admin-card__body" id="dashboard-recent-registrations" style="padding: 0;">
+                                <div style="text-align: center; padding: 40px;">
+                                    <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Reviews -->
+                        <div class="admin-card">
+                            <div class="admin-card__header">
+                                <h2 class="admin-card__title">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="margin-right: 8px; vertical-align: -3px;">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    Opinie do akceptacji
+                                </h2>
+                                <button class="btn btn--secondary btn--sm" onclick="navigateTo('reviews')">
+                                    Zobacz wszystkie
+                                </button>
+                            </div>
+                            <div class="admin-card__body" id="dashboard-pending-reviews" style="padding: 0;">
+                                <div style="text-align: center; padding: 40px;">
+                                    <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent News -->
+                        <div class="admin-card">
+                            <div class="admin-card__header">
+                                <h2 class="admin-card__title">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="margin-right: 8px; vertical-align: -3px;">
+                                        <path
+                                            d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                    </svg>
+                                    Ostatnie artykuły
+                                </h2>
+                                <button class="btn btn--secondary btn--sm" onclick="navigateTo('news-list')">
+                                    Zobacz wszystkie
+                                </button>
+                            </div>
+                            <div class="admin-card__body" id="recent-news" style="padding: 0;">
+                                <div style="text-align: center; padding: 40px;">
+                                    <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Verification Codes -->
+                        <div class="admin-card">
+                            <div class="admin-card__header">
+                                <h2 class="admin-card__title">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="margin-right: 8px; vertical-align: -3px;">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                    Kody weryfikacyjne
+                                </h2>
+                                <button class="btn btn--secondary btn--sm" onclick="navigateTo('verification-codes')">
+                                    Zarządzaj
+                                </button>
+                            </div>
+                            <div class="admin-card__body" id="dashboard-codes-info" style="padding: 20px;">
+                                <div style="display: flex; justify-content: space-around; text-align: center;">
+                                    <div>
+                                        <div style="font-size: 28px; font-weight: 700; color: #22c55e;"
+                                            id="dash-codes-active">0</div>
+                                        <div style="font-size: 13px; color: #64748b;">Aktywne</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 28px; font-weight: 700; color: #94a3b8;"
+                                            id="dash-codes-used">0</div>
+                                        <div style="font-size: 13px; color: #64748b;">Użyte</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn--primary" onclick="openGenerateCodeModal()"
+                                    style="width: 100%; margin-top: 16px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    Wygeneruj nowy kod
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     NEWS LIST VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-news-list" style="display: none;">
+                    <div class="admin-card">
+                        <div class="admin-card__header">
+                            <h2 class="admin-card__title">Wszystkie artykuły</h2>
+                            <div class="admin-card__actions">
+                                <select class="editor-select" id="news-status-filter" style="width: auto;">
+                                    <option value="all">Wszystkie statusy</option>
+                                    <option value="published">Opublikowane</option>
+                                    <option value="draft">Szkice</option>
+                                    <option value="scheduled">Zaplanowane</option>
+                                </select>
+                                <div style="position: relative;">
+                                    <input type="text" class="form-input" id="news-search" placeholder="Szukaj..."
+                                        style="padding-left: 36px; width: 200px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2"
+                                        style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #94a3b8;">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <path d="M21 21l-4.35-4.35" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-card__body">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tytuł</th>
+                                        <th>Kategoria</th>
+                                        <th>Status</th>
+                                        <th>Data</th>
+                                        <th>Akcje</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="news-table-body">
+                                    <tr>
+                                        <td colspan="5" style="text-align: center; padding: 40px;">
+                                            <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     CATEGORIES VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-categories" style="display: none;">
+                    <div class="admin-card">
+                        <div class="admin-card__header">
+                            <h2 class="admin-card__title">Zarządzanie kategoriami</h2>
+                            <button class="btn btn--primary btn--sm" id="add-category-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 5v14M5 12h14" />
+                                </svg>
+                                Nowa kategoria
+                            </button>
+                        </div>
+                        <div class="admin-card__body" style="padding: 20px;" id="categories-list">
+                            <div style="text-align: center; padding: 40px;">
+                                <div class="loading-spinner" style="margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     REGISTRATIONS VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-registrations" style="display: none;">
+                    <div class="admin-card">
+                        <div class="admin-card__header">
+                            <h2 class="admin-card__title">Zapisy na kurs</h2>
+                            <div class="admin-card__actions">
+                                <select class="editor-select" id="registrations-status-filter" style="width: auto;">
+                                    <option value="new">Nowe</option>
+                                    <option value="exported">Wyeksportowane</option>
+                                    <option value="all">Wszystkie</option>
+                                </select>
+                                <button class="btn btn--primary btn--sm" id="export-pdf-btn"
+                                    onclick="exportRegistrationsToPDF()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                        <path d="M12 18v-6" />
+                                        <path d="M9 15l3 3 3-3" />
+                                    </svg>
+                                    Eksportuj PDF
+                                </button>
+                            </div>
+                        </div>
+                        <div class="admin-card__body">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 40px;">
+                                            <input type="checkbox" id="select-all-registrations"
+                                                title="Zaznacz wszystkie">
+                                        </th>
+                                        <th>Imię i nazwisko</th>
+                                        <th>Kontakt</th>
+                                        <th>Kurs</th>
+                                        <th>Miasto</th>
+                                        <th>Data</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="registrations-table-body">
+                                    <tr>
+                                        <td colspan="7" style="text-align: center; padding: 40px;">
+                                            <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="admin-card__footer"
+                            style="padding: 16px; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+                            <div id="registrations-count" style="color: #64748b; font-size: 14px;">
+                                Ładowanie...
+                            </div>
+                            <div id="registrations-selected"
+                                style="color: #1a56db; font-size: 14px; font-weight: 600; display: none;">
+                                Zaznaczono: <span id="selected-count">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     REVIEWS VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-reviews" style="display: none;">
+                    <div class="admin-card">
+                        <div class="admin-card__header">
+                            <h2 class="admin-card__title">Zarządzanie opiniami</h2>
+                            <div class="admin-card__actions">
+                                <select class="editor-select" id="reviews-status-filter" style="width: auto;">
+                                    <option value="all">Wszystkie</option>
+                                    <option value="pending">⏳ Do akceptacji</option>
+                                    <option value="published">Opublikowane</option>
+                                    <option value="draft">Nieopublikowane</option>
+                                </select>
+                                <button class="btn btn--primary btn--sm" id="add-review-btn"
+                                    onclick="openReviewModal()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    Nowa opinia
+                                </button>
+                            </div>
+                        </div>
+                        <div class="admin-card__body">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Autor</th>
+                                        <th>Treść</th>
+                                        <th>Ocena</th>
+                                        <th>Kategoria</th>
+                                        <th>Rok</th>
+                                        <th>Data</th>
+                                        <th>Status</th>
+                                        <th>Akcje</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reviews-table-body">
+                                    <tr>
+                                        <td colspan="8" style="text-align: center; padding: 40px;">
+                                            <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="admin-card__footer"
+                            style="padding: 16px; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+                            <div id="reviews-count" style="color: #64748b; font-size: 14px;">
+                                Ładowanie...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     VERIFICATION CODES VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-verification-codes" style="display: none;">
+                    <div class="admin-card">
+                        <div class="admin-card__header">
+                            <h2 class="admin-card__title">Kody weryfikacyjne</h2>
+                            <div class="admin-card__actions">
+                                <select class="editor-select" id="codes-status-filter" style="width: auto;">
+                                    <option value="all">Wszystkie</option>
+                                    <option value="active">Aktywne</option>
+                                    <option value="used">Użyte</option>
+                                </select>
+                                <button class="btn btn--primary btn--sm" id="generate-code-btn"
+                                    onclick="openGenerateCodeModal()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    Wygeneruj kod
+                                </button>
+                            </div>
+                        </div>
+                        <div class="admin-card__body">
+                            <div
+                                style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+                                <p style="margin: 0; color: #166534; font-size: 14px;">
+                                    <strong>Jak to działa?</strong><br>
+                                    1. Wygeneruj unikalny kod dla kursanta<br>
+                                    2. Przekaż kod kursantowi (SMS, email lub karteczka)<br>
+                                    3. Kursant wchodzi na stronę → klika "Dodaj opinię" → wpisuje kod<br>
+                                    4. Opinia zostanie oznaczona jako "✓ Zweryfikowany kursant"
+                                </p>
+                            </div>
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Kod</th>
+                                        <th>Imię kursanta</th>
+                                        <th>Kategoria</th>
+                                        <th>Utworzono</th>
+                                        <th>Status</th>
+                                        <th>Akcje</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="codes-table-body">
+                                    <tr>
+                                        <td colspan="6" style="text-align: center; padding: 40px;">
+                                            <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="admin-card__footer"
+                            style="padding: 16px; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+                            <div id="codes-count" style="color: #64748b; font-size: 14px;">
+                                Ładowanie...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PRICES VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-prices" style="display: none;">
+                    <div class="admin-card">
+                        <div class="admin-card__header">
+                            <h2 class="admin-card__title">Zarządzanie cennikiem</h2>
+                            <div class="admin-card__actions">
+                                <span style="color: #64748b; font-size: 14px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="vertical-align: middle; margin-right: 4px;">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="12" y1="16" x2="12" y2="12" />
+                                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                                    </svg>
+                                    Edytuj cenę aby ustawić promocję
+                                </span>
+                            </div>
+                        </div>
+                        <div class="admin-card__body">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nazwa</th>
+                                        <th>Cena bazowa</th>
+                                        <th>Promocja</th>
+                                        <th>Koniec promocji</th>
+                                        <th>Akcje</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="prices-table-body">
+                                    <tr>
+                                        <td colspan="6" style="text-align: center; padding: 40px;">
+                                            <div class="loading-spinner" style="margin: 0 auto;"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="admin-card__footer"
+                            style="padding: 16px; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+                            <div id="prices-count" style="color: #64748b; font-size: 14px;">
+                                Ładowanie...
+                            </div>
+                            <div id="active-promos-count" style="color: #dc2626; font-size: 14px; font-weight: 600;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     EDITOR VIEW
+                     ======================================== -->
+                <div class="admin-view" id="view-editor" style="display: none;">
+                    <form id="editor-form">
+                        <div class="editor-grid">
+                            <!-- Main Editor -->
+                            <div class="editor-main">
+                                <!-- Title -->
+                                <input type="text" class="editor-title-input" id="article-title"
+                                    placeholder="Tytuł artykułu..." required>
+
+                                <!-- Slug -->
+                                <div class="editor-slug">
+                                    <span class="editor-slug__prefix">URL: /artykul.html?slug=</span>
+                                    <span class="editor-slug__value" id="article-slug">url-artykulu</span>
+                                </div>
+
+                                <!-- Excerpt -->
+                                <textarea class="editor-excerpt" id="article-excerpt"
+                                    placeholder="Krótki opis artykułu (widoczny na liście)..." rows="3"></textarea>
+
+                                <!-- Rich Text Editor -->
+                                <div class="editor-content">
+                                    <div id="quill-editor"></div>
+                                </div>
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="editor-sidebar">
+                                <!-- Publish Panel -->
+                                <div class="editor-panel">
+                                    <div class="editor-panel__header">Publikacja</div>
+                                    <div class="editor-panel__body">
+                                        <div class="form-group">
+                                            <label class="form-label">Status</label>
+                                            <select class="editor-select" id="article-status">
+                                                <option value="draft">Szkic</option>
+                                                <option value="published">Opublikowany</option>
+                                                <option value="scheduled">Zaplanowany</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Data publikacji</label>
+                                            <input type="datetime-local" class="editor-datetime" id="article-date">
+                                        </div>
+                                        <div class="editor-actions">
+                                            <button type="submit" class="btn btn--primary btn--lg">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path
+                                                        d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                                                    <polyline points="17 21 17 13 7 13 7 21" />
+                                                    <polyline points="7 3 7 8 15 8" />
+                                                </svg>
+                                                Zapisz
+                                            </button>
+                                            <button type="button" class="btn btn--secondary" id="preview-btn"
+                                                onclick="previewCurrentArticle()">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg>
+                                                Podgląd
+                                            </button>
+                                            <button type="button" class="btn btn--secondary"
+                                                onclick="navigateTo('news-list')">
+                                                Anuluj
+                                            </button>
+                                            <span id="autosave-indicator" class="autosave-indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Category Panel -->
+                                <div class="editor-panel">
+                                    <div class="editor-panel__header">Kategoria</div>
+                                    <div class="editor-panel__body">
+                                        <select class="editor-select" id="article-category">
+                                            <option value="">Wybierz kategorię</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Image Panel -->
+                                <div class="editor-panel">
+                                    <div class="editor-panel__header">Obrazek wyróżniający</div>
+                                    <div class="editor-panel__body">
+                                        <div class="image-upload">
+                                            <img src="" alt="" class="image-upload__preview" id="image-preview">
+                                            <div class="image-upload__placeholder">
+                                                <div class="image-upload__icon">
+                                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2">
+                                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                                        <circle cx="8.5" cy="8.5" r="1.5" />
+                                                        <polyline points="21 15 16 10 5 21" />
+                                                    </svg>
+                                                </div>
+                                                <div class="image-upload__text">Kliknij lub przeciągnij obraz
+                                                </div>
+                                                <div class="image-upload__hint">PNG, JPG do 5MB</div>
+                                            </div>
+                                            <button type="button"
+                                                class="btn btn--secondary btn--sm image-upload__remove"
+                                                onclick="removeImage()">
+                                                Usuń obraz
+                                            </button>
+                                        </div>
+                                        <input type="file" id="image-input" accept="image/*" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ========================================
+         CATEGORY MODAL
+         ======================================== -->
+    <div class="modal-overlay" id="category-modal">
+        <div class="modal">
+            <div class="modal__header">
+                <h2 class="modal__title" id="category-modal-title">Nowa kategoria</h2>
+                <button class="modal__close" onclick="closeCategoryModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <form id="category-form">
+                <div class="modal__body">
+                    <div class="form-group">
+                        <label class="form-label">Nazwa kategorii</label>
+                        <input type="text" class="form-input" id="category-name" placeholder="np. Kursy" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Kolor</label>
+                        <input type="color" class="form-input" id="category-color" value="#1a56db"
+                            style="height: 50px; padding: 4px;">
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--secondary" onclick="closeCategoryModal()">Anuluj</button>
+                    <button type="submit" class="btn btn--primary">Zapisz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================
+         REVIEW MODAL
+         ======================================== -->
+    <div class="modal-overlay" id="review-modal">
+        <div class="modal" style="max-width: 600px;">
+            <div class="modal__header">
+                <h2 class="modal__title" id="review-modal-title">Nowa opinia</h2>
+                <button class="modal__close" onclick="closeReviewModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <form id="review-form">
+                <input type="hidden" id="review-id">
+                <div class="modal__body" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="form-group">
+                        <label class="form-label">Imię i nazwisko autora <span style="color: #ef4444;">*</span></label>
+                        <input type="text" class="form-input" id="review-author" placeholder="np. Anna K." required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Treść opinii <span style="color: #ef4444;">*</span></label>
+                        <textarea class="form-input" id="review-content" rows="4" placeholder="Treść opinii kursanta..."
+                            required></textarea>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">Ocena <span style="color: #ef4444;">*</span></label>
+                            <select class="form-input" id="review-rating" required>
+                                <option value="5">★★★★★ (5)</option>
+                                <option value="4">★★★★☆ (4)</option>
+                                <option value="3">★★★☆☆ (3)</option>
+                                <option value="2">★★☆☆☆ (2)</option>
+                                <option value="1">★☆☆☆☆ (1)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Kategoria kursu <span style="color: #ef4444;">*</span></label>
+                            <select class="form-input" id="review-category" required>
+                                <option value="B">Kategoria B</option>
+                                <option value="B+E">Kategoria B+E</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px;">
+                        <div class="form-group">
+                            <label class="form-label">Rok ukończenia kursu <span
+                                    style="color: #ef4444;">*</span></label>
+                            <input type="number" class="form-input" id="review-year" min="2000" max="2030" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Data dodania opinii</label>
+                            <input type="date" class="form-input" id="review-date">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div></div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 12px;">
+                            <label class="form-label">Opcje</label>
+                            <label
+                                style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 8px 0;"
+                                title="Wyróżnione opinie wyświetlają się na stronie głównej (max 5)">
+                                <input type="checkbox" id="review-featured" style="width: 18px; height: 18px;">
+                                <span>Na stronie głównej ★</span>
+                            </label>
+                            <label
+                                style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 8px 0;">
+                                <input type="checkbox" id="review-published" checked style="width: 18px; height: 18px;">
+                                <span>Opublikowana</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--secondary" onclick="closeReviewModal()">Anuluj</button>
+                    <button type="submit" class="btn btn--primary">Zapisz opinię</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================
+         GENERATE VERIFICATION CODE MODAL
+         ======================================== -->
+    <div class="modal-overlay" id="generate-code-modal">
+        <div class="modal" style="max-width: 500px;">
+            <div class="modal__header">
+                <h2 class="modal__title">Wygeneruj kod weryfikacyjny</h2>
+                <button class="modal__close" onclick="closeGenerateCodeModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <form id="generate-code-form">
+                <div class="modal__body" style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Code Preview -->
+                    <div
+                        style="text-align: center; padding: 24px; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 12px;">
+                        <div
+                            style="color: #64748b; font-size: 12px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">
+                            Wygenerowany kod</div>
+                        <code id="code-preview" style="
+                            font-size: 28px;
+                            font-weight: 700;
+                            letter-spacing: 3px;
+                            color: #1e40af;
+                            background: white;
+                            padding: 12px 24px;
+                            border-radius: 8px;
+                            display: inline-block;
+                            border: 2px dashed #93c5fd;
+                        ">OSK-XXXX-XXXX</code>
+                        <div style="display: flex; gap: 8px; justify-content: center; margin-top: 12px;">
+                            <button type="button" class="btn btn--secondary btn--sm" onclick="regenerateCodePreview()">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M23 4v6h-6M1 20v-6h6" />
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                                </svg>
+                                Generuj nowy
+                            </button>
+                            <button type="button" class="btn btn--primary btn--sm" id="copy-code-btn"
+                                onclick="copyGeneratedCode()">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                                Skopiuj do schowka
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Imię kursanta <span
+                                style="color: #94a3b8;">(opcjonalne)</span></label>
+                        <input type="text" class="form-input" id="code-student-name" placeholder="np. Jan Kowalski">
+                        <small style="color: #64748b; margin-top: 4px; display: block;">Pomoże Ci śledzić dla kogo
+                            wygenerowałeś kod</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Kategoria kursu <span
+                                style="color: #94a3b8;">(opcjonalne)</span></label>
+                        <select class="form-input" id="code-course-category">
+                            <option value="">- Wybierz kategorię -</option>
+                            <option value="B">Kategoria B</option>
+                            <option value="B+E">Kategoria B+E</option>
+                        </select>
+                    </div>
+
+                    <div
+                        style="background: #fefce8; padding: 12px 16px; border-radius: 8px; font-size: 13px; color: #854d0e;">
+                        <strong>📋 Informacja:</strong> Kod będzie ważny przez 30 dni od wygenerowania i może być użyty
+                        tylko raz.
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--secondary" onclick="closeGenerateCodeModal()">Anuluj</button>
+                    <button type="submit" class="btn btn--primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Zapisz kod
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================
+         PRICE EDIT MODAL
+         ======================================== -->
+    <div class="modal-overlay" id="price-modal">
+        <div class="modal" style="max-width: 550px;">
+            <div class="modal__header">
+                <h2 class="modal__title" id="price-modal-title">Edytuj cenę</h2>
+                <button class="modal__close" onclick="closePriceModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <form id="price-form">
+                <input type="hidden" id="price-id">
+                <div class="modal__body" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="form-group">
+                        <label class="form-label">Nazwa pozycji</label>
+                        <input type="text" class="form-input" id="price-name" readonly
+                            style="background: #f1f5f9; cursor: not-allowed;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">Cena bazowa <span style="color: #ef4444;">*</span></label>
+                            <div style="position: relative;">
+                                <input type="number" class="form-input" id="price-base" min="0" step="0.01" required
+                                    style="padding-right: 50px;">
+                                <span
+                                    style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #64748b;"
+                                    id="price-unit-display">zł</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo Section -->
+                    <div class="price-modal__promo-section" style="
+                        margin-top: 8px;
+                        padding: 16px;
+                        background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), rgba(239, 68, 68, 0.02));
+                        border: 1px solid rgba(220, 38, 38, 0.2);
+                        border-radius: 12px;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                    ">
+                        <label
+                            style="display: flex; align-items: center; gap: 12px; cursor: pointer; margin-bottom: 16px;">
+                            <input type="checkbox" id="price-promo-active"
+                                style="width: 20px; height: 20px; accent-color: #dc2626; flex-shrink: 0;">
+                            <span style="font-weight: 600; color: #dc2626;">
+                                Aktywuj promocję
+                            </span>
+                        </label>
+                        <div id="promo-fields"
+                            style="display: flex; flex-direction: column; gap: 12px; opacity: 0.4; pointer-events: none;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                <div class="form-group" style="margin: 0; min-width: 0;">
+                                    <label class="form-label" style="font-size: 13px;">Cena promocyjna <span
+                                            style="color: #ef4444;">*</span></label>
+                                    <div style="position: relative;">
+                                        <input type="number" class="form-input" id="price-promo" min="0" step="0.01"
+                                            style="padding-right: 40px; width: 100%; box-sizing: border-box;">
+                                        <span
+                                            style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #64748b; font-size: 13px;"
+                                            id="price-promo-unit-display">zł</span>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin: 0; min-width: 0;">
+                                    <label class="form-label" style="font-size: 13px;">Koniec promocji <span
+                                            style="color: #ef4444;">*</span></label>
+                                    <input type="datetime-local" class="form-input" id="price-promo-end"
+                                        style="width: 100%; box-sizing: border-box;">
+                                </div>
+                            </div>
+                            <div
+                                style="background: #fef3c7; padding: 10px 12px; border-radius: 8px; font-size: 12px; color: #92400e; line-height: 1.4;">
+                                Po upływie daty promocji, cena automatycznie wróci do wartości bazowej.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--secondary" onclick="closePriceModal()">Anuluj</button>
+                    <button type="submit" class="btn btn--primary">Zapisz zmiany</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================
+         SCRIPTS
+         ======================================== -->
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Quill Editor -->
+    <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="../js/supabase.js"></script>
+    <script src="../js/admin-security.js"></script>
+    <script src="../js/registrations.js"></script>
+    <script src="../js/reviews-admin.js"></script>
+    <script src="../js/prices-admin.js"></script>
+    <script src="../js/verification-codes-admin.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>
