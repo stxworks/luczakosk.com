@@ -410,7 +410,7 @@ async function saveRegistration(registrationData) {
     const client = getSupabase();
     if (!client) throw new Error('Supabase not configured');
 
-    const { data, error } = await client
+    const { error } = await client
         .from('course_registrations')
         .insert([{
             first_name: registrationData.firstName,
@@ -424,12 +424,9 @@ async function saveRegistration(registrationData) {
             source: registrationData.source || null,
             message: registrationData.message || null,
             status: 'new'
-        }])
-        .select()
-        .single();
+        }]);
 
     if (error) throw error;
-    return data;
 }
 
 /**
