@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aktualności OSK Łuczak - Szkoła jazdy">
+    <title>Artykuł | OSK Łuczak</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+
+    <!-- Open Graph (will be updated dynamically) -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="" id="og-url">
+    <meta property="og:title" content="Artykuł | OSK Łuczak" id="og-title">
+    <meta property="og:description" content="Aktualności OSK Łuczak - Szkoła jazdy" id="og-description">
+    <meta property="og:image" content="" id="og-image">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+
+    <style>
+        /* Article Page Specific Styles */
+        .article {
+            padding: var(--spacing-24) 0;
+            background: var(--color-white);
+            min-height: 60vh;
+        }
+
+        .article__container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .article__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--osk-blue);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            text-decoration: none;
+            margin-bottom: var(--spacing-8);
+            transition: all 0.3s ease;
+        }
+
+        .article__back:hover {
+            transform: translateX(-5px);
+        }
+
+        .article__back svg {
+            transform: rotate(180deg);
+        }
+
+        .article__header {
+            margin-bottom: var(--spacing-8);
+        }
+
+        .article__meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .article__category {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--osk-blue);
+            color: white;
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: var(--radius-full);
+        }
+
+        .article__date {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+
+        .article__title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .article__excerpt {
+            font-size: var(--font-size-xl);
+            color: var(--color-gray-600);
+            line-height: 1.7;
+            padding-bottom: var(--spacing-6);
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .article__image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--spacing-8);
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article__image:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox__image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active .lightbox__image {
+            transform: scale(1);
+        }
+
+        .lightbox__close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox__close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox__close svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .article__content {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            color: var(--color-gray-700);
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            margin-top: var(--spacing-10);
+            margin-bottom: var(--spacing-4);
+            color: var(--color-gray-900);
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            margin-top: var(--spacing-8);
+            margin-bottom: var(--spacing-3);
+            color: var(--color-gray-900);
+        }
+
+        .article__content p {
+            margin-bottom: var(--spacing-5);
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--spacing-5);
+            padding-left: var(--spacing-6);
+        }
+
+        .article__content li {
+            margin-bottom: var(--spacing-2);
+        }
+
+        .article__content a {
+            color: var(--osk-blue);
+            text-decoration: underline;
+        }
+
+        .article__content a:hover {
+            color: var(--osk-yellow);
+        }
+
+        .article__content blockquote {
+            margin: var(--spacing-8) 0;
+            padding: var(--spacing-6);
+            background: var(--color-gray-50);
+            border-left: 4px solid var(--osk-blue);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            font-style: italic;
+            color: var(--color-gray-600);
+        }
+
+        .article__content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-6) 0;
+        }
+
+        .article__footer {
+            margin-top: var(--spacing-12);
+            padding-top: var(--spacing-8);
+            border-top: 2px solid var(--color-gray-200);
+        }
+
+        .article__share {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+        }
+
+        .article__share-label {
+            font-weight: 700;
+            color: var(--color-gray-700);
+        }
+
+        .article__share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-full);
+            color: var(--color-gray-600);
+            transition: all 0.3s ease;
+        }
+
+        .article__share-btn:hover {
+            background: var(--osk-blue);
+            color: white;
+        }
+
+        .article__loading {
+            text-align: center;
+            padding: var(--spacing-16);
+            color: var(--color-gray-500);
+        }
+
+        .article__loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--color-gray-200);
+            border-top-color: var(--osk-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto var(--spacing-4);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .article__error {
+            text-align: center;
+            padding: var(--spacing-16);
+        }
+
+        .article__error h2 {
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .article__error p {
+            color: var(--color-gray-600);
+            margin-bottom: var(--spacing-6);
+        }
+
+        /* Related articles */
+        .related {
+            padding: var(--spacing-16) 0;
+            background: var(--color-gray-50);
+        }
+
+        .related__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .related__title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-8);
+            text-align: center;
+        }
+
+        .related__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-6);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article">
+        <div class="article__container">
+            <!-- Back button -->
+            <a href="/aktualnosci" class="article__back">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                Powrót do aktualności
+            </a>
+
+            <!-- Loading state -->
+            <div id="article-loading" class="article__loading">
+                <div class="article__loading-spinner"></div>
+                <span>Ładowanie artykułu...</span>
+            </div>
+
+            <!-- Article content (filled by JS) -->
+            <div id="article-content" style="display: none;">
+                <header class="article__header">
+                    <div class="article__meta">
+                        <span id="article-category" class="article__category">Kategoria</span>
+                        <span id="article-date" class="article__date">Data publikacji</span>
+                    </div>
+                    <h1 id="article-title" class="article__title">Tytuł artykułu</h1>
+                    <p id="article-excerpt" class="article__excerpt">Opis artykułu</p>
+                </header>
+
+                <img id="article-image" class="article__image" src="" alt="" style="display: none;">
+
+                <div id="article-body" class="article__content">
+                    <!-- Article body will be inserted here -->
+                </div>
+
+                <footer class="article__footer">
+                    <div class="article__share">
+                        <span class="article__share-label">Udostępnij:</span>
+                        <a href="#" class="article__share-btn" id="share-facebook" title="Udostępnij na Facebooku">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="article__share-btn" id="share-copy" title="Kopiuj link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                        </a>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- Error state -->
+            <div id="article-error" class="article__error" style="display: none;">
+                <h2>Artykuł nie został znaleziony</h2>
+                <p>Przepraszamy, nie udało się załadować tego artykułu.</p>
+                <a href="/aktualnosci" class="btn btn--primary">
+                    Wróć do aktualności
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- Related Articles Section -->
+    <section class="related" id="related-section" style="display: none;">
+        <div class="related__container">
+            <h2 class="related__title">Inne aktualności</h2>
+            <div class="related__grid" id="related-grid">
+                <!-- Related articles will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox__close" aria-label="Zamknij">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <img class="lightbox__image" id="lightbox-image" src="" alt="">
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadArticle();
+            setupLightbox();
+        });
+
+        /**
+         * Setup lightbox for article images
+         */
+        function setupLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox__close');
+
+            // Close lightbox on background click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === closeBtn || closeBtn.contains(e.target)) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        /**
+         * Open lightbox with image
+         */
+        function openLightbox(src, alt) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+
+            lightboxImage.src = src;
+            lightboxImage.alt = alt || '';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        /**
+         * Get article slug from URL
+         */
+        function getArticleSlug() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('slug') || urlParams.get('id');
+        }
+
+        /**
+         * Load article from Supabase
+         */
+        async function loadArticle() {
+            const slug = getArticleSlug();
+            const loadingEl = document.getElementById('article-loading');
+            const contentEl = document.getElementById('article-content');
+            const errorEl = document.getElementById('article-error');
+
+            if (!slug) {
+                showPlaceholderArticle('demo');
+                return;
+            }
+
+            try {
+                // Try to fetch from Supabase
+                const article = await fetchArticleBySlug(slug);
+
+                if (!article) {
+                    // No article found - show placeholder for demo
+                    showPlaceholderArticle(slug);
+                    return;
+                }
+
+                renderArticle(article);
+                loadRelatedArticles(article.id);
+
+            } catch (error) {
+                console.error('Error loading article:', error);
+                // On error, show placeholder
+                showPlaceholderArticle(slug);
+            }
+        }
+
+
+        /**
+         * Render article content
+         */
+        function renderArticle(article) {
+            const loadingEl = document.getElementById('article-loading');
+            const contentEl = document.getElementById('article-content');
+
+            // Update page title
+            document.title = `${article.title} | OSK Łuczak`;
+
+            // Update meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc && article.excerpt) {
+                metaDesc.setAttribute('content', article.excerpt);
+            }
+
+            // Update Open Graph meta tags for social sharing
+            const ogUrl = document.getElementById('og-url');
+            const ogTitle = document.getElementById('og-title');
+            const ogDesc = document.getElementById('og-description');
+            const ogImage = document.getElementById('og-image');
+
+            if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+            if (ogTitle) ogTitle.setAttribute('content', `${article.title} | OSK Łuczak`);
+            if (ogDesc && article.excerpt) ogDesc.setAttribute('content', article.excerpt);
+            if (ogImage && article.image_url) ogImage.setAttribute('content', article.image_url);
+
+            // Fill in article data
+            const category = article.category || { name: 'Aktualności', color: '#1a56db' };
+            const categoryEl = document.getElementById('article-category');
+            categoryEl.textContent = typeof category === 'string' ? category : category.name;
+            if (category.color) {
+                categoryEl.style.backgroundColor = category.color;
+            }
+            document.getElementById('article-date').textContent = formatDatePL(article.published_at || article.created_at);
+            document.getElementById('article-title').textContent = article.title;
+            document.getElementById('article-excerpt').textContent = article.excerpt || '';
+
+            // Image
+            const imageEl = document.getElementById('article-image');
+            if (article.image_url) {
+                imageEl.src = article.image_url;
+                imageEl.alt = article.title;
+                imageEl.style.display = 'block';
+                imageEl.onclick = () => openLightbox(article.image_url, article.title);
+            }
+
+            // Body content (supports HTML)
+            const bodyEl = document.getElementById('article-body');
+            bodyEl.innerHTML = article.content || article.body || '<p>Brak treści artykułu.</p>';
+
+            // Setup share buttons
+            setupShareButtons(article);
+
+            // Show content, hide loading
+            loadingEl.style.display = 'none';
+            contentEl.style.display = 'block';
+        }
+
+        /**
+         * Show error when article not found (production behavior)
+         * Previously showed placeholder data, now shows proper error
+         */
+        function showPlaceholderArticle(slug) {
+            // In production, show error state instead of fake data
+            showError();
+        }
+
+        /**
+         * Show error state
+         */
+        function showError() {
+            document.getElementById('article-loading').style.display = 'none';
+            document.getElementById('article-error').style.display = 'block';
+        }
+
+        /**
+         * Setup share buttons
+         */
+        function setupShareButtons(article) {
+            const url = window.location.href;
+            const title = article.title;
+
+            // Facebook share
+            const fbBtn = document.getElementById('share-facebook');
+            fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            fbBtn.target = '_blank';
+
+            // Copy link
+            const copyBtn = document.getElementById('share-copy');
+            copyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Link skopiowany do schowka!');
+                });
+            });
+        }
+
+        /**
+         * Load related articles
+         */
+        async function loadRelatedArticles(currentId) {
+            try {
+                const { data: articles } = await fetchPublishedNews({ limit: 3 });
+
+                // Filter out current article
+                const related = articles.filter(a => a.id !== currentId && a.slug !== currentId);
+
+                if (related.length > 0) {
+                    renderRelatedArticles(related.slice(0, 3));
+                }
+            } catch (error) {
+                console.error('Error loading related articles:', error);
+            }
+        }
+
+        /**
+         * Render related articles
+         */
+        function renderRelatedArticles(articles) {
+            const section = document.getElementById('related-section');
+            const grid = document.getElementById('related-grid');
+
+            grid.innerHTML = articles.map(item => {
+                const category = item.category || {};
+                const categoryName = typeof category === 'string' ? category : category.name;
+                const categoryColor = category.color || '#1a56db';
+
+                return `
+                    <article class="news-card">
+                        ${item.image_url ? `<img src="${item.image_url}" alt="${item.title}" class="news-card__image" loading="lazy" decoding="async">` :
+                        `<div class="news-card__image"></div>`}
+                        <div class="news-card__content">
+                            <div class="news-card__meta">
+                                ${categoryName ? `<span class="news-card__category" style="background-color: ${categoryColor}">${categoryName}</span>` : ''}
+                                <span class="news-card__date">${formatDatePL(item.published_at || item.created_at)}</span>
+                            </div>
+                            <h3 class="news-card__title">${item.title}</h3>
+                            <p class="news-card__excerpt">${item.excerpt || ''}</p>
+                            <a href="artykul.html?slug=${item.slug || item.id}" class="news-card__link">
+                                Czytaj więcej
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+
+            section.style.display = 'block';
+        }
+
+        // formatDate is now provided by supabase.js as formatDatePL
+    </script>
+</body>
+
+</html>

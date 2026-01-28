@@ -1,0 +1,1069 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Hostname-based routing: Check if admin subdomain -->
+    <script>
+        (function() {
+            const hostname = window.location.hostname;
+            const isAdmin = hostname === "admin.luczakosk.com";
+            
+            if (isAdmin) {
+                // If on admin subdomain, redirect to admin panel
+                const currentPath = window.location.pathname;
+                // If already in /admin/, keep the path
+                if (currentPath.startsWith('/admin/')) {
+                    // Already in admin area, let it load
+                    return;
+                }
+                // Otherwise redirect to admin login
+                window.location.href = '/admin/index.html';
+            }
+        })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="OSK Łuczak - Twoja droga do prawa jazdy. Kursy kategorii B i B+E w profesjonalnej szkole jazdy. Piła, Poznań.">
+    <meta name="keywords"
+        content="szkoła jazdy, prawo jazdy, kurs prawa jazdy, kategoria B, kategoria B+E, OSK Łuczak, Piła, Poznań, nauka jazdy">
+    <meta name="author" content="OSK Łuczak">
+    <meta name="robots" content="index, follow">
+    <title>OSK Łuczak | Szkoła Jazdy - Kursy Kat. B i B+E</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oskluczak.pl/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/">
+    <meta property="og:title" content="OSK Łuczak | Szkoła Jazdy">
+    <meta property="og:description"
+        content="Twoja droga do prawa jazdy zaczyna się tutaj. Kursy kategorii B i B+E w Pile i Poznaniu. Wysoka zdawalność za pierwszym razem!">
+    <meta property="og:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="OSK Łuczak">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oskluczak.pl/">
+    <meta name="twitter:title" content="OSK Łuczak | Szkoła Jazdy">
+    <meta name="twitter:description"
+        content="Twoja droga do prawa jazdy zaczyna się tutaj. Kursy kategorii B i B+E w Pile i Poznaniu.">
+    <meta name="twitter:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a56db">
+    <meta name="msapplication-TileColor" content="#1a56db">
+
+    <!-- Font (najbliżej wyglądu na screenie) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Preload Critical Hero Images for faster LCP -->
+    <link rel="preload" href="assets/images/hero-placeholder.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/images/auta_hero.jpg" as="image">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/prices.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DrivingSchool",
+        "name": "OSK Łuczak",
+        "alternateName": "Ośrodek Szkolenia Kierowców Łuczak",
+        "description": "Profesjonalna szkoła jazdy oferująca kursy kategorii B i B+E w Pile i Poznaniu. Ponad 15 lat doświadczenia, wysoka zdawalność za pierwszym razem.",
+        "url": "https://oskluczak.pl",
+        "telephone": "+48795499047",
+        "email": "kontakt@luczakosk.com",
+        "foundingDate": "2009",
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Piła"
+            },
+            {
+                "@type": "City",
+                "name": "Poznań"
+            }
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Piła",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "53.1519",
+            "longitude": "16.7381"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "08:00",
+            "closes": "20:00"
+        },
+        "priceRange": "3300-3800 PLN",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Kursy prawa jazdy",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Course",
+                        "name": "Kurs prawa jazdy kategorii B",
+                        "description": "30 godzin teorii + 30 godzin praktyki. Samochód osobowy do 3,5 tony."
+                    },
+                    "price": "3300",
+                    "priceCurrency": "PLN"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Course",
+                        "name": "Kurs prawa jazdy kategorii B+E",
+                        "description": "15 godzin praktyki. Samochód z przyczepami powyżej 750 kg."
+                    },
+                    "price": "2400",
+                    "priceCurrency": "PLN"
+                }
+            ]
+        },
+        "sameAs": [
+            "https://www.facebook.com/oskluczak",
+            "https://www.instagram.com/oskluczak"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Page Loader - Premium Design -->
+    <div class="loader" id="page-loader">
+        <!-- Floating particles -->
+        <div class="loader__particles">
+            <div class="loader__particle"></div>
+            <div class="loader__particle"></div>
+            <div class="loader__particle"></div>
+            <div class="loader__particle"></div>
+        </div>
+
+        <div class="loader__content">
+            <!-- Animated logo with spinning rings -->
+            <div class="loader__logo">
+                <div class="loader__logo-ring loader__logo-ring--outer"></div>
+                <div class="loader__logo-ring"></div>
+                <div class="loader__logo-ring loader__logo-ring--inner"></div>
+                <!-- Steering wheel icon -->
+                <svg class="loader__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 3v6" />
+                    <path d="M5.6 16.5l5.2-3" />
+                    <path d="M18.4 16.5l-5.2-3" />
+                </svg>
+            </div>
+
+            <!-- Brand -->
+            <div class="loader__brand">
+                <span class="loader__title">OSK Łuczak</span>
+                <span class="loader__subtitle">Szkoła Jazdy</span>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="loader__progress">
+                <div class="loader__progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header placeholder - loaded via JS -->
+    <div id="header"></div>
+
+    <!-- HERO SECTION - OVERLAY CARD -->
+    <section class="hero">
+        <!-- Background image -->
+        <div class="hero__background">
+            <img src="assets/images/hero-placeholder.jpg" alt="Tło sekcji hero - droga i samochody szkoleniowe"
+                class="hero__bg-img" fetchpriority="high" width="1024" height="1024">
+            <div class="hero__overlay"></div>
+        </div>
+
+        <!-- Hero Content Container (for max-width on ultrawide) -->
+        <div class="hero__container">
+            <!-- Floating Card -->
+            <div class="hero__card">
+                <h1 class="hero__title">
+                    Twoja droga do <span class="hero__title-accent">prawa jazdy</span> zaczyna się tutaj
+                </h1>
+                <p class="hero__subtitle">
+                    Kursy kategorii B i B+E. Indywidualne podejście, nowoczesne pojazdy i elastyczne terminy.
+                </p>
+                <div class="hero__cta">
+                    <a href="#kursy" class="btn btn--primary">Zobacz ofertę</a>
+                    <a href="/zapisy" class="btn btn--accent">Zapisz się na kurs</a>
+                </div>
+
+                <!-- Trust indicators -->
+                <div class="hero__trust">
+                    <div class="hero__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Licencjonowana szkoła</span>
+                    </div>
+                    <div class="hero__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <span>Elastyczne terminy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual - Premium Image with Floating Cards -->
+            <div class="hero__visual">
+                <!-- Logo in Ellipse - floating above image -->
+                <div class="hero__logo-ellipse">
+                    <img src="assets/images/logoosk.png" alt="Logo OSK Łuczak" class="hero__logo-img" width="112"
+                        height="85">
+                </div>
+
+                <!-- Main Image Container -->
+                <div class="hero__image-container">
+                    <img src="assets/images/auta_hero.jpg"
+                        alt="Pojazdy szkoleniowe OSK Łuczak - Kia Rio IV i Renault Trafic z przyczepą"
+                        class="hero__image" fetchpriority="high" width="2509" height="1255">
+                    <!-- Blue overlay for branding -->
+                    <div class="hero__image-overlay"></div>
+                </div>
+
+                <!-- Floating Info Cards -->
+                <div class="hero__float-card hero__float-card--top">
+                    <div class="hero__float-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <div class="hero__float-content">
+                        <span class="hero__float-value">Wysoka</span>
+                        <span class="hero__float-label">zdawalność za 1 razem</span>
+                    </div>
+                </div>
+
+                <div class="hero__float-card hero__float-card--middle">
+                    <div class="hero__float-icon hero__float-icon--accent">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2" />
+                            <path d="M9 17h6" />
+                        </svg>
+                    </div>
+                    <div class="hero__float-content">
+                        <span class="hero__float-value">Nasze pojazdy</span>
+                        <span class="hero__float-label">Kia Rio IV + Renault Trafic</span>
+                    </div>
+                </div>
+
+                <div class="hero__float-card hero__float-card--bottom">
+                    <div class="hero__float-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div class="hero__float-content">
+                        <span class="hero__float-value">Miasto + Plac</span>
+                        <span class="hero__float-label">Kompletne przygotowanie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="hero__stats">
+            <div class="hero__stat">
+                <div class="hero__stat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                </div>
+                <div class="hero__stat-content">
+                    <span class="hero__stat-number" data-count="15">15+</span>
+                    <span class="hero__stat-label">lat doświadczenia</span>
+                </div>
+            </div>
+            <div class="hero__stat-divider"></div>
+            <div class="hero__stat">
+                <div class="hero__stat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </div>
+                <div class="hero__stat-content">
+                    <span class="hero__stat-number" data-count="500">500+</span>
+                    <span class="hero__stat-label">zadowolonych kursantów</span>
+                </div>
+            </div>
+            <div class="hero__stat-divider"></div>
+            <div class="hero__stat">
+                <div class="hero__stat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                </div>
+                <div class="hero__stat-content">
+                    <span class="hero__stat-number">Wysoka</span>
+                    <span class="hero__stat-label">zdawalność za pierwszym razem</span>
+                </div>
+            </div>
+            <div class="hero__stat-divider"></div>
+            <div class="hero__stat">
+                <div class="hero__stat-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                </div>
+                <div class="hero__stat-content">
+                    <span class="hero__stat-number">B & B+E</span>
+                    <span class="hero__stat-label">kategorie prawa jazdy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#kursy" class="hero__scroll">
+            <span>Dowiedz się więcej</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+        </a>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-us" id="dlaczego-osk">
+        <div class="why-us__container">
+            <div class="why-us__header reveal">
+                <span class="why-us__badge">Dlaczego OSK Łuczak?</span>
+                <h2 class="why-us__title">Szkoła jazdy z <span class="text-yellow">pasją</span></h2>
+                <p class="why-us__subtitle">
+                    Jako jednoosobowa szkoła jazdy stawiam na jakość, nie ilość. Każdy kursant jest dla mnie ważny.
+                </p>
+            </div>
+
+            <div class="why-us__grid">
+                <!-- Feature 1: Individual approach -->
+                <div class="why-us__card reveal reveal--delay-1">
+                    <div class="why-us__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </div>
+                    <h3 class="why-us__card-title">Indywidualne podejście</h3>
+                    <p class="why-us__card-text">
+                        Jeden instruktor = pełna uwaga. Dostosowuję tempo nauki do Twoich potrzeb i możliwości.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Experience -->
+                <div class="why-us__card reveal reveal--delay-2">
+                    <div class="why-us__icon why-us__icon--accent">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="why-us__card-title">15+ lat doświadczenia</h3>
+                    <p class="why-us__card-text">
+                        Setki przeszkolonych kursantów. Wiem, czego wymaga egzaminator i jak Cię do tego przygotować.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Flexibility -->
+                <div class="why-us__card reveal reveal--delay-3">
+                    <div class="why-us__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3 class="why-us__card-title">Elastyczne terminy</h3>
+                    <p class="why-us__card-text">
+                        Pracujesz? Studiujesz? Bez problemu. Dopasowuję się do Twojego grafiku, także w weekendy.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Calm atmosphere -->
+                <div class="why-us__card reveal reveal--delay-4">
+                    <div class="why-us__icon why-us__icon--accent">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <polyline points="9 12 11 14 15 10" />
+                        </svg>
+                    </div>
+                    <h3 class="why-us__card-title">Spokój i cierpliwość</h3>
+                    <p class="why-us__card-text">
+                        Żadnego stresu i pośpiechu. Uczysz się w swoim tempie, bez presji i nerwowej atmosfery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- NEWS / AKTUALNOŚCI -->
+    <section class="news" id="aktualnosci">
+        <div class="news__container">
+            <div class="news__header">
+                <span class="courses__badge">Aktualności</span>
+                <h2 class="news__title">Co <span class="text-accent">nowego</span> w OSK Łuczak?</h2>
+                <p class="news__subtitle">Bądź na bieżąco z ważnymi informacjami i nowościami</p>
+            </div>
+
+            <div class="news__grid" id="news-grid">
+                <!-- News will be loaded from Supabase -->
+                <div class="news__loading">
+                    <div class="news__loading-spinner"></div>
+                    <span>Ładowanie aktualności...</span>
+                </div>
+            </div>
+
+            <div class="news__footer">
+                <a href="/aktualnosci" class="btn btn--outline">
+                    Zobacz wszystkie aktualności
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- COURSES SECTION -->
+    <section class="courses" id="kursy">
+        <div class="courses__container">
+            <div class="courses__header reveal">
+                <span class="why-us__badge">Moja oferta</span>
+                <h2 class="courses__title">Wybierz swój <span class="text-yellow">kurs</span></h2>
+                <p class="courses__subtitle">
+                    Profesjonalne szkolenie dostosowane do Twoich potrzeb. Zdaj za pierwszym razem!
+                </p>
+            </div>
+
+            <!-- Promo banner placeholder - shown only when promos are active -->
+            <div id="promo-banner-container" style="text-align: center;"></div>
+
+            <div class="courses__grid">
+                <!-- Course Card: Kategoria B -->
+                <div class="course-card course-card--featured course-card--animated-border">
+                    <div class="course-card__popular">NAJPOPULARNIEJSZY</div>
+                    <div class="course-card__header">
+                        <div class="course-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6" />
+                            </svg>
+                        </div>
+                        <div class="course-card__category">
+                            <span class="course-card__badge">B</span>
+                            <h3 class="course-card__name">Kategoria B</h3>
+                        </div>
+                    </div>
+                    <p class="course-card__desc">Samochód osobowy do 3,5 tony. Idealna na start Twojej przygody z
+                        motoryzacją.</p>
+                    <div class="course-card__price" id="price-course-b">
+                        <span class="course-card__price-label">Cena kursu</span>
+                        <span class="course-card__price-value" data-price="course-b"
+                            data-price-display="value-only"><strong>3 300</strong> zł</span>
+                        <span class="course-card__price-express">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            Kurs ekspresowy 16 dni: <span data-price="course-b-express"
+                                data-price-display="inline"><strong>3 800 zł</strong></span>
+                        </span>
+                        <!-- Promo countdown placeholder -->
+                        <div id="countdown-course-b"></div>
+                    </div>
+                    <ul class="course-card__features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            30 godzin zajęć teoretycznych
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            30 godzin jazd praktycznych
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Materiały szkoleniowe
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Egzamin wewnętrzny
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Elastyczne terminy jazd
+                        </li>
+                    </ul>
+                    <div class="course-card__buttons">
+                        <a href="/zapisy" class="btn btn--accent course-card__btn">
+                            Zapisz się na kurs
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="/kategoria-b" class="btn btn--secondary course-card__btn">
+                            Szczegóły kursu
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course Card: Kategoria B+E -->
+                <div class="course-card course-card--blue course-card--animated-border">
+                    <div class="course-card__header">
+                        <div class="course-card__icon course-card__icon--secondary">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M5 17h-2v-4h9m5-2v6h-4m-4 0h-1" />
+                                <path d="M14 7h5a2 2 0 0 1 2 2v2" />
+                                <rect x="14" y="5" width="4" height="6" rx="1" />
+                            </svg>
+                        </div>
+                        <div class="course-card__category">
+                            <span class="course-card__badge course-card__badge--secondary">B+E</span>
+                            <h3 class="course-card__name">Kategoria B+E</h3>
+                        </div>
+                    </div>
+                    <p class="course-card__desc">Samochód z przyczepami powyżej 750 kg. Rozszerz swoje uprawnienia!</p>
+                    <div class="course-card__price" id="price-course-be">
+                        <span class="course-card__price-label">Cena kursu</span>
+                        <span class="course-card__price-value" data-price="course-be"
+                            data-price-display="value-only"><strong>2 400</strong> zł</span>
+                        <span class="course-card__price-express">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            Kurs ekspresowy 16 dni: <span data-price="course-be-express"
+                                data-price-display="inline"><strong>2 800 zł</strong></span>
+                        </span>
+                        <!-- Promo countdown placeholder -->
+                        <div id="countdown-course-be"></div>
+                    </div>
+                    <ul class="course-card__features">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Wymagane prawo jazdy kat. B
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            15 godzin jazd praktycznych
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Nauka manewrowania z przyczepą
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Przygotowanie do egzaminu WORD
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Bonus: automatycznie kat. T
+                        </li>
+                    </ul>
+                    <div class="course-card__buttons">
+                        <a href="/zapisy" class="btn btn--primary course-card__btn">
+                            Zapisz się na kurs
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="/kategoria-b-e" class="btn btn--secondary course-card__btn">
+                            Szczegóły kursu
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Jazdy doszkalające: Kategoria B -->
+                <div class="refresher-card refresher-card--yellow">
+                    <div class="refresher-card__content">
+                        <div class="refresher-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+                                <path d="M21 3v5h-5" />
+                            </svg>
+                        </div>
+                        <div class="refresher-card__info">
+                            <div class="refresher-card__header">
+                                <span class="refresher-card__badge">B</span>
+                                <h3 class="refresher-card__title">Jazdy doszkalające kat. B</h3>
+                            </div>
+                            <p class="refresher-card__desc">Wróć za kółko szybko i na spokojnie. Dodatkowe jazdy
+                                dopasowane do Ciebie, praktyka w realnych sytuacjach, bez lania wody.</p>
+                        </div>
+                        <div class="refresher-card__price">
+                            <span class="refresher-card__price-value" data-price="refresher-b"
+                                data-price-display="value-only">120 zł/h</span>
+                            <span class="refresher-card__price-note">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span data-price="refresher-b-student" data-price-display="value-only">110 zł/h</span>
+                                dla kursantów
+                            </span>
+                        </div>
+                        <a href="/kontakt" class="btn btn--accent refresher-card__btn">
+                            Umów jazdę
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Jazdy doszkalające: Kategoria B+E -->
+                <div class="refresher-card refresher-card--blue">
+                    <div class="refresher-card__content">
+                        <div class="refresher-card__icon refresher-card__icon--blue">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+                                <path d="M21 3v5h-5" />
+                            </svg>
+                        </div>
+                        <div class="refresher-card__info">
+                            <div class="refresher-card__header">
+                                <span class="refresher-card__badge refresher-card__badge--blue">B+E</span>
+                                <h3 class="refresher-card__title">Jazdy doszkalające kat. B+E</h3>
+                            </div>
+                            <p class="refresher-card__desc">Wróć za kółko i ogarnij zestaw jak trzeba. Nauczysz się
+                                manewrów, cofania i prowadzenia z przyczepą tak, żeby jechać pewnie od pierwszych minut.
+                            </p>
+                        </div>
+                        <div class="refresher-card__price">
+                            <span class="refresher-card__price-value" data-price="refresher-be"
+                                data-price-display="value-only">150 zł/h</span>
+                            <span class="refresher-card__price-note">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                                <span data-price="refresher-be-student" data-price-display="value-only">140 zł/h</span>
+                                dla kursantów
+                            </span>
+                        </div>
+                        <a href="/kontakt" class="btn btn--primary refresher-card__btn">
+                            Umów jazdę
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pickup Fee Notice -->
+                <p class="courses__notice">
+                    * Dojazd po kursanta poza rejonem Kłecka – dodatkowe <span class="text-yellow"
+                        data-price="pickup-fee" data-price-display="value-only"><strong>150
+                            zł</strong></span> do kursu (nie dotyczy
+                    jazd
+                    doszkalających).
+                </p>
+            </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- LOCATIONS SECTION -->
+    <section class="locations">
+        <div class="locations__container">
+            <div class="locations__header reveal">
+                <span class="courses__badge">Gdzie jeżdżę</span>
+                <h2 class="locations__title">Działam w <span class="text-accent">dwóch miastach</span></h2>
+                <p class="locations__subtitle">Poznań i Piła. Wybierz dogodną lokalizację</p>
+            </div>
+
+            <div class="locations__grid">
+                <!-- Piła -->
+                <div class="location-card">
+                    <div class="location-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3 class="location-card__city">Piła</h3>
+                    <p class="location-card__desc">Nauka jazdy w spokojnym, miejskim ruchu</p>
+                    <a href="/kontakt" class="location-card__link">
+                        Umów jazdę
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Poznań -->
+                <div class="location-card">
+                    <div class="location-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3 class="location-card__city">Poznań</h3>
+                    <p class="location-card__desc">Intensywny kurs w stolicy Wielkopolski</p>
+                    <a href="/kontakt" class="location-card__link">
+                        Umów jazdę
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="testimonials__container">
+            <div class="testimonials__header">
+                <span class="why-us__badge">Opinie kursantów</span>
+                <h2 class="testimonials__title">Co mówią o nas <span class="text-yellow">nasi kursanci</span></h2>
+                <p class="testimonials__subtitle">Przeczytaj opinie osób, które ukończyły kurs</p>
+            </div>
+
+            <div class="testimonials__grid" id="testimonials-grid">
+                <!-- Loading state -->
+                <div class="testimonials__loading" id="testimonials-loading">
+                    <div class="testimonials__loading-spinner"></div>
+                    <span>Ładowanie opinii...</span>
+                </div>
+            </div>
+
+            <!-- Link to all reviews -->
+            <div class="testimonials__footer" id="testimonials-footer" style="display: none;">
+                <a href="/opinie" class="btn btn--outline">
+                    Zobacz wszystkie opinie
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cta-banner">
+        <div class="cta-banner__bg"></div>
+        <!-- Floating Particles -->
+        <div class="cta-particles" aria-hidden="true">
+            <div class="cta-particle cta-particle--yellow cta-particle--sm"></div>
+            <div class="cta-particle cta-particle--white cta-particle--md"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--lg"></div>
+            <div class="cta-particle cta-particle--white cta-particle--sm"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--md"></div>
+            <div class="cta-particle cta-particle--white cta-particle--lg"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--sm"></div>
+            <div class="cta-particle cta-particle--white cta-particle--md"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--lg"></div>
+            <div class="cta-particle cta-particle--white cta-particle--sm"></div>
+        </div>
+        <div class="cta-banner__container">
+            <div class="cta-banner__left">
+                <h2 class="cta-banner__title">Gotowy na <span class="cta-banner__accent">prawo jazdy</span>?</h2>
+                <p class="cta-banner__text">Dołącz do grona zadowolonych kursantów i zacznij swoją przygodę z
+                    motoryzacją już dziś.</p>
+
+                <div class="cta-banner__trust">
+                    <div class="cta-banner__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Doświadczony instruktor</span>
+                    </div>
+                    <div class="cta-banner__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <span>Elastyczne terminy</span>
+                    </div>
+                    <div class="cta-banner__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Wysoka zdawalność</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner__right">
+                <div class="cta-banner__card">
+                    <div class="cta-banner__card-header">
+                        <span class="cta-banner__card-title">Skontaktuj się ze mną</span>
+                        <span class="cta-banner__card-subtitle">Odpowiadam w ciągu 24h</span>
+                    </div>
+                    <div class="cta-banner__actions">
+                        <a href="/zapisy" class="btn btn--cta-primary">
+                            Zapisz się na kurs
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="tel:+48795499047" class="btn btn--cta-secondary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            +48 795 499 047
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer placeholder - loaded via JS -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/prices.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+
+    <!-- Testimonials dynamic loading -->
+    <script>
+        // Load testimonials from database (max 5)
+        async function loadTestimonials() {
+            const grid = document.getElementById('testimonials-grid');
+            const loading = document.getElementById('testimonials-loading');
+            const footer = document.getElementById('testimonials-footer');
+
+            if (!grid) return;
+
+            try {
+                // Check if fetchPublishedReviews is available
+                if (typeof fetchPublishedReviews === 'function') {
+                    // Fetch only featured reviews for homepage (max 5)
+                    const result = await fetchPublishedReviews({ limit: 5, featured: true });
+
+                    if (result.success && result.data && result.data.length > 0) {
+                        // Hide loading
+                        if (loading) loading.style.display = 'none';
+
+                        // Render testimonials
+                        grid.innerHTML = result.data.map(review => renderTestimonialCard(review)).join('');
+
+                        // Show footer link
+                        if (footer) footer.style.display = 'flex';
+                    } else {
+                        // No featured reviews - show empty state
+                        if (loading) loading.innerHTML = '<p style="color: var(--color-gray-500);">Brak wyróżnionych opinii</p>';
+                    }
+                } else {
+                    // Supabase not available
+                    if (loading) loading.innerHTML = '<p style="color: var(--color-gray-500);">Brak opinii do wyświetlenia</p>';
+                }
+            } catch (error) {
+                console.error('Error loading testimonials:', error);
+                if (loading) loading.innerHTML = '<p style="color: var(--color-gray-500);">Błąd ładowania opinii</p>';
+            }
+        }
+
+        // Render single testimonial card
+        function renderTestimonialCard(review) {
+            const stars = Array(5).fill(0).map((_, i) => `
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="${i < review.rating ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="${i < review.rating ? '0' : '1.5'}">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+            `).join('');
+
+            const initials = review.author_initials || review.author_name.split(' ').map(n => n[0]).join('');
+
+            // Format date
+            const createdDate = review.created_at ? new Date(review.created_at).toLocaleDateString('pl-PL', { year: 'numeric', month: 'long' }) : '';
+
+            return `
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">${stars}</div>
+                    <blockquote class="testimonial-card__quote">
+                        "${review.content}"
+                    </blockquote>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-card__info">
+                            <span class="testimonial-card__name">${review.author_name}</span>
+                            <span class="testimonial-card__date">Kategoria ${review.course_category} • ${review.course_year}${createdDate ? ' • ' + createdDate : ''}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Load testimonials when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Small delay to ensure Supabase is initialized
+            setTimeout(loadTestimonials, 100);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Strona główna -->
+    <url>
+        <loc>https://luczakosk.com/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- O szkole (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/o-szkole</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Oferta (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/oferta</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Kategoria B (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/kategoria-b</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Kategoria B+E (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/kategoria-b-e</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Zapisz się na kurs (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/zapisy</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Kontakt (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/kontakt</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Opinie (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/opinie</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Aktualności (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/aktualnosci</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Artykuł (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/artykul</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Regulamin (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/regulamin</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- Polityka prywatności (clean URL) -->
+    <url>
+        <loc>https://luczakosk.com/polityka-prywatnosci</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+</urlset>

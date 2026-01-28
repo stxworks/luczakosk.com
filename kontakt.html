@@ -1,0 +1,1306 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Skontaktuj się z OSK Łuczak. Telefon, e-mail, formularz kontaktowy. Szkoła jazdy w Pile i Poznaniu.">
+    <meta name="keywords" content="kontakt, OSK Łuczak, szkoła jazdy, prawo jazdy, Piła, Poznań, telefon, e-mail">
+    <meta name="author" content="OSK Łuczak">
+    <meta name="robots" content="index, follow">
+    <title>Kontakt | OSK Łuczak - Szkoła Jazdy</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oskluczak.pl/kontakt.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/kontakt.html">
+    <meta property="og:title" content="Kontakt | OSK Łuczak">
+    <meta property="og:description"
+        content="Skontaktuj się z nami. Odpowiemy na wszystkie pytania dotyczące kursów prawa jazdy.">
+    <meta property="og:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oskluczak.pl/kontakt.html">
+    <meta name="twitter:title" content="Kontakt | OSK Łuczak">
+    <meta name="twitter:description"
+        content="Skontaktuj się z nami. Odpowiemy na wszystkie pytania dotyczące kursów prawa jazdy.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a56db">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <style>
+        /* ===================================
+           CONTACT PAGE STYLES
+        =================================== */
+        .page-hero {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, var(--osk-blue) 50%, #1e40af 100%);
+            padding-top: 120px;
+            padding-bottom: var(--spacing-16);
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(249, 204, 24, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Background Elements */
+        .page-hero__bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .page-hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatCircle 20s ease-in-out infinite;
+        }
+
+        .page-hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--osk-yellow), transparent);
+            top: -100px;
+            right: -100px;
+        }
+
+        .page-hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .page-hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 40%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 10px) scale(1.02);
+            }
+        }
+
+        /* Steering Wheel */
+        .page-hero__steering {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            height: 350px;
+            opacity: 0.06;
+            animation: rotateWheel 60s linear infinite;
+        }
+
+        .page-hero__steering svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Icons */
+        .page-hero__float-icon {
+            position: absolute;
+            opacity: 0.12;
+            animation: floatIcon 15s ease-in-out infinite;
+        }
+
+        .page-hero__float-icon--1 {
+            top: 20%;
+            left: 10%;
+        }
+
+        .page-hero__float-icon--2 {
+            bottom: 25%;
+            right: 25%;
+            animation-delay: -5s;
+        }
+
+        .page-hero__float-icon--3 {
+            top: 15%;
+            right: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.12;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.18;
+            }
+        }
+
+        /* Road Lines */
+        .page-hero__road-lines {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            opacity: 0.1;
+        }
+
+        .page-hero__road-line {
+            position: absolute;
+            bottom: 20px;
+            height: 4px;
+            background: var(--osk-yellow);
+            border-radius: 2px;
+            animation: roadLine 3s linear infinite;
+        }
+
+        .page-hero__road-line--1 {
+            width: 60px;
+            left: 10%;
+        }
+
+        .page-hero__road-line--2 {
+            width: 80px;
+            left: 30%;
+            animation-delay: -1s;
+        }
+
+        .page-hero__road-line--3 {
+            width: 50px;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .page-hero__road-line--4 {
+            width: 70px;
+            left: 70%;
+            animation-delay: -0.5s;
+        }
+
+        .page-hero__road-line--5 {
+            width: 55px;
+            left: 90%;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes roadLine {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+        }
+
+        .page-hero__container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--spacing-12) var(--container-padding);
+            text-align: center;
+        }
+
+        .page-hero__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-6);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-hero__title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-6);
+            line-height: 1.1;
+        }
+
+        .page-hero__title-accent {
+            color: var(--osk-yellow);
+        }
+
+        .page-hero__subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===================================
+           CONTACT SECTION
+        =================================== */
+        .contact {
+            padding: var(--spacing-24) 0;
+            background: var(--color-white);
+        }
+
+        .contact__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .contact__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-12);
+            align-items: start;
+        }
+
+        /* Contact Info */
+        .contact__info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-8);
+        }
+
+        .contact__info-header {
+            margin-bottom: var(--spacing-4);
+        }
+
+        .contact__info-badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-4);
+            background: var(--color-primary-100);
+            color: var(--osk-blue);
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            margin-bottom: var(--spacing-4);
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .contact__info-badge:hover {
+            background: var(--color-accent-100);
+            color: var(--color-accent-700);
+        }
+
+        .contact__info-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .contact__info-text {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        /* Contact Items */
+        .contact__items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-4);
+        }
+
+        .contact__item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            padding: var(--spacing-5);
+            background: var(--color-gray-50);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .contact__item:hover {
+            border-color: var(--osk-blue);
+            box-shadow: 0 4px 20px rgba(39, 100, 234, 0.1);
+            transform: translateX(4px);
+        }
+
+        .contact__item-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--osk-blue), #3b82f6);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact__item-icon svg {
+            color: white;
+        }
+
+        .contact__item-content {
+            flex: 1;
+        }
+
+        .contact__item-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+            margin-bottom: var(--spacing-1);
+        }
+
+        .contact__item-value {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--color-gray-900);
+        }
+
+        .contact__item-value a {
+            color: var(--osk-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact__item-value a:hover {
+            color: #1e40af;
+        }
+
+        /* Locations */
+        .contact__locations {
+            margin-top: var(--spacing-4);
+        }
+
+        .contact__locations-title {
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .contact__locations-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-3);
+        }
+
+        .contact__location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-2) var(--spacing-4);
+            background: var(--color-primary-50);
+            border: 1px solid var(--color-primary-100);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--osk-blue);
+        }
+
+        /* Contact Form */
+        .contact__form-wrapper {
+            background: var(--color-white);
+            border-radius: var(--radius-2xl);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: var(--spacing-10);
+            border: 1px solid var(--color-gray-100);
+        }
+
+        .contact__form-header {
+            margin-bottom: var(--spacing-8);
+        }
+
+        .contact__form-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .contact__form-subtitle {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+        }
+
+        .contact__form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-5);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-5);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-2);
+        }
+
+        .form-group--full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--color-gray-700);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-1);
+        }
+
+        .form-label__required {
+            color: #ef4444;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: var(--spacing-4) var(--spacing-5);
+            font-size: var(--font-size-base);
+            background: var(--color-gray-50);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+            font-family: inherit;
+            color: var(--color-gray-800);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--osk-blue);
+            background: var(--color-white);
+            box-shadow: 0 0 0 4px rgba(39, 100, 234, 0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--color-gray-400);
+        }
+
+        .form-textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 48px;
+        }
+
+        /* Checkbox */
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-3);
+            cursor: pointer;
+            margin-top: var(--spacing-2);
+        }
+
+        .form-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: var(--osk-blue);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .form-checkbox__text {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            line-height: 1.5;
+        }
+
+        .form-checkbox__text a {
+            color: var(--osk-blue);
+            text-decoration: underline;
+        }
+
+        /* Submit */
+        .contact__submit {
+            margin-top: var(--spacing-4);
+        }
+
+        .contact__submit .btn {
+            width: 100%;
+            padding: var(--spacing-5) var(--spacing-8);
+            font-size: var(--font-size-lg);
+        }
+
+        /* Success Message */
+        .contact__success {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-12);
+        }
+
+        .contact__success.is-visible {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact__success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-6);
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: successPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes successPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 20px rgba(34, 197, 94, 0);
+            }
+        }
+
+        .contact__success-icon svg {
+            color: white;
+        }
+
+        .contact__success-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-3);
+        }
+
+        .contact__success-text {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+        }
+
+        /* ===================================
+           MAP SECTION
+        =================================== */
+        .map-section {
+            padding: var(--spacing-16) 0;
+            background: var(--color-gray-50);
+        }
+
+        .map-section__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .map-section__header {
+            text-align: center;
+            margin-bottom: var(--spacing-10);
+        }
+
+        .map-section__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-4);
+            background: var(--color-accent-100);
+            color: var(--color-accent-700);
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            margin-bottom: var(--spacing-4);
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .map-section__badge:hover {
+            background: var(--color-primary-100);
+            color: var(--osk-blue);
+        }
+
+        .map-section__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .map-section__subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .map-section__wrapper {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 4px solid var(--color-white);
+        }
+
+        .map-section__iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block;
+        }
+
+        .map-section__overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: var(--spacing-8) var(--spacing-6) var(--spacing-6);
+            pointer-events: none;
+        }
+
+        .map-section__info {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            color: white;
+            pointer-events: auto;
+        }
+
+        .map-section__info-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--osk-yellow);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .map-section__info-icon svg {
+            color: var(--color-gray-900);
+        }
+
+        .map-section__info-content {
+            flex: 1;
+        }
+
+        .map-section__info-label {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2px;
+        }
+
+        .map-section__info-address {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+        }
+
+        .map-section__directions {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-3) var(--spacing-5);
+            background: var(--osk-blue);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+        }
+
+        .map-section__directions:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        /* ===================================
+           RESPONSIVE
+        =================================== */
+        @media (max-width: 968px) {
+            .contact__grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-10);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: auto;
+                padding-top: 100px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact__form-wrapper {
+                padding: var(--spacing-6);
+            }
+
+            .contact__item:hover {
+                transform: none;
+            }
+
+            .map-section {
+                padding: var(--spacing-12) 0;
+            }
+
+            .map-section__iframe {
+                height: 350px;
+            }
+
+            .map-section__info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .map-section__directions {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <!-- Animated Background Elements -->
+        <div class="page-hero__bg-elements">
+            <div class="page-hero__bg-circle page-hero__bg-circle--1"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--2"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--3"></div>
+
+            <div class="page-hero__steering">
+                <svg viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+                    <circle cx="50" cy="50" r="45" />
+                    <circle cx="50" cy="50" r="15" />
+                    <line x1="50" y1="5" x2="50" y2="35" />
+                    <line x1="10.7" y1="72.5" x2="37.5" y2="57.5" />
+                    <line x1="89.3" y1="72.5" x2="62.5" y2="57.5" />
+                </svg>
+            </div>
+
+            <div class="page-hero__float-icon page-hero__float-icon--1">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+            </div>
+
+            <div class="page-hero__road-lines">
+                <div class="page-hero__road-line page-hero__road-line--1"></div>
+                <div class="page-hero__road-line page-hero__road-line--2"></div>
+                <div class="page-hero__road-line page-hero__road-line--3"></div>
+                <div class="page-hero__road-line page-hero__road-line--4"></div>
+                <div class="page-hero__road-line page-hero__road-line--5"></div>
+            </div>
+        </div>
+
+        <div class="page-hero__container">
+            <span class="page-hero__badge">Kontakt</span>
+            <h1 class="page-hero__title">
+                Masz <span class="page-hero__title-accent">pytania?</span> Napisz do nas!
+            </h1>
+            <p class="page-hero__subtitle">
+                Chętnie odpowiem na wszystkie Twoje pytania dotyczące kursów, terminów i cen. Skontaktuj się ze mną!
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="kontakt">
+        <div class="contact__container">
+            <div class="contact__grid">
+                <!-- Contact Info -->
+                <div class="contact__info">
+                    <div class="contact__info-header">
+                        <span class="contact__info-badge">Dane kontaktowe</span>
+                        <h2 class="contact__info-title">Skontaktuj się <span class="text-yellow">ze mną</span></h2>
+                        <p class="contact__info-text">
+                            Jestem dostępny od poniedziałku do soboty. Odpowiadam na wiadomości w ciągu 24 godzin.
+                        </p>
+                    </div>
+
+                    <div class="contact__items">
+                        <div class="contact__item">
+                            <div class="contact__item-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div class="contact__item-content">
+                                <div class="contact__item-label">Telefon</div>
+                                <div class="contact__item-value">
+                                    <a href="tel:+48795499047">795 499 047</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__item-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div class="contact__item-content">
+                                <div class="contact__item-label">E-mail</div>
+                                <div class="contact__item-value">
+                                    <a href="mailto:kontakt@luczakosk.com">kontakt@luczakosk.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__item-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div class="contact__item-content">
+                                <div class="contact__item-label">Adres siedziby</div>
+                                <div class="contact__item-value">Wilkowyja 18, 62-270 Kłecko</div>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__item-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div class="contact__item-content">
+                                <div class="contact__item-label">Godziny pracy</div>
+                                <div class="contact__item-value">Pon: 8-18, Wt-Pt: 9-19, Sob: 8-13</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact__locations">
+                        <h3 class="contact__locations-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Prowadzę kursy w:
+                        </h3>
+                        <div class="contact__locations-list">
+                            <span class="contact__location-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Piła
+                            </span>
+                            <span class="contact__location-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Poznań
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact__form-wrapper">
+                    <!-- Success Message -->
+                    <div class="contact__success" id="success-message">
+                        <div class="contact__success-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <h3 class="contact__success-title">Wiadomość wysłana!</h3>
+                        <p class="contact__success-text">
+                            Dziękuję za kontakt. Odpowiem najszybciej jak to możliwe.
+                        </p>
+                    </div>
+
+                    <div id="form-container">
+                        <div class="contact__form-header">
+                            <h3 class="contact__form-title">Napisz do mnie</h3>
+                            <p class="contact__form-subtitle">Wypełnij formularz, a odezwę się do Ciebie.</p>
+                        </div>
+
+                        <form class="contact__form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">
+                                        Imię i nazwisko <span class="form-label__required">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" class="form-input"
+                                        placeholder="Twoje imię i nazwisko" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">
+                                        E-mail <span class="form-label__required">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-input"
+                                        placeholder="twoj@email.pl" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">
+                                        Telefon
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" class="form-input"
+                                        placeholder="123 456 789">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="subject">
+                                        Temat <span class="form-label__required">*</span>
+                                    </label>
+                                    <select id="subject" name="subject" class="form-select" required>
+                                        <option value="" disabled selected>Wybierz temat</option>
+                                        <option value="kursy">Pytanie o kursy</option>
+                                        <option value="ceny">Pytanie o ceny</option>
+                                        <option value="terminy">Dostępne terminy</option>
+                                        <option value="doszkolenie">Jazdy doszkalające</option>
+                                        <option value="inne">Inne</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group--full">
+                                <label class="form-label" for="message">
+                                    Wiadomość <span class="form-label__required">*</span>
+                                </label>
+                                <textarea id="message" name="message" class="form-textarea"
+                                    placeholder="Napisz swoją wiadomość..." required></textarea>
+                            </div>
+
+                            <label class="form-checkbox">
+                                <input type="checkbox" name="consent" required>
+                                <span class="form-checkbox__text">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na przesłane
+                                    zapytanie.
+                                    <a href="/polityka-prywatnosci" target="_blank">Polityka Prywatności</a>
+                                    <span class="form-label__required">*</span>
+                                </span>
+                            </label>
+
+                            <div class="contact__submit">
+                                <button type="submit" class="btn btn--accent">
+                                    Wyślij wiadomość
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13" />
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+        <div class="map-section__container">
+            <div class="map-section__header">
+                <span class="map-section__badge">Lokalizacja</span>
+                <h2 class="map-section__title">Znajdź <span class="text-accent">nas</span></h2>
+                <p class="map-section__subtitle">
+                    Nasza główna siedziba mieści się w Wilkowyji koło Kłecka. Zapraszamy!
+                </p>
+            </div>
+
+            <div class="map-section__wrapper">
+                <iframe class="map-section__iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d214.00641399729588!2d17.41473713595946!3d52.63818784091931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470487c2583a5adb%3A0x47943fd65160dde1!2zT8Wbcm9kZWsgU3prb2xlbmlhIEtpZXJvd2PDs3cgIiDFgXVjemFrIg!5e0!3m2!1spl!2spl!4v1766682242915!5m2!1spl!2spl"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa lokalizacji OSK Łuczak - Wilkowyja koło Kłecka">
+                </iframe>
+                <div class="map-section__overlay">
+                    <div class="map-section__info">
+                        <div class="map-section__info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="map-section__info-content">
+                            <div class="map-section__info-label">Główna siedziba</div>
+                            <div class="map-section__info-address">Wilkowyja 18, 62-270 Kłecko</div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/Wilkowyja+18+62-270+K%C5%82ecko" target="_blank"
+                            rel="noopener noreferrer" class="map-section__directions">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                            </svg>
+                            Wyznacz trasę
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scroll to Top -->
+    <div id="scroll-indicator"></div>
+
+    <!-- Scripts -->
+    <script src="js/supabase.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/emailjs.js" defer></script>
+
+    <script>
+        // Contact Form Handler with EmailJS
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+            const formContainer = document.getElementById('form-container');
+            const successMessage = document.getElementById('success-message');
+
+            if (form) {
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const formData = new FormData(form);
+
+                    const data = {
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone') || '',
+                        subject: formData.get('subject'),
+                        message: formData.get('message')
+                    };
+
+                    // Pokaż stan ładowania
+                    EmailJSHandler.setButtonLoading(submitBtn, true);
+
+                    // Sprawdź czy EmailJS jest skonfigurowany
+                    if (!EmailJSHandler.isContactConfigured()) {
+                        console.warn('EmailJS nie skonfigurowany - symulacja wysyłki');
+                        // Symulacja dla testów (usuń po konfiguracji)
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        formContainer.style.display = 'none';
+                        successMessage.classList.add('is-visible');
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        return;
+                    }
+
+                    // Wyślij przez EmailJS
+                    const result = await EmailJSHandler.sendContactForm(data);
+
+                    if (result.success) {
+                        // Sukces - pokaż komunikat
+                        formContainer.style.display = 'none';
+                        successMessage.classList.add('is-visible');
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        // Błąd - pokaż komunikat i przywróć przycisk
+                        EmailJSHandler.setButtonLoading(submitBtn, false);
+                        EmailJSHandler.showFormError(form, 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń do nas.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

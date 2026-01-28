@@ -1,0 +1,24 @@
+# OSK Łuczak - Robots.txt
+# https://luczakosk.com
+# Ostatnia aktualizacja: 25.01.2026
+
+User-agent: *
+Allow: /
+
+# Blokowanie dostępu do panelu administratora
+Disallow: /admin/
+
+# Blokowanie stron technicznych i wewnętrznych
+Disallow: /praca.html
+Disallow: /serwis.html
+Disallow: /przerwa.html
+
+# Blokowanie plików konfiguracyjnych
+Disallow: /*.txt$
+Disallow: /oskpassy.txt
+
+# Mapa strony
+Sitemap: https://luczakosk.com/sitemap.xml
+
+# Opóźnienie między requestami (łagodne crawlowanie)
+Crawl-delay: 1

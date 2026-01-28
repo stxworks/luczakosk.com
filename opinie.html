@@ -1,0 +1,1742 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Opinie kursantów OSK Łuczak - Przeczytaj prawdziwe opinie osób, które ukończyły kurs prawa jazdy. Wysoka zdawalność, indywidualne podejście.">
+    <meta name="keywords"
+        content="opinie szkoła jazdy, OSK Łuczak opinie, recenzje kursantów, prawo jazdy opinie, Piła, Poznań">
+    <meta name="author" content="OSK Łuczak">
+    <meta name="robots" content="index, follow">
+    <title>Opinie Kursantów | OSK Łuczak - Szkoła Jazdy</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oskluczak.pl/opinie.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/opinie.html">
+    <meta property="og:title" content="Opinie Kursantów | OSK Łuczak">
+    <meta property="og:description"
+        content="Przeczytaj prawdziwe opinie kursantów OSK Łuczak. Wysoka zdawalność i indywidualne podejście.">
+    <meta property="og:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oskluczak.pl/opinie.html">
+    <meta name="twitter:title" content="Opinie Kursantów | OSK Łuczak">
+    <meta name="twitter:description" content="Przeczytaj prawdziwe opinie kursantów OSK Łuczak.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a56db">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <style>
+        /* ========================================
+           OPINIE PAGE STYLES
+           ======================================== */
+
+        /* Hero Section */
+        .reviews-hero {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, var(--osk-blue) 50%, #1e40af 100%);
+            padding-top: 120px;
+            padding-bottom: var(--spacing-16);
+        }
+
+        .reviews-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(249, 204, 24, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .reviews-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Background Elements */
+        .reviews-hero__bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .reviews-hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatCircle 20s ease-in-out infinite;
+        }
+
+        .reviews-hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--osk-yellow), transparent);
+            top: -100px;
+            right: -100px;
+        }
+
+        .reviews-hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .reviews-hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 40%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 10px) scale(1.02);
+            }
+        }
+
+        /* Steering Wheel Decoration */
+        .reviews-hero__steering {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            height: 350px;
+            opacity: 0.06;
+            animation: rotateWheel 60s linear infinite;
+        }
+
+        .reviews-hero__steering svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Stars */
+        .reviews-hero__float-icon {
+            position: absolute;
+            opacity: 0.15;
+            animation: floatIcon 15s ease-in-out infinite;
+        }
+
+        .reviews-hero__float-icon--1 {
+            top: 20%;
+            left: 8%;
+        }
+
+        .reviews-hero__float-icon--2 {
+            bottom: 30%;
+            right: 20%;
+            animation-delay: -5s;
+        }
+
+        .reviews-hero__float-icon--3 {
+            top: 15%;
+            right: 35%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.15;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.25;
+            }
+        }
+
+        /* Road Lines */
+        .reviews-hero__road-lines {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            opacity: 0.1;
+        }
+
+        .reviews-hero__road-line {
+            position: absolute;
+            bottom: 20px;
+            height: 4px;
+            background: var(--osk-yellow);
+            border-radius: 2px;
+            animation: roadLine 3s linear infinite;
+        }
+
+        .reviews-hero__road-line--1 {
+            width: 60px;
+            left: 10%;
+        }
+
+        .reviews-hero__road-line--2 {
+            width: 80px;
+            left: 30%;
+            animation-delay: -1s;
+        }
+
+        .reviews-hero__road-line--3 {
+            width: 50px;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .reviews-hero__road-line--4 {
+            width: 70px;
+            left: 70%;
+            animation-delay: -0.5s;
+        }
+
+        .reviews-hero__road-line--5 {
+            width: 55px;
+            left: 90%;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes roadLine {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+        }
+
+        .reviews-hero__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviews-hero__content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .reviews-hero__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-6);
+            backdrop-filter: blur(10px);
+        }
+
+        .reviews-hero__title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-6);
+        }
+
+        .reviews-hero__title .text-accent {
+            color: var(--osk-yellow);
+        }
+
+        .reviews-hero__subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-8);
+        }
+
+        /* Hero Stats */
+        .reviews-hero__stats {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: var(--spacing-6);
+            flex-wrap: wrap;
+        }
+
+        .reviews-hero__stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-5) var(--spacing-6);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(10px);
+            min-width: 140px;
+            min-height: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .reviews-hero__stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .reviews-hero__stat-number {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--osk-yellow);
+            line-height: 1;
+        }
+
+        .reviews-hero__stat-label {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin-top: var(--spacing-1);
+        }
+
+        .reviews-hero__stat-stars {
+            display: flex;
+            gap: 2px;
+            color: var(--osk-yellow);
+            margin-bottom: var(--spacing-2);
+        }
+
+        /* Filters Section */
+        .reviews-filters {
+            background: var(--color-gray-50);
+            padding: var(--spacing-6) 0;
+            border-bottom: 1px solid var(--color-gray-200);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .reviews-filters__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-4);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reviews-filters__group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-2);
+            align-items: center;
+        }
+
+        .reviews-filters__label {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-gray-600);
+            margin-right: var(--spacing-2);
+        }
+
+        .reviews-filters__btn {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-gray-600);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .reviews-filters__btn:hover {
+            border-color: var(--osk-blue);
+            color: var(--osk-blue);
+        }
+
+        .reviews-filters__btn.is-active {
+            background: var(--osk-blue);
+            border-color: var(--osk-blue);
+            color: white;
+        }
+
+        .reviews-filters__divider {
+            width: 1px;
+            height: 24px;
+            background: var(--color-gray-300);
+            margin: 0 var(--spacing-4);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: var(--spacing-16) 0;
+            background: white;
+            min-height: 50vh;
+        }
+
+        .reviews-section__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .reviews-section__header {
+            text-align: center;
+            margin-bottom: var(--spacing-12);
+        }
+
+        .reviews-section__count {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+
+        /* Reviews Grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-6);
+        }
+
+        /* Review Card - Enhanced testimonial style */
+        .review-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-8);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-gray-100);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .review-card--featured {
+            position: relative;
+            border: none;
+            background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, var(--osk-blue), var(--osk-yellow)) border-box;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 20px rgba(26, 86, 219, 0.15);
+        }
+
+        .review-card--featured::before {
+            content: '★';
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--osk-yellow), #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+        }
+
+        .review-card--featured:hover {
+            box-shadow: 0 8px 30px rgba(26, 86, 219, 0.2);
+        }
+
+        .review-card__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-4);
+        }
+
+        .review-card__stars {
+            display: flex;
+            gap: 2px;
+            color: var(--color-accent-400);
+        }
+
+        .review-card__category {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--color-primary-50);
+            color: var(--osk-blue);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: var(--radius-full);
+        }
+
+        .review-card__quote {
+            font-size: var(--font-size-base);
+            line-height: 1.8;
+            color: var(--color-gray-700);
+            font-style: italic;
+            flex: 1;
+            margin-bottom: var(--spacing-6);
+        }
+
+        .review-card__author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            padding-top: var(--spacing-4);
+            border-top: 1px solid var(--color-gray-100);
+        }
+
+        .review-card__avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--osk-blue), #3b82f6);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+        }
+
+        .review-card__info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card__name {
+            font-weight: 700;
+            color: var(--color-gray-900);
+            font-size: var(--font-size-base);
+        }
+
+        .review-card__date {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+
+        /* Verified Badge */
+        .review-verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 12px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .review-verified-badge svg {
+            flex-shrink: 0;
+        }
+
+        /* Loading State */
+        .reviews-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-16);
+            color: var(--color-gray-500);
+            grid-column: 1 / -1;
+        }
+
+        .reviews-loading__spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--color-gray-200);
+            border-top-color: var(--osk-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: var(--spacing-4);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Empty State */
+        .reviews-empty {
+            text-align: center;
+            padding: var(--spacing-16);
+            grid-column: 1 / -1;
+        }
+
+        .reviews-empty__icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-6);
+            color: var(--color-gray-400);
+        }
+
+        .reviews-empty__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .reviews-empty__text {
+            font-size: var(--font-size-md);
+            color: var(--color-gray-500);
+        }
+
+        /* Load More */
+        .reviews-load-more {
+            text-align: center;
+            margin-top: var(--spacing-12);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .reviews-hero {
+                height: auto;
+                min-height: 550px;
+                padding-top: 100px;
+                padding-bottom: var(--spacing-12);
+            }
+
+            .reviews-hero__stats {
+                gap: var(--spacing-4);
+            }
+
+            .reviews-hero__stat {
+                padding: var(--spacing-4);
+                min-width: 100px;
+            }
+
+            .reviews-filters__container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .reviews-filters__group {
+                justify-content: center;
+            }
+
+            .reviews-filters__divider {
+                display: none;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                padding: var(--spacing-6);
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Ultra compact review cards */
+            .reviews-grid {
+                gap: 8px !important;
+            }
+
+            .review-card {
+                padding: 12px !important;
+                border-radius: 12px !important;
+            }
+
+            .review-card__header {
+                margin-bottom: 4px !important;
+            }
+
+            .review-card__stars svg {
+                width: 14px !important;
+                height: 14px !important;
+            }
+
+            .review-card__category {
+                font-size: 9px !important;
+                padding: 2px 6px !important;
+            }
+
+            .review-card__quote {
+                font-size: 12px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+            }
+
+            .review-card__author {
+                padding-top: 8px !important;
+                gap: 8px !important;
+            }
+
+            .review-card__avatar {
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 11px !important;
+            }
+
+            .review-card__name {
+                font-size: 12px !important;
+            }
+
+            .review-card__date {
+                font-size: 10px !important;
+            }
+
+            .review-verified-badge {
+                font-size: 9px !important;
+                padding: 1px 5px !important;
+            }
+        }
+
+        /* ========================================
+           PUBLIC REVIEW MODAL
+           ======================================== */
+        .public-review-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .public-review-modal.is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .public-review-modal__content {
+            background: white;
+            border-radius: var(--radius-2xl);
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: var(--spacing-8);
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .public-review-modal.is-visible .public-review-modal__content {
+            transform: scale(1) translateY(0);
+        }
+
+        .public-review-modal__close {
+            position: absolute;
+            top: var(--spacing-4);
+            right: var(--spacing-4);
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-600);
+            transition: all 0.2s ease;
+        }
+
+        .public-review-modal__close:hover {
+            background: var(--color-gray-200);
+            color: var(--color-gray-900);
+        }
+
+        .public-review-modal__icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--osk-blue), #3b82f6);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto var(--spacing-6);
+        }
+
+        .public-review-modal__title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            text-align: center;
+            margin-bottom: var(--spacing-2);
+        }
+
+        .public-review-modal__subtitle {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            text-align: center;
+            margin-bottom: var(--spacing-6);
+            line-height: 1.6;
+        }
+
+        .public-review-modal__help {
+            margin-top: var(--spacing-6);
+            padding: var(--spacing-4);
+            background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .public-review-modal__verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-2) var(--spacing-4);
+            background: #dcfce7;
+            color: #166534;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin: 0 auto var(--spacing-4);
+        }
+
+        .public-review-step.is-hidden {
+            display: none;
+        }
+
+        /* Verify Code Form */
+        .verify-code-form__input-group {
+            display: flex;
+            gap: var(--spacing-2);
+        }
+
+        .verify-code-form__input {
+            flex: 1;
+            padding: var(--spacing-4);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .verify-code-form__input:focus {
+            outline: none;
+            border-color: var(--osk-blue);
+            box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+        }
+
+        .verify-code-form__input.shake {
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20%,
+            60% {
+                transform: translateX(-8px);
+            }
+
+            40%,
+            80% {
+                transform: translateX(8px);
+            }
+        }
+
+        .verify-code-form__error {
+            margin-top: var(--spacing-3);
+            padding: var(--spacing-3);
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: var(--radius-md);
+            color: #dc2626;
+            font-size: var(--font-size-sm);
+            text-align: center;
+        }
+
+        /* Public Review Form */
+        .public-review-form__group {
+            margin-bottom: var(--spacing-5);
+        }
+
+        .public-review-form__label {
+            display: block;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .public-review-form__input,
+        .public-review-form__textarea,
+        .public-review-form__select {
+            width: 100%;
+            padding: var(--spacing-3) var(--spacing-4);
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-base);
+            transition: all 0.2s ease;
+        }
+
+        .public-review-form__input:focus,
+        .public-review-form__textarea:focus,
+        .public-review-form__select:focus {
+            outline: none;
+            border-color: var(--osk-blue);
+            box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+        }
+
+        .public-review-form__input--small {
+            max-width: 150px;
+        }
+
+        .public-review-form__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-4);
+        }
+
+        .public-review-form__error {
+            padding: var(--spacing-3);
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: var(--radius-md);
+            color: #dc2626;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-4);
+        }
+
+        /* Star Rating */
+        .public-review-form__stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 4px;
+        }
+
+        .public-review-form__stars input {
+            display: none;
+        }
+
+        .public-review-form__stars label {
+            font-size: 32px;
+            color: var(--color-gray-300);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .public-review-form__stars label:hover,
+        .public-review-form__stars label:hover~label,
+        .public-review-form__stars input:checked~label {
+            color: #f59e0b;
+        }
+
+        /* Success State */
+        .public-review-success {
+            text-align: center;
+            padding: var(--spacing-8) 0;
+        }
+
+        .public-review-success__icon {
+            width: 80px;
+            height: 80px;
+            background: #dcfce7;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #166534;
+            margin: 0 auto var(--spacing-6);
+        }
+
+        .public-review-success__title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-3);
+        }
+
+        .public-review-success__text {
+            color: var(--color-gray-600);
+            margin-bottom: var(--spacing-6);
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        .btn--full {
+            width: 100%;
+        }
+
+        @media (max-width: 480px) {
+            .verify-code-form__input-group {
+                flex-direction: column;
+            }
+
+            .public-review-form__row {
+                grid-template-columns: 1fr;
+            }
+
+            .public-review-modal__content {
+                padding: var(--spacing-6);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="reviews-hero">
+        <!-- Background Elements -->
+        <div class="reviews-hero__bg-elements">
+            <div class="reviews-hero__bg-circle reviews-hero__bg-circle--1"></div>
+            <div class="reviews-hero__bg-circle reviews-hero__bg-circle--2"></div>
+            <div class="reviews-hero__bg-circle reviews-hero__bg-circle--3"></div>
+
+            <!-- Rotating steering wheel -->
+            <div class="reviews-hero__steering">
+                <svg viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+                    <circle cx="50" cy="50" r="45" />
+                    <circle cx="50" cy="50" r="15" />
+                    <line x1="50" y1="5" x2="50" y2="35" />
+                    <line x1="10.7" y1="72.5" x2="37.5" y2="57.5" />
+                    <line x1="89.3" y1="72.5" x2="62.5" y2="57.5" />
+                </svg>
+            </div>
+
+            <!-- Floating stars -->
+            <div class="reviews-hero__float-icon reviews-hero__float-icon--1">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="white" stroke="none">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            </div>
+            <div class="reviews-hero__float-icon reviews-hero__float-icon--2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="white" stroke="none">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            </div>
+            <div class="reviews-hero__float-icon reviews-hero__float-icon--3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="white" stroke="none">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            </div>
+
+            <!-- Animated road lines -->
+            <div class="reviews-hero__road-lines">
+                <div class="reviews-hero__road-line reviews-hero__road-line--1"></div>
+                <div class="reviews-hero__road-line reviews-hero__road-line--2"></div>
+                <div class="reviews-hero__road-line reviews-hero__road-line--3"></div>
+                <div class="reviews-hero__road-line reviews-hero__road-line--4"></div>
+                <div class="reviews-hero__road-line reviews-hero__road-line--5"></div>
+            </div>
+        </div>
+
+        <div class="reviews-hero__container">
+            <div class="reviews-hero__content">
+                <span class="reviews-hero__badge">Opinie Kursantów</span>
+                <h1 class="reviews-hero__title">
+                    Co mówią o nas <span class="text-accent">nasi kursanci</span>
+                </h1>
+                <p class="reviews-hero__subtitle">
+                    Przeczytaj prawdziwe opinie osób, które ukończyły kurs i zdały egzamin za pierwszym razem.
+                </p>
+
+                <!-- Stats -->
+                <div class="reviews-hero__stats">
+                    <div class="reviews-hero__stat">
+                        <span class="reviews-hero__stat-number" id="avg-rating">5.0</span>
+                        <span class="reviews-hero__stat-label">Średnia ocena</span>
+                    </div>
+                    <div class="reviews-hero__stat">
+                        <span class="reviews-hero__stat-number" id="total-reviews">0</span>
+                        <span class="reviews-hero__stat-label" id="total-reviews-label">Opinii</span>
+                    </div>
+                    <div class="reviews-hero__stat">
+                        <span class="reviews-hero__stat-number">Wysoka</span>
+                        <span class="reviews-hero__stat-label">Zdawalność</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="reviews-filters">
+        <div class="reviews-filters__container">
+            <div class="reviews-filters__group">
+                <span class="reviews-filters__label">Kategoria:</span>
+                <button class="reviews-filters__btn is-active" data-category="all">Wszystkie</button>
+                <button class="reviews-filters__btn" data-category="B">Kategoria B</button>
+                <button class="reviews-filters__btn" data-category="B+E">Kategoria B+E</button>
+            </div>
+            <div class="reviews-filters__divider"></div>
+            <div class="reviews-filters__group">
+                <span class="reviews-filters__label">Ocena:</span>
+                <button class="reviews-filters__btn is-active" data-rating="all">Wszystkie</button>
+                <button class="reviews-filters__btn" data-rating="5">5★</button>
+                <button class="reviews-filters__btn" data-rating="4">4★</button>
+                <button class="reviews-filters__btn" data-rating="3">3★</button>
+                <button class="reviews-filters__btn" data-rating="2">2★</button>
+                <button class="reviews-filters__btn" data-rating="1">1★</button>
+            </div>
+            <div class="reviews-filters__divider"></div>
+            <button class="btn btn--primary btn--sm" id="add-review-public-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12h14" />
+                </svg>
+                Dodaj opinię
+            </button>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="reviews-section__container">
+            <div class="reviews-section__header">
+                <p class="reviews-section__count" id="reviews-count">Ładowanie...</p>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- Loading state -->
+                <div class="reviews-loading" id="reviews-loading">
+                    <div class="reviews-loading__spinner"></div>
+                    <p>Ładowanie opinii...</p>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="reviews-load-more" id="load-more-container" style="display: none;">
+                <button class="btn btn--secondary" id="load-more-btn">
+                    Załaduj więcej opinii
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-banner__bg"></div>
+        <!-- Floating Particles -->
+        <div class="cta-particles" aria-hidden="true">
+            <div class="cta-particle cta-particle--yellow cta-particle--sm"></div>
+            <div class="cta-particle cta-particle--white cta-particle--md"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--lg"></div>
+            <div class="cta-particle cta-particle--white cta-particle--sm"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--md"></div>
+            <div class="cta-particle cta-particle--white cta-particle--lg"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--sm"></div>
+            <div class="cta-particle cta-particle--white cta-particle--md"></div>
+            <div class="cta-particle cta-particle--yellow cta-particle--lg"></div>
+            <div class="cta-particle cta-particle--white cta-particle--sm"></div>
+        </div>
+        <div class="cta-banner__container">
+            <div class="cta-banner__left">
+                <h2 class="cta-banner__title">Chcesz być <span class="cta-banner__accent">następny</span>?</h2>
+                <p class="cta-banner__text">Dołącz do grona zadowolonych kursantów i zacznij swoją przygodę z
+                    motoryzacją już dziś.</p>
+
+                <div class="cta-banner__trust">
+                    <div class="cta-banner__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Indywidualne podejście</span>
+                    </div>
+                    <div class="cta-banner__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <span>Średnia ocena 5.0</span>
+                    </div>
+                    <div class="cta-banner__trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>Wysoka zdawalność</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner__right">
+                <div class="cta-banner__card">
+                    <div class="cta-banner__card-header">
+                        <span class="cta-banner__card-title">Skontaktuj się ze mną</span>
+                        <span class="cta-banner__card-subtitle">Odpowiadam w ciągu 24h</span>
+                    </div>
+                    <div class="cta-banner__actions">
+                        <a href="/zapisy" class="btn btn--cta-primary">
+                            Zapisz się na kurs
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="tel:+48795499047" class="btn btn--cta-secondary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            +48 795 499 047
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner-container"></div>
+
+    <!-- Public Review Modal -->
+    <div class="public-review-modal" id="public-review-modal">
+        <div class="public-review-modal__content">
+            <button class="public-review-modal__close" aria-label="Zamknij">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+
+            <!-- Step 1: Code Verification -->
+            <div class="public-review-step" id="review-step-1">
+                <div class="public-review-modal__icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                </div>
+                <h2 class="public-review-modal__title">Dodaj swoją opinię</h2>
+                <p class="public-review-modal__subtitle">
+                    Aby dodać opinię, potrzebujesz kodu weryfikacyjnego, który otrzymałeś po ukończeniu kursu.
+                </p>
+
+                <form id="verify-code-form" class="verify-code-form">
+                    <div class="verify-code-form__input-group">
+                        <input type="text" id="verification-code-input" class="verify-code-form__input"
+                            placeholder="Wpisz kod (np. OSK-XXXX-XXXX)" autocomplete="off" maxlength="14" required>
+                        <button type="submit" class="btn btn--primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                            Weryfikuj
+                        </button>
+                    </div>
+                    <div class="verify-code-form__error" id="code-verify-error" style="display: none;"></div>
+                </form>
+
+                <div class="public-review-modal__help">
+                    <strong>Nie masz kodu?</strong><br>
+                    Skontaktuj się z nami, a wyślemy Ci kod po potwierdzeniu ukończenia kursu.
+                </div>
+            </div>
+
+            <!-- Step 2: Review Form -->
+            <div class="public-review-step is-hidden" id="review-step-2">
+                <div class="public-review-modal__verified-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    Kod zweryfikowany
+                </div>
+                <h2 class="public-review-modal__title">Podziel się swoją opinią</h2>
+
+                <form id="public-review-form" class="public-review-form">
+                    <div class="public-review-form__error" id="review-submit-error" style="display: none;"></div>
+
+                    <div class="public-review-form__group">
+                        <label class="public-review-form__label">Twoja ocena *</label>
+                        <div class="public-review-form__stars" id="star-rating">
+                            <input type="radio" name="rating" value="5" id="star5" required>
+                            <label for="star5" title="5 gwiazdek">★</label>
+                            <input type="radio" name="rating" value="4" id="star4">
+                            <label for="star4" title="4 gwiazdki">★</label>
+                            <input type="radio" name="rating" value="3" id="star3">
+                            <label for="star3" title="3 gwiazdki">★</label>
+                            <input type="radio" name="rating" value="2" id="star2">
+                            <label for="star2" title="2 gwiazdki">★</label>
+                            <input type="radio" name="rating" value="1" id="star1">
+                            <label for="star1" title="1 gwiazdka">★</label>
+                        </div>
+                        <input type="hidden" id="public-review-rating" value="5">
+                    </div>
+
+                    <div class="public-review-form__group">
+                        <label class="public-review-form__label" for="public-review-content">Twoja opinia *</label>
+                        <textarea id="public-review-content" class="public-review-form__textarea" rows="4"
+                            placeholder="Opisz swoje doświadczenia z kursu..." required minlength="20"></textarea>
+                    </div>
+
+                    <div class="public-review-form__row">
+                        <div class="public-review-form__group">
+                            <label class="public-review-form__label" for="public-review-author">Twoje imię *</label>
+                            <input type="text" id="public-review-author" class="public-review-form__input"
+                                placeholder="np. Anna K." required>
+                        </div>
+                        <div class="public-review-form__group">
+                            <label class="public-review-form__label" for="public-review-category">Kategoria kursu
+                                *</label>
+                            <select id="public-review-category" class="public-review-form__select" required>
+                                <option value="">Wybierz kategorię</option>
+                                <option value="B">Kategoria B</option>
+                                <option value="B+E">Kategoria B+E</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="public-review-form__group">
+                        <label class="public-review-form__label" for="public-review-year">Rok ukończenia kursu *</label>
+                        <input type="number" id="public-review-year"
+                            class="public-review-form__input public-review-form__input--small" min="2000" max="2030"
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--lg btn--full">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                        Wyślij opinię
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <div id="scroll-indicator"></div>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+
+    <!-- Components -->
+    <script src="js/components.js" defer></script>
+
+    <!-- Main Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+    <script src="js/public-review.js" defer></script>
+
+    <!-- Reviews Page Script -->
+    <script>
+        // =============================================
+        // REVIEWS PAGE - DYNAMIC DATA LOADING
+        // =============================================
+
+        const ReviewsPage = {
+            reviews: [],
+            filteredReviews: [],
+            currentPage: 1,
+            perPage: 9,
+            filters: {
+                category: 'all',
+                rating: 'all'
+            },
+
+            // Initialize the page
+            async init() {
+                this.setupFilterListeners();
+                await this.loadReviews();
+            },
+
+            // Setup filter button listeners
+            setupFilterListeners() {
+                // Category filters
+                document.querySelectorAll('[data-category]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('[data-category]').forEach(b => b.classList.remove('is-active'));
+                        btn.classList.add('is-active');
+                        this.filters.category = btn.dataset.category;
+                        this.applyFilters();
+                    });
+                });
+
+                // Rating filters
+                document.querySelectorAll('[data-rating]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('[data-rating]').forEach(b => b.classList.remove('is-active'));
+                        btn.classList.add('is-active');
+                        this.filters.rating = btn.dataset.rating;
+                        this.applyFilters();
+                    });
+                });
+
+                // Load more button
+                const loadMoreBtn = document.getElementById('load-more-btn');
+                if (loadMoreBtn) {
+                    loadMoreBtn.addEventListener('click', () => this.loadMore());
+                }
+            },
+
+            // Load reviews from Supabase
+            async loadReviews() {
+                const grid = document.getElementById('reviews-grid');
+                const loading = document.getElementById('reviews-loading');
+
+                try {
+                    // Load reviews from database
+                    if (typeof fetchPublishedReviews === 'function') {
+                        const result = await fetchPublishedReviews();
+                        if (result.success && result.data) {
+                            this.reviews = result.data;
+                        } else {
+                            this.reviews = [];
+                        }
+                    } else {
+                        console.warn('fetchPublishedReviews not available');
+                        this.reviews = [];
+                    }
+
+                    this.filteredReviews = [...this.reviews];
+                    this.updateStats();
+                    this.renderReviews();
+
+                } catch (error) {
+                    console.error('Error loading reviews:', error);
+                    this.reviews = [];
+                    this.filteredReviews = [];
+                    this.updateStats();
+                    this.renderReviews();
+                }
+            },
+
+            // Apply filters to reviews
+            applyFilters() {
+                this.filteredReviews = this.reviews.filter(review => {
+                    // Category filter
+                    if (this.filters.category !== 'all' && review.course_category !== this.filters.category) {
+                        return false;
+                    }
+                    // Rating filter
+                    if (this.filters.rating !== 'all' && review.rating !== parseInt(this.filters.rating)) {
+                        return false;
+                    }
+                    return true;
+                });
+
+                this.currentPage = 1;
+                this.renderReviews();
+            },
+
+            // Get proper Polish plural form for "opinia"
+            getOpiniaLabel(count) {
+                if (count === 1) return 'Opinia';
+                if (count >= 2 && count <= 4) return 'Opinie';
+                if (count >= 5 && count <= 21) return 'Opinii';
+                // For numbers > 21, check last digit
+                const lastDigit = count % 10;
+                const lastTwoDigits = count % 100;
+                if (lastTwoDigits >= 12 && lastTwoDigits <= 14) return 'Opinii';
+                if (lastDigit >= 2 && lastDigit <= 4) return 'Opinie';
+                return 'Opinii';
+            },
+
+            // Update stats in hero with animation
+            updateStats() {
+                const avgRating = this.reviews.length > 0
+                    ? (this.reviews.reduce((sum, r) => sum + r.rating, 0) / this.reviews.length).toFixed(1)
+                    : '5.0';
+
+                // Animate the numbers
+                this.animateNumber(document.getElementById('avg-rating'), parseFloat(avgRating), true);
+                this.animateNumber(document.getElementById('total-reviews'), this.reviews.length, false);
+
+                // Update the plural label
+                const labelEl = document.getElementById('total-reviews-label');
+                if (labelEl) {
+                    labelEl.textContent = this.getOpiniaLabel(this.reviews.length);
+                }
+            },
+
+            // Animate a number from 0 to target
+            animateNumber(element, target, isDecimal) {
+                const duration = 1500;
+                const startTime = performance.now();
+                const startValue = 0;
+
+                function updateNumber(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Easing function (ease-out)
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    const current = startValue + (target - startValue) * easeOut;
+
+                    if (isDecimal) {
+                        element.textContent = current.toFixed(1);
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        element.textContent = isDecimal ? target.toFixed(1) : target;
+                    }
+                }
+
+                requestAnimationFrame(updateNumber);
+            },
+
+            // Render reviews to the grid
+            renderReviews() {
+                const grid = document.getElementById('reviews-grid');
+                const countEl = document.getElementById('reviews-count');
+                const loadMoreContainer = document.getElementById('load-more-container');
+                const loading = document.getElementById('reviews-loading');
+
+                // Hide loading
+                if (loading) loading.style.display = 'none';
+
+                // Update count
+                countEl.textContent = `Wyświetlanie ${Math.min(this.currentPage * this.perPage, this.filteredReviews.length)} z ${this.filteredReviews.length} ${this.getOpiniaLabel(this.filteredReviews.length).toLowerCase()}`;
+
+                // Check if empty
+                if (this.filteredReviews.length === 0) {
+                    grid.innerHTML = `
+                        <div class="reviews-empty">
+                            <div class="reviews-empty__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="reviews-empty__title">Brak opinii</h3>
+                            <p class="reviews-empty__text">Nie znaleziono opinii spełniających wybrane kryteria.</p>
+                        </div>
+                    `;
+                    loadMoreContainer.style.display = 'none';
+                    return;
+                }
+
+                // Get reviews for current page
+                const reviewsToShow = this.filteredReviews.slice(0, this.currentPage * this.perPage);
+
+                // Render cards
+                grid.innerHTML = reviewsToShow.map(review => this.renderReviewCard(review)).join('');
+
+                // Show/hide load more button
+                loadMoreContainer.style.display =
+                    this.currentPage * this.perPage < this.filteredReviews.length ? 'block' : 'none';
+            },
+
+            // Render single review card
+            renderReviewCard(review) {
+                const stars = Array(5).fill(0).map((_, i) => `
+                    <svg class="review-star" viewBox="0 0 24 24" fill="${i < review.rating ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                `).join('');
+
+                const initials = review.author_initials || review.author_name.split(' ').map(n => n[0]).join('');
+
+                // Format date
+                const createdDate = review.created_at ? new Date(review.created_at).toLocaleDateString('pl-PL', { year: 'numeric', month: 'long' }) : '';
+
+                // Verified badge for reviews submitted with verification code
+                const verifiedBadge = review.is_verified ? `
+                    <span class="review-verified-badge" title="Zweryfikowany kursant - opinia potwierdzona kodem weryfikacyjnym">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                        Zweryfikowany
+                    </span>
+                ` : '';
+
+                return `
+                    <article class="review-card ${review.is_featured ? 'review-card--featured' : ''}">
+                        <div class="review-card__header">
+                            <div class="review-card__stars">${stars}</div>
+                            <span class="review-card__category">${review.course_category}</span>
+                        </div>
+                        <blockquote class="review-card__quote">
+                            "${review.content}"
+                        </blockquote>
+                        <div class="review-card__author">
+                            <div class="review-card__avatar">${initials}</div>
+                            <div class="review-card__info">
+                                <span class="review-card__name">
+                                    ${review.author_name}
+                                    ${verifiedBadge}
+                                </span>
+                                <span class="review-card__date">Kategoria ${review.course_category} • ${review.course_year}${createdDate ? ' • Dodano ' + createdDate : ''}</span>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            },
+
+            // Load more reviews
+            loadMore() {
+                this.currentPage++;
+                this.renderReviews();
+            }
+        };
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            ReviewsPage.init();
+        });
+    </script>
+</body>
+
+</html>

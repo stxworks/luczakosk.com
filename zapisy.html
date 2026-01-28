@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zapisz się na kurs prawa jazdy OSK Łuczak. Formularz zapisu online - szybko i wygodnie. Kategoria B i B+E. Piła, Poznań.">
+    <meta name="keywords"
+        content="zapis na kurs, kurs prawa jazdy, formularz zapisu, kategoria B, kategoria B+E, OSK Łuczak, Piła, Poznań">
+    <meta name="author" content="OSK Łuczak">
+    <meta name="robots" content="index, follow">
+    <title>Zapisz się na kurs | OSK Łuczak - Szkoła Jazdy</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oskluczak.pl/zapisy.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/zapisy.html">
+    <meta property="og:title" content="Zapisz się na kurs | OSK Łuczak">
+    <meta property="og:description" content="Zapisz się na kurs prawa jazdy online. Szybki i wygodny formularz zapisu.">
+    <meta property="og:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oskluczak.pl/zapisy.html">
+    <meta name="twitter:title" content="Zapisz się na kurs | OSK Łuczak">
+    <meta name="twitter:description"
+        content="Zapisz się na kurs prawa jazdy online. Szybki i wygodny formularz zapisu.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a56db">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/prices.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <style>
+        /* ===================================
+           COURSE REGISTRATION PAGE STYLES
+        =================================== */
+        .page-hero {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, var(--osk-blue) 50%, #1e40af 100%);
+            padding-top: 120px;
+            padding-bottom: var(--spacing-16);
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(249, 204, 24, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Background Elements */
+        .page-hero__bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .page-hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatCircle 20s ease-in-out infinite;
+        }
+
+        .page-hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--osk-yellow), transparent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .page-hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .page-hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 40%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 10px) scale(1.02);
+            }
+        }
+
+        /* Steering Wheel Decoration */
+        .page-hero__steering {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            height: 350px;
+            opacity: 0.06;
+            animation: rotateWheel 60s linear infinite;
+        }
+
+        .page-hero__steering svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Icons */
+        .page-hero__float-icon {
+            position: absolute;
+            opacity: 0.12;
+            animation: floatIcon 15s ease-in-out infinite;
+        }
+
+        .page-hero__float-icon--1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__float-icon--2 {
+            bottom: 25%;
+            right: 25%;
+            animation-delay: -5s;
+        }
+
+        .page-hero__float-icon--3 {
+            top: 15%;
+            right: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.12;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.18;
+            }
+        }
+
+        /* Road Lines Decoration */
+        .page-hero__road-lines {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            opacity: 0.1;
+        }
+
+        .page-hero__road-line {
+            position: absolute;
+            bottom: 20px;
+            height: 4px;
+            background: var(--osk-yellow);
+            border-radius: 2px;
+            animation: roadLine 3s linear infinite;
+        }
+
+        .page-hero__road-line--1 {
+            width: 60px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__road-line--2 {
+            width: 80px;
+            left: 30%;
+            animation-delay: -1s;
+        }
+
+        .page-hero__road-line--3 {
+            width: 50px;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .page-hero__road-line--4 {
+            width: 70px;
+            left: 70%;
+            animation-delay: -0.5s;
+        }
+
+        .page-hero__road-line--5 {
+            width: 55px;
+            left: 90%;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes roadLine {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+        }
+
+        .page-hero__container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--spacing-12) var(--container-padding);
+            text-align: center;
+        }
+
+        .page-hero__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-6);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-hero__title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-6);
+            line-height: 1.1;
+        }
+
+        .page-hero__title-accent {
+            color: var(--osk-yellow);
+        }
+
+        .page-hero__subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===================================
+           REGISTRATION FORM SECTION
+        =================================== */
+        .registration {
+            padding: var(--spacing-24) 0;
+            background: var(--color-white);
+        }
+
+        .registration__container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .registration__header {
+            text-align: center;
+            margin-bottom: var(--spacing-12);
+        }
+
+        .registration__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-4);
+            background: var(--color-primary-100);
+            color: var(--osk-blue);
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            margin-bottom: var(--spacing-4);
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .registration__badge:hover {
+            background: var(--color-accent-100);
+            color: var(--color-accent-700);
+        }
+
+        .registration__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .registration__subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Form Card */
+        .registration__card {
+            background: var(--color-white);
+            border-radius: var(--radius-2xl);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: var(--spacing-12);
+            border: 1px solid var(--color-gray-100);
+        }
+
+        .registration__form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-6);
+        }
+
+        /* Form Groups */
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-6);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-2);
+        }
+
+        .form-group--full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--color-gray-700);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-1);
+        }
+
+        .form-label__required {
+            color: #ef4444;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: var(--spacing-4) var(--spacing-5);
+            font-size: var(--font-size-base);
+            background: var(--color-gray-50);
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+            font-family: inherit;
+            color: var(--color-gray-800);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--osk-blue);
+            background: var(--color-white);
+            box-shadow: 0 0 0 4px rgba(39, 100, 234, 0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--color-gray-400);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 48px;
+        }
+
+        /* Form Note / Info */
+        .form-note {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-3);
+            padding: var(--spacing-4) var(--spacing-5);
+            background: var(--color-accent-50);
+            border: 1px solid var(--color-accent-200);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-700);
+            line-height: 1.5;
+        }
+
+        .form-note svg {
+            color: var(--color-accent-600);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .form-note strong {
+            color: var(--color-gray-800);
+        }
+
+        /* Checkbox Group */
+        .form-checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-4);
+            margin-top: var(--spacing-4);
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-3);
+            cursor: pointer;
+        }
+
+        .form-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: var(--osk-blue);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .form-checkbox__text {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            line-height: 1.5;
+        }
+
+        .form-checkbox__text a {
+            color: var(--osk-blue);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .form-checkbox__text a:hover {
+            color: var(--color-primary-700);
+        }
+
+        /* Select All Checkbox Styling */
+        .form-checkbox--select-all {
+            background: linear-gradient(135deg, var(--color-primary-50) 0%, #e0f2fe 100%);
+            padding: var(--spacing-3) var(--spacing-4);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-primary-200);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .form-checkbox__text--bold {
+            font-weight: 600;
+            color: var(--color-primary-700);
+        }
+
+        .form-checkbox-divider {
+            height: 1px;
+            background: var(--color-gray-200);
+            margin: var(--spacing-2) 0 var(--spacing-3);
+        }
+
+        /* Submit Button */
+        .registration__submit {
+            margin-top: var(--spacing-6);
+        }
+
+        .registration__submit .btn {
+            width: 100%;
+            padding: var(--spacing-5) var(--spacing-8);
+            font-size: var(--font-size-lg);
+        }
+
+        /* Form Info */
+        .registration__info {
+            margin-top: var(--spacing-8);
+            padding: var(--spacing-6);
+            background: var(--color-primary-50);
+            border-radius: var(--radius-xl);
+            border-left: 4px solid var(--osk-blue);
+        }
+
+        .registration__info-title {
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-2);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .registration__info-title svg {
+            color: var(--osk-blue);
+        }
+
+        .registration__info-text {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        /* Privacy Notice */
+        .registration__privacy {
+            margin-top: var(--spacing-8);
+            padding: var(--spacing-6);
+            background: var(--color-gray-50);
+            border-radius: var(--radius-xl);
+        }
+
+        .registration__privacy-title {
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--color-gray-700);
+            margin-bottom: var(--spacing-3);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .registration__privacy-title svg {
+            color: var(--osk-blue);
+        }
+
+        .registration__privacy-text {
+            font-size: var(--font-size-xs);
+            color: var(--color-gray-500);
+            line-height: 1.6;
+        }
+
+        /* Success Message */
+        .registration__success {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-12);
+        }
+
+        .registration__success.is-visible {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .registration__success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-6);
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: successPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes successPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 20px rgba(34, 197, 94, 0);
+            }
+        }
+
+        .registration__success-icon svg {
+            color: white;
+        }
+
+        .registration__success-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-3);
+        }
+
+        .registration__success-text {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            margin-bottom: var(--spacing-6);
+        }
+
+        /* ===================================
+           PKK INFO TILE - EXPANDABLE
+        =================================== */
+        .pkk-info-tile {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .pkk-info-tile:hover {
+            border-color: #d97706;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+        }
+
+        .pkk-info-tile[open] {
+            border-color: var(--osk-blue);
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            box-shadow: 0 8px 30px rgba(39, 100, 234, 0.15);
+        }
+
+        .pkk-info-tile__header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            padding: var(--spacing-5) var(--spacing-6);
+            cursor: pointer;
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+
+        .pkk-info-tile__header::-webkit-details-marker {
+            display: none;
+        }
+
+        .pkk-info-tile__header::marker {
+            display: none;
+        }
+
+        .pkk-info-tile__icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(245, 158, 11, 0.2);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .pkk-info-tile__icon svg {
+            color: #b45309;
+            transition: color 0.3s ease;
+        }
+
+        .pkk-info-tile[open] .pkk-info-tile__icon {
+            background: rgba(39, 100, 234, 0.15);
+        }
+
+        .pkk-info-tile[open] .pkk-info-tile__icon svg {
+            color: var(--osk-blue);
+        }
+
+        .pkk-info-tile__text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-1);
+        }
+
+        .pkk-info-tile__text strong {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-900);
+        }
+
+        .pkk-info-tile__hint {
+            font-size: var(--font-size-sm);
+            color: #92400e;
+            transition: color 0.3s ease;
+        }
+
+        .pkk-info-tile[open] .pkk-info-tile__hint {
+            color: var(--osk-blue);
+        }
+
+        .pkk-info-tile__arrow {
+            flex-shrink: 0;
+            color: #b45309;
+            transition: all 0.3s ease;
+        }
+
+        .pkk-info-tile[open] .pkk-info-tile__arrow {
+            transform: rotate(180deg);
+            color: var(--osk-blue);
+        }
+
+        .pkk-info-tile__content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .pkk-info-tile[open] .pkk-info-tile__content {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .pkk-info-tile__title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            padding: var(--spacing-5) var(--spacing-6) var(--spacing-4);
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--osk-blue);
+            border-bottom: 1px solid rgba(39, 100, 234, 0.1);
+            margin: 0;
+        }
+
+        .pkk-info-tile__title svg {
+            color: var(--osk-blue);
+        }
+
+        .pkk-info-tile__steps {
+            padding: var(--spacing-4) var(--spacing-6);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-4);
+        }
+
+        .pkk-step {
+            display: flex;
+            gap: var(--spacing-4);
+            padding: var(--spacing-4);
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .pkk-step:hover {
+            border-color: var(--osk-blue);
+            box-shadow: 0 4px 12px rgba(39, 100, 234, 0.1);
+            transform: translateX(4px);
+        }
+
+        .pkk-step__number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--osk-blue), #3b82f6);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+        }
+
+        .pkk-step__content {
+            flex: 1;
+        }
+
+        .pkk-step__content strong {
+            display: block;
+            font-size: var(--font-size-base);
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-1);
+        }
+
+        .pkk-step__content p {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pkk-step__content a {
+            color: var(--osk-blue);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .pkk-step__content a:hover {
+            color: #1e40af;
+        }
+
+        .pkk-info-tile__help {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            margin: 0 var(--spacing-6) var(--spacing-5);
+            padding: var(--spacing-4);
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: var(--radius-lg);
+            color: white;
+            font-size: var(--font-size-sm);
+        }
+
+        .pkk-info-tile__help svg {
+            flex-shrink: 0;
+        }
+
+        .pkk-info-tile__help a {
+            color: white;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .pkk-info-tile__help a:hover {
+            opacity: 0.9;
+        }
+
+        /* Closing animation state */
+        .pkk-info-tile.is-closing {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .pkk-info-tile.is-closing .pkk-info-tile__content {
+            transition: max-height 0.4s ease-out;
+        }
+
+        .pkk-info-tile.is-closing .pkk-info-tile__arrow {
+            transform: rotate(0deg);
+            color: #b45309;
+        }
+
+        .pkk-info-tile.is-closing .pkk-info-tile__icon {
+            background: rgba(245, 158, 11, 0.2);
+        }
+
+        .pkk-info-tile.is-closing .pkk-info-tile__icon svg {
+            color: #b45309;
+        }
+
+        .pkk-info-tile.is-closing .pkk-info-tile__hint {
+            color: #92400e;
+        }
+
+        /* ===================================
+           RESPONSIVE
+        =================================== */
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: auto;
+                padding-top: 100px;
+            }
+
+            /* Fix container overflow */
+            .registration {
+                padding: var(--spacing-12) 0;
+                overflow-x: hidden;
+            }
+
+            .registration__container {
+                max-width: 100%;
+                padding: 0 var(--spacing-4);
+                box-sizing: border-box;
+            }
+
+            .registration__header {
+                margin-bottom: var(--spacing-8);
+            }
+
+            .registration__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .registration__subtitle {
+                font-size: var(--font-size-base);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-4);
+            }
+
+            .registration__card {
+                padding: var(--spacing-6);
+                border-radius: var(--radius-xl);
+                box-sizing: border-box;
+                max-width: 100%;
+                overflow: hidden;
+            }
+
+            /* Fix form inputs overflow */
+            .form-group {
+                max-width: 100%;
+            }
+
+            .form-input,
+            .form-select,
+            .form-textarea {
+                width: 100%;
+                box-sizing: border-box;
+                padding: var(--spacing-3) var(--spacing-4);
+                font-size: var(--font-size-sm);
+            }
+
+            .form-select {
+                background-position: right 12px center;
+                padding-right: 40px;
+            }
+
+            .form-textarea {
+                min-height: 100px;
+            }
+
+            .form-label {
+                font-size: var(--font-size-xs);
+            }
+
+            /* Form checkbox fixes */
+            .form-checkbox {
+                gap: var(--spacing-2);
+            }
+
+            .form-checkbox input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+            }
+
+            .form-checkbox__text {
+                font-size: var(--font-size-xs);
+            }
+
+            /* PKK Tile responsive */
+            .pkk-info-tile {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .pkk-info-tile__header {
+                padding: var(--spacing-4);
+                gap: var(--spacing-3);
+            }
+
+            .pkk-info-tile__icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .pkk-info-tile__text strong {
+                font-size: var(--font-size-sm);
+            }
+
+            .pkk-info-tile__hint {
+                font-size: var(--font-size-xs);
+            }
+
+            .pkk-info-tile__title {
+                padding: var(--spacing-4);
+                font-size: var(--font-size-base);
+            }
+
+            .pkk-info-tile__steps {
+                padding: var(--spacing-3) var(--spacing-4);
+                gap: var(--spacing-3);
+            }
+
+            .pkk-step {
+                padding: var(--spacing-3);
+                gap: var(--spacing-3);
+            }
+
+            .pkk-step__number {
+                width: 28px;
+                height: 28px;
+                font-size: var(--font-size-xs);
+            }
+
+            .pkk-step__content strong {
+                font-size: var(--font-size-sm);
+            }
+
+            .pkk-step__content p {
+                font-size: var(--font-size-xs);
+            }
+
+            .pkk-info-tile__help {
+                margin: 0 var(--spacing-4) var(--spacing-4);
+                padding: var(--spacing-3);
+                font-size: var(--font-size-xs);
+                flex-wrap: wrap;
+            }
+
+            /* Registration info and privacy boxes */
+            .registration__info,
+            .registration__privacy {
+                padding: var(--spacing-4);
+            }
+
+            .registration__info-title {
+                font-size: var(--font-size-sm);
+            }
+
+            .registration__info-text {
+                font-size: var(--font-size-xs);
+            }
+
+            .registration__privacy-text {
+                font-size: 11px;
+                line-height: 1.5;
+            }
+
+            /* Submit button */
+            .registration__submit .btn {
+                padding: var(--spacing-4) var(--spacing-6);
+                font-size: var(--font-size-base);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero {
+                padding-top: 90px;
+                padding-bottom: var(--spacing-8);
+            }
+
+            .page-hero__container {
+                padding: var(--spacing-6) var(--spacing-4);
+            }
+
+            .page-hero__badge {
+                font-size: 10px;
+                padding: var(--spacing-1) var(--spacing-3);
+            }
+
+            .page-hero__title {
+                font-size: clamp(1.5rem, 7vw, 2rem);
+            }
+
+            .page-hero__subtitle {
+                font-size: var(--font-size-sm);
+            }
+
+            .registration__container {
+                padding: 0 var(--spacing-3);
+            }
+
+            .registration__card {
+                padding: var(--spacing-5);
+                border-radius: var(--radius-lg);
+            }
+
+            .form-input,
+            .form-select,
+            .form-textarea {
+                padding: var(--spacing-3);
+            }
+
+            .pkk-step:hover {
+                transform: none;
+            }
+
+            /* Even smaller text for tiny screens */
+            .form-checkbox__text {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="loader" id="page-loader">
+        <div class="loader__particles">
+            <div class="loader__particle"></div>
+            <div class="loader__particle"></div>
+            <div class="loader__particle"></div>
+            <div class="loader__particle"></div>
+        </div>
+        <div class="loader__content">
+            <div class="loader__logo">
+                <div class="loader__logo-ring loader__logo-ring--outer"></div>
+                <div class="loader__logo-ring"></div>
+                <div class="loader__logo-ring loader__logo-ring--inner"></div>
+                <svg class="loader__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 3v6" />
+                    <path d="M5.6 16.5l5.2-3" />
+                    <path d="M18.4 16.5l-5.2-3" />
+                </svg>
+            </div>
+            <div class="loader__brand">
+                <span class="loader__title">OSK Łuczak</span>
+                <span class="loader__subtitle">Szkoła Jazdy</span>
+            </div>
+            <div class="loader__progress">
+                <div class="loader__progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <!-- Animated Background Elements -->
+        <div class="page-hero__bg-elements">
+            <!-- Floating circles -->
+            <div class="page-hero__bg-circle page-hero__bg-circle--1"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--2"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--3"></div>
+
+            <!-- Rotating steering wheel -->
+            <div class="page-hero__steering">
+                <svg viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+                    <circle cx="50" cy="50" r="45" />
+                    <circle cx="50" cy="50" r="15" />
+                    <line x1="50" y1="5" x2="50" y2="35" />
+                    <line x1="10.7" y1="72.5" x2="37.5" y2="57.5" />
+                    <line x1="89.3" y1="72.5" x2="62.5" y2="57.5" />
+                </svg>
+            </div>
+
+            <!-- Floating icons -->
+            <div class="page-hero__float-icon page-hero__float-icon--1">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M9 12l2 2 4-4" />
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+            </div>
+
+            <!-- Animated road lines -->
+            <div class="page-hero__road-lines">
+                <div class="page-hero__road-line page-hero__road-line--1"></div>
+                <div class="page-hero__road-line page-hero__road-line--2"></div>
+                <div class="page-hero__road-line page-hero__road-line--3"></div>
+                <div class="page-hero__road-line page-hero__road-line--4"></div>
+                <div class="page-hero__road-line page-hero__road-line--5"></div>
+            </div>
+        </div>
+
+        <div class="page-hero__container">
+            <span class="page-hero__badge">Formularz zapisu</span>
+            <h1 class="page-hero__title">
+                Zacznij swoją <span class="page-hero__title-accent">przygodę</span> z jazdą
+            </h1>
+            <p class="page-hero__subtitle">
+                Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin, aby omówić szczegóły kursu.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- REGISTRATION FORM SECTION -->
+    <section class="registration" id="formularz">
+        <div class="registration__container">
+            <div class="registration__header">
+                <span class="registration__badge">Zapisz się</span>
+                <h2 class="registration__title">Formularz <span class="text-yellow">zapisu</span> na kurs</h2>
+                <p class="registration__subtitle">
+                    Wypełnij poniższy formularz, a my skontaktujemy się z Tobą i odpowiemy na wszystkie pytania.
+                </p>
+            </div>
+
+            <div class="registration__card">
+                <!-- Success Message (hidden by default) -->
+                <div class="registration__success" id="success-message">
+                    <div class="registration__success-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <h3 class="registration__success-title">Dziękujemy za zgłoszenie!</h3>
+                    <p class="registration__success-text">
+                        Twoje zgłoszenie zostało przyjęte. Skontaktujemy się z Tobą w ciągu 24 godzin.
+                    </p>
+                    <a href="index.html" class="btn btn--primary">
+                        Wróć na stronę główną
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Registration Form -->
+                <form class="registration__form" id="registration-form">
+                    <!-- Personal Data -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">
+                                Imię <span class="form-label__required">*</span>
+                            </label>
+                            <input type="text" id="firstName" name="firstName" class="form-input"
+                                placeholder="Twoje imię" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">
+                                Nazwisko <span class="form-label__required">*</span>
+                            </label>
+                            <input type="text" id="lastName" name="lastName" class="form-input"
+                                placeholder="Twoje nazwisko" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                Adres e-mail <span class="form-label__required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="twoj@email.pl"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">
+                                Numer telefonu <span class="form-label__required">*</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="123 456 789"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- PESEL and PKK -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="pesel">
+                                PESEL
+                            </label>
+                            <input type="text" id="pesel" name="pesel" class="form-input" placeholder="np. 99010112345"
+                                pattern="[0-9]{11}" maxlength="11" title="PESEL musi składać się z 11 cyfr">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pkk">
+                                Numer PKK (jeśli posiadasz)
+                            </label>
+                            <input type="text" id="pkk" name="pkk" class="form-input"
+                                placeholder="Profil Kandydata na Kierowcę" maxlength="20">
+                        </div>
+                    </div>
+
+                    <!-- PKK Info - Expandable Tile -->
+                    <details class="pkk-info-tile" id="pkk-info-tile">
+                        <summary class="pkk-info-tile__header">
+                            <div class="pkk-info-tile__icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4" />
+                                    <path d="M12 8h.01" />
+                                </svg>
+                            </div>
+                            <div class="pkk-info-tile__text">
+                                <strong>Numer PKK jest wymagany przed rozpoczęciem kursu.</strong>
+                                <span class="pkk-info-tile__hint">Nie masz jeszcze PKK? Kliknij, aby dowiedzieć się jak
+                                    go wyrobić!</span>
+                            </div>
+                            <svg class="pkk-info-tile__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </summary>
+                        <div class="pkk-info-tile__content">
+                            <h4 class="pkk-info-tile__title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                    <line x1="16" y1="13" x2="8" y2="13" />
+                                    <line x1="16" y1="17" x2="8" y2="17" />
+                                    <polyline points="10 9 9 9 8 9" />
+                                </svg>
+                                Jak wyrobić PKK? - krok po kroku
+                            </h4>
+                            <div class="pkk-info-tile__steps">
+                                <div class="pkk-step">
+                                    <div class="pkk-step__number">1</div>
+                                    <div class="pkk-step__content">
+                                        <strong>Przygotuj dokumenty</strong>
+                                        <p>Dowód osobisty lub paszport, aktualne zdjęcie (jak do dowodu), orzeczenie
+                                            lekarskie o braku przeciwwskazań do kierowania pojazdem.</p>
+                                    </div>
+                                </div>
+                                <div class="pkk-step">
+                                    <div class="pkk-step__number">2</div>
+                                    <div class="pkk-step__content">
+                                        <strong>Wykonaj badania lekarskie</strong>
+                                        <p>Umów się do lekarza uprawnionego do badań kierowców. Koszt badania to ok. 200
+                                            zł. Otrzymasz orzeczenie ważne przez 15 lat.</p>
+                                    </div>
+                                </div>
+                                <div class="pkk-step">
+                                    <div class="pkk-step__number">3</div>
+                                    <div class="pkk-step__content">
+                                        <strong>Złóż wniosek w Starostwie lub online</strong>
+                                        <p>Wniosek możesz złożyć osobiście w Wydziale Komunikacji lub elektronicznie
+                                            przez <a href="https://www.gov.pl" target="_blank"
+                                                rel="noopener">gov.pl</a>. Wyrobienie PKK jest bezpłatne!</p>
+                                    </div>
+                                </div>
+                                <div class="pkk-step">
+                                    <div class="pkk-step__number">4</div>
+                                    <div class="pkk-step__content">
+                                        <strong>Odbierz numer PKK</strong>
+                                        <p>Po pozytywnym rozpatrzeniu wniosku (zazwyczaj 2-7 dni) otrzymasz swój
+                                            unikalny numer PKK. Możesz go sprawdzić online lub odebrać osobiście.</p>
+                                    </div>
+                                </div>
+                                <div class="pkk-step">
+                                    <div class="pkk-step__number">5</div>
+                                    <div class="pkk-step__content">
+                                        <strong>Podaj numer PKK w szkole jazdy</strong>
+                                        <p>Przekaż mi swój numer PKK, a ja zajmę się resztą! Możesz go wpisać w
+                                            formularzu powyżej lub podać telefonicznie.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pkk-info-tile__help">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                <span>Potrzebujesz pomocy? Zadzwoń do mnie: <a href="tel:+48795499047">795 499 047</a> -
+                                    chętnie pomogę!</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Course Selection -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="course">
+                                Wybierz kurs <span class="form-label__required">*</span>
+                            </label>
+                            <select id="course" name="course" class="form-select" required>
+                                <option value="" disabled selected>Wybierz kategorię</option>
+                                <option value="B" data-price-slug="course-b">Kategoria B</option>
+                                <option value="B-express" data-price-slug="course-b-express">Kategoria B (ekspresowy)
+                                </option>
+                                <option value="BE" data-price-slug="course-be">Kategoria B+E</option>
+                                <option value="BE-express" data-price-slug="course-be-express">Kategoria B+E
+                                    (ekspresowy)</option>
+                                <option value="doszkolenie-b" data-price-slug="refresher-b">Jazdy doszkalające kategorii
+                                    B</option>
+                                <option value="doszkolenie-be" data-price-slug="refresher-be">Jazdy doszkalające
+                                    kategorii B+E</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="city">
+                                Preferowane miasto <span class="form-label__required">*</span>
+                            </label>
+                            <select id="city" name="city" class="form-select" required>
+                                <option value="" disabled selected>Wybierz miasto</option>
+                                <option value="pila">Piła</option>
+                                <option value="poznan">Poznań</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="form-group form-group--full">
+                        <label class="form-label" for="message">
+                            Dodatkowe informacje
+                        </label>
+                        <textarea id="message" name="message" class="form-textarea"
+                            placeholder="Napisz, jeśli masz pytania lub chcesz przekazać dodatkowe informacje (np. preferowane terminy jazd)"></textarea>
+                    </div>
+
+                    <!-- Consents -->
+                    <div class="form-checkbox-group">
+                        <label class="form-checkbox form-checkbox--select-all">
+                            <input type="checkbox" id="select-all-required">
+                            <span class="form-checkbox__text form-checkbox__text--bold">
+                                Zaznacz wszystkie wymagane zgody
+                            </span>
+                        </label>
+                        <div class="form-checkbox-divider"></div>
+                        <label class="form-checkbox">
+                            <input type="checkbox" name="consent-personal" class="required-consent" required>
+                            <span class="form-checkbox__text">
+                                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu rozpatrzenia zgłoszenia na
+                                kurs prawa jazdy. <span class="form-label__required">*</span>
+                            </span>
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" name="consent-contact" class="required-consent" required>
+                            <span class="form-checkbox__text">
+                                Wyrażam zgodę na kontakt telefoniczny lub mailowy w celu omówienia szczegółów kursu.
+                                <span class="form-label__required">*</span>
+                            </span>
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" name="consent-privacy" class="required-consent" required>
+                            <span class="form-checkbox__text">
+                                Zapoznałem/am się z <a href="polityka-prywatnosci.html" target="_blank">Polityką
+                                    Prywatności</a> i akceptuję jej warunki. <span class="form-label__required">*</span>
+                            </span>
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" name="consent-marketing">
+                            <span class="form-checkbox__text">
+                                Wyrażam zgodę na otrzymywanie informacji marketingowych i promocji (opcjonalne).
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="registration__submit">
+                        <button type="submit" class="btn btn--accent">
+                            Wyślij zgłoszenie
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Info Box -->
+                <div class="registration__info">
+                    <h4 class="registration__info-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 16v-4" />
+                            <path d="M12 8h.01" />
+                        </svg>
+                        Co dalej?
+                    </h4>
+                    <p class="registration__info-text">
+                        Po otrzymaniu Twojego zgłoszenia skontaktujemy się telefonicznie lub mailowo w ciągu 24 godzin
+                        (w dni robocze). Omówimy szczegóły kursu, terminy oraz odpowiemy na wszystkie Twoje pytania.
+                    </p>
+                </div>
+
+                <!-- Privacy Notice (RODO) -->
+                <div class="registration__privacy">
+                    <h4 class="registration__privacy-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Informacja o przetwarzaniu danych osobowych (RODO)
+                    </h4>
+                    <p class="registration__privacy-text">
+                        Administratorem Twoich danych osobowych jest OSK Łuczak z siedzibą w Wilkowyji 18, 62-270
+                        Kłecko. Dane przetwarzane są w celu rozpatrzenia zgłoszenia na kurs prawa jazdy oraz kontaktu w
+                        sprawie kursu. Podstawą prawną przetwarzania jest Twoja zgoda (art. 6 ust. 1 lit. a RODO) oraz
+                        niezbędność do wykonania umowy (art. 6 ust. 1 lit. b RODO). Masz prawo do dostępu do swoich
+                        danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz cofnięcia
+                        zgody w dowolnym momencie. Więcej informacji znajdziesz w naszej <a
+                            href="polityka-prywatnosci.html">Polityce Prywatności</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scroll to Top -->
+    <div id="scroll-indicator"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/prices.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/emailjs.js" defer></script>
+
+    <script>
+        // Registration Form Handler with EmailJS
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('registration-form');
+            const successMessage = document.getElementById('success-message');
+
+            if (form) {
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const formData = new FormData(form);
+
+                    const data = {
+                        firstName: formData.get('firstName'),
+                        lastName: formData.get('lastName'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        pesel: formData.get('pesel') || '',
+                        pkk: formData.get('pkk') || '',
+                        course: formData.get('course'),
+                        city: formData.get('city'),
+                        source: formData.get('source') || '',
+                        message: formData.get('message') || ''
+                    };
+
+                    // Pokaż stan ładowania
+                    EmailJSHandler.setButtonLoading(submitBtn, true);
+
+                    // Sprawdź czy EmailJS jest skonfigurowany
+                    if (!EmailJSHandler.isRegistrationConfigured()) {
+                        console.warn('EmailJS nie skonfigurowany - symulacja wysyłki');
+                        console.log('Registration data:', data);
+
+                        // Zapisz do bazy danych nawet bez EmailJS
+                        try {
+                            if (typeof saveRegistration === 'function') {
+                                await saveRegistration(data);
+                                console.log('Registration saved to database');
+                            }
+                        } catch (dbError) {
+                            console.warn('Could not save to database:', dbError);
+                        }
+
+                        // Symulacja dla testów
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        form.style.display = 'none';
+                        document.querySelector('.registration__info').style.display = 'none';
+                        document.querySelector('.registration__privacy').style.display = 'none';
+                        successMessage.classList.add('is-visible');
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        return;
+                    }
+
+                    // Wyślij przez EmailJS
+                    const result = await EmailJSHandler.sendRegistrationForm(data);
+
+                    if (result.success) {
+                        // Zapisz do bazy danych Supabase
+                        try {
+                            if (typeof saveRegistration === 'function') {
+                                await saveRegistration(data);
+                                console.log('Registration saved to database');
+                            }
+                        } catch (dbError) {
+                            console.warn('Could not save to database:', dbError);
+                            // Kontynuuj - email został wysłany
+                        }
+
+                        // Sukces - pokaż komunikat
+                        form.style.display = 'none';
+                        document.querySelector('.registration__info').style.display = 'none';
+                        document.querySelector('.registration__privacy').style.display = 'none';
+                        successMessage.classList.add('is-visible');
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        // Błąd - pokaż komunikat i przywróć przycisk
+                        EmailJSHandler.setButtonLoading(submitBtn, false);
+                        EmailJSHandler.showFormError(form, 'Nie udało się wysłać zgłoszenia. Spróbuj ponownie lub zadzwoń do nas: 795 499 047');
+                    }
+                });
+            }
+
+            // PKK Info Tile Animation
+            const pkkTile = document.getElementById('pkk-info-tile');
+            if (pkkTile) {
+                const summary = pkkTile.querySelector('summary');
+                const content = pkkTile.querySelector('.pkk-info-tile__content');
+                let isAnimating = false;
+
+                summary.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    if (isAnimating) return;
+                    isAnimating = true;
+
+                    if (pkkTile.open) {
+                        // Closing animation
+                        pkkTile.classList.add('is-closing');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+
+                        requestAnimationFrame(() => {
+                            content.style.maxHeight = '0px';
+                        });
+
+                        setTimeout(() => {
+                            pkkTile.open = false;
+                            pkkTile.classList.remove('is-closing');
+                            content.style.maxHeight = '';
+                            isAnimating = false;
+                        }, 400);
+                    } else {
+                        // Opening animation
+                        pkkTile.open = true;
+                        const targetHeight = content.scrollHeight;
+                        content.style.maxHeight = '0px';
+
+                        requestAnimationFrame(() => {
+                            content.style.maxHeight = targetHeight + 'px';
+                        });
+
+                        setTimeout(() => {
+                            content.style.maxHeight = '';
+                            isAnimating = false;
+                        }, 500);
+                    }
+                });
+            }
+
+            // Select All Required Consents Handler
+            const selectAllCheckbox = document.getElementById('select-all-required');
+            const requiredConsents = document.querySelectorAll('.required-consent');
+
+            if (selectAllCheckbox && requiredConsents.length > 0) {
+                // Handle "Select All" checkbox change
+                selectAllCheckbox.addEventListener('change', function () {
+                    requiredConsents.forEach(checkbox => {
+                        checkbox.checked = this.checked;
+                    });
+                });
+
+                // Handle individual consent changes - update "Select All" state
+                requiredConsents.forEach(checkbox => {
+                    checkbox.addEventListener('change', function () {
+                        const allChecked = Array.from(requiredConsents).every(cb => cb.checked);
+                        selectAllCheckbox.checked = allChecked;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

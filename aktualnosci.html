@@ -1,0 +1,1171 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aktualności OSK Łuczak - Bądź na bieżąco z nowościami ze szkoły jazdy. Kursy, promocje, porady i sukcesy naszych kursantów.">
+    <meta name="keywords"
+        content="aktualności szkoła jazdy, OSK Łuczak news, kursy prawa jazdy, promocje, Piła, Poznań">
+    <title>Aktualności | OSK Łuczak - Szkoła Jazdy</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/aktualnosci.html">
+    <meta property="og:title" content="Aktualności | OSK Łuczak">
+    <meta property="og:description" content="Bądź na bieżąco z nowościami ze szkoły jazdy OSK Łuczak.">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <style>
+        /* ========================================
+           AKTUALNOŚCI PAGE STYLES
+           ======================================== */
+
+        /* Hero Section - matching o-firmie.html style */
+        .news-hero {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, var(--osk-blue) 50%, #1e40af 100%);
+            padding-top: 120px;
+            padding-bottom: var(--spacing-16);
+        }
+
+        .news-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(249, 204, 24, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .news-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Background Elements */
+        .news-hero__bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .news-hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatCircle 20s ease-in-out infinite;
+        }
+
+        .news-hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--osk-yellow), transparent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .news-hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .news-hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 40%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 10px) scale(1.02);
+            }
+        }
+
+        /* Steering Wheel Decoration */
+        .news-hero__steering {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            height: 350px;
+            opacity: 0.06;
+            animation: rotateWheel 60s linear infinite;
+        }
+
+        .news-hero__steering svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Icons */
+        .news-hero__float-icon {
+            position: absolute;
+            opacity: 0.12;
+            animation: floatIcon 15s ease-in-out infinite;
+        }
+
+        .news-hero__float-icon--1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .news-hero__float-icon--2 {
+            bottom: 25%;
+            right: 25%;
+            animation-delay: -5s;
+        }
+
+        .news-hero__float-icon--3 {
+            top: 15%;
+            right: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.12;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.18;
+            }
+        }
+
+        /* Road Lines Decoration */
+        .news-hero__road-lines {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            opacity: 0.1;
+        }
+
+        .news-hero__road-line {
+            position: absolute;
+            bottom: 20px;
+            height: 4px;
+            background: var(--osk-yellow);
+            border-radius: 2px;
+            animation: roadLine 3s linear infinite;
+        }
+
+        .news-hero__road-line--1 {
+            width: 60px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .news-hero__road-line--2 {
+            width: 80px;
+            left: 30%;
+            animation-delay: -1s;
+        }
+
+        .news-hero__road-line--3 {
+            width: 50px;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .news-hero__road-line--4 {
+            width: 70px;
+            left: 70%;
+            animation-delay: -0.5s;
+        }
+
+        .news-hero__road-line--5 {
+            width: 55px;
+            left: 90%;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes roadLine {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+        }
+
+        .news-hero__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            position: relative;
+            z-index: 1;
+        }
+
+        .news-hero__content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .news-hero__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-6);
+            backdrop-filter: blur(10px);
+        }
+
+        .news-hero__title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-6);
+        }
+
+        .news-hero__title .text-accent {
+            color: var(--osk-yellow);
+        }
+
+        .news-hero__subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        /* Search and Filters */
+        .news-filters {
+            background: var(--color-gray-50);
+            padding: var(--spacing-6) 0;
+            border-bottom: 1px solid var(--color-gray-200);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .news-filters__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-4);
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news-filters__categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-2);
+        }
+
+        .news-filters__category {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-gray-600);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .news-filters__category:hover {
+            border-color: var(--osk-blue);
+            color: var(--osk-blue);
+        }
+
+        .news-filters__category.is-active {
+            background: var(--osk-blue);
+            border-color: var(--osk-blue);
+            color: white;
+        }
+
+        .news-filters__search {
+            position: relative;
+            flex: 1;
+            max-width: 300px;
+            min-width: 200px;
+        }
+
+        .news-filters__search-input {
+            width: 100%;
+            padding: 10px 16px 10px 44px;
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .news-filters__search-input:focus {
+            outline: none;
+            border-color: var(--osk-blue);
+            box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+        }
+
+        .news-filters__search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-gray-400);
+            pointer-events: none;
+        }
+
+        /* News Grid Section */
+        .news-section {
+            padding: var(--spacing-16) 0;
+            background: white;
+            min-height: 50vh;
+        }
+
+        .news-section__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .news-section__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-8);
+        }
+
+        .news-section__count {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+
+        .news-section__sort {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .news-section__sort-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+
+        .news-section__sort-select {
+            padding: 6px 12px;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            font-family: inherit;
+            background: white;
+            cursor: pointer;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--spacing-6);
+        }
+
+        /* Enhanced News Card */
+        .news-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .news-card__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-gray-200) 100%);
+        }
+
+        .news-card__content {
+            padding: var(--spacing-5);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card__meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            margin-bottom: var(--spacing-3);
+        }
+
+        .news-card__category {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: var(--radius-full);
+            color: white;
+        }
+
+        .news-card__date {
+            font-size: var(--font-size-xs);
+            color: var(--color-gray-500);
+        }
+
+        .news-card__title {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: #111827;
+            color: var(--color-gray-900, #111827);
+            line-height: 1.4;
+            margin-bottom: var(--spacing-2);
+        }
+
+        .news-card__excerpt {
+            font-size: var(--font-size-sm);
+            color: #4b5563;
+            color: var(--color-gray-600, #4b5563);
+            line-height: 1.6;
+            flex: 1;
+            margin-bottom: var(--spacing-4);
+        }
+
+        .news-card__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--osk-blue);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .news-card__link:hover {
+            color: var(--osk-yellow);
+            gap: 10px;
+        }
+
+        /* Loading State */
+        .news-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-16);
+            color: var(--color-gray-500);
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
+        .news-loading__spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--color-gray-200);
+            border-top-color: var(--osk-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: var(--spacing-4);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Empty State */
+        .news-empty {
+            text-align: center;
+            padding: var(--spacing-16);
+        }
+
+        .news-empty__icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-6);
+            color: var(--color-gray-400);
+        }
+
+        .news-empty__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .news-empty__text {
+            font-size: var(--font-size-md);
+            color: var(--color-gray-500);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .news-empty__btn {
+            display: inline-flex;
+        }
+
+        /* Pagination */
+        .news-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-2);
+            margin-top: var(--spacing-12);
+        }
+
+        .news-pagination__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-gray-600);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .news-pagination__btn:hover:not(:disabled) {
+            border-color: var(--osk-blue);
+            color: var(--osk-blue);
+        }
+
+        .news-pagination__btn.is-active {
+            background: var(--osk-blue);
+            border-color: var(--osk-blue);
+            color: white;
+        }
+
+        .news-pagination__btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .news-pagination__ellipsis {
+            padding: 0 var(--spacing-2);
+            color: var(--color-gray-400);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .news-hero {
+                min-height: auto;
+                padding-top: 100px;
+                padding-bottom: var(--spacing-12);
+            }
+
+            .news-filters__container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .news-filters__categories {
+                overflow-x: auto;
+                padding-bottom: var(--spacing-2);
+                flex-wrap: nowrap;
+            }
+
+            .news-filters__category {
+                white-space: nowrap;
+            }
+
+            .news-filters__search {
+                max-width: none;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-section__header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-3);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="news-hero">
+        <!-- Background Elements -->
+        <div class="news-hero__bg-elements">
+            <!-- Floating circles -->
+            <div class="news-hero__bg-circle news-hero__bg-circle--1"></div>
+            <div class="news-hero__bg-circle news-hero__bg-circle--2"></div>
+            <div class="news-hero__bg-circle news-hero__bg-circle--3"></div>
+
+            <!-- Rotating steering wheel -->
+            <div class="news-hero__steering">
+                <svg viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+                    <circle cx="50" cy="50" r="45" />
+                    <circle cx="50" cy="50" r="15" />
+                    <line x1="50" y1="5" x2="50" y2="35" />
+                    <line x1="10.7" y1="72.5" x2="37.5" y2="57.5" />
+                    <line x1="89.3" y1="72.5" x2="62.5" y2="57.5" />
+                </svg>
+            </div>
+
+            <!-- Floating icons -->
+            <div class="news-hero__float-icon news-hero__float-icon--1">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path
+                        d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V9a2 2 0 0 0-2-2h-1" />
+                    <path d="M13 9h-6" />
+                    <path d="M13 13h-6" />
+                </svg>
+            </div>
+            <div class="news-hero__float-icon news-hero__float-icon--2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+            </div>
+            <div class="news-hero__float-icon news-hero__float-icon--3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+            </div>
+
+            <!-- Animated road lines -->
+            <div class="news-hero__road-lines">
+                <div class="news-hero__road-line news-hero__road-line--1"></div>
+                <div class="news-hero__road-line news-hero__road-line--2"></div>
+                <div class="news-hero__road-line news-hero__road-line--3"></div>
+                <div class="news-hero__road-line news-hero__road-line--4"></div>
+                <div class="news-hero__road-line news-hero__road-line--5"></div>
+            </div>
+        </div>
+
+        <div class="news-hero__container">
+            <div class="news-hero__content">
+                <span class="news-hero__badge">Aktualności</span>
+                <h1 class="news-hero__title">
+                    Bądź na bieżąco z <span class="text-accent">OSK Łuczak</span>
+                </h1>
+                <p class="news-hero__subtitle">
+                    Najnowsze informacje o kursach, promocjach, sukcesach naszych kursantów i ważnych ogłoszeniach.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="news-filters">
+        <div class="news-filters__container">
+            <div class="news-filters__categories" id="category-filters">
+                <button class="news-filters__category is-active" data-category="all">Wszystkie</button>
+                <!-- Categories will be loaded dynamically -->
+            </div>
+            <div class="news-filters__search">
+                <svg class="news-filters__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input type="text" class="news-filters__search-input" placeholder="Szukaj artykułów..."
+                    id="search-input">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- News Grid -->
+    <section class="news-section">
+        <div class="news-section__container">
+            <div class="news-section__header">
+                <span class="news-section__count" id="news-count">Ładowanie...</span>
+                <div class="news-section__sort">
+                    <span class="news-section__sort-label">Sortuj:</span>
+                    <select class="news-section__sort-select" id="sort-select">
+                        <option value="newest">Najnowsze</option>
+                        <option value="oldest">Najstarsze</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="news-grid" id="news-grid">
+                <!-- Loading state -->
+                <div class="news-loading" id="news-loading">
+                    <div class="news-loading__spinner"></div>
+                    <span>Ładowanie aktualności...</span>
+                </div>
+            </div>
+
+            <!-- Empty state -->
+            <div class="news-empty" id="news-empty" style="display: none;">
+                <div class="news-empty__icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <line x1="10" y1="9" x2="8" y2="9" />
+                    </svg>
+                </div>
+                <h2 class="news-empty__title">Brak aktualności</h2>
+                <p class="news-empty__text" id="news-empty-text">Nie znaleziono żadnych artykułów spełniających
+                    kryteria.</p>
+                <button class="btn btn--primary news-empty__btn" onclick="resetFilters()">
+                    Pokaż wszystkie
+                </button>
+            </div>
+
+            <!-- Pagination -->
+            <div class="news-pagination" id="news-pagination" style="display: none;">
+                <!-- Pagination will be generated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+    <script>
+        // ========================================
+        // AKTUALNOŚCI PAGE LOGIC
+        // ========================================
+
+        // State
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let currentSearch = '';
+        let currentSort = 'newest';
+        const ITEMS_PER_PAGE = 9;
+        let totalItems = 0;
+        let categories = [];
+
+        // DOM Elements
+        const newsGrid = document.getElementById('news-grid');
+        const newsLoading = document.getElementById('news-loading');
+        const newsEmpty = document.getElementById('news-empty');
+        const newsEmptyText = document.getElementById('news-empty-text');
+        const newsPagination = document.getElementById('news-pagination');
+        const newsCount = document.getElementById('news-count');
+        const categoryFilters = document.getElementById('category-filters');
+        const searchInput = document.getElementById('search-input');
+        const sortSelect = document.getElementById('sort-select');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadCategories();
+            await loadNews();
+            setupEventListeners();
+        });
+
+        // Load categories
+        async function loadCategories() {
+            try {
+                categories = await fetchCategories();
+                renderCategoryFilters();
+            } catch (error) {
+                console.error('Error loading categories:', error);
+            }
+        }
+
+        // Render category filter buttons
+        function renderCategoryFilters() {
+            // Keep "Wszystkie" button
+            const allBtn = categoryFilters.querySelector('[data-category="all"]');
+
+            // Clear and re-add
+            categoryFilters.innerHTML = '';
+            categoryFilters.appendChild(allBtn);
+
+            // Add category buttons
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'news-filters__category';
+                btn.dataset.category = cat.slug;
+                btn.textContent = cat.name;
+                btn.addEventListener('click', () => filterByCategory(cat.slug));
+                categoryFilters.appendChild(btn);
+            });
+        }
+
+        // Load news
+        async function loadNews() {
+            showLoading();
+
+            try {
+                const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+
+                const { data, count } = await fetchPublishedNews({
+                    limit: ITEMS_PER_PAGE,
+                    offset: offset,
+                    category: currentCategory === 'all' ? null : currentCategory,
+                    search: currentSearch || null
+                });
+
+                totalItems = count || data.length;
+
+                // Sort if needed
+                let sortedData = [...data];
+                if (currentSort === 'oldest') {
+                    sortedData.reverse();
+                }
+
+                if (sortedData.length === 0) {
+                    showEmpty();
+                } else {
+                    renderNews(sortedData);
+                    renderPagination();
+                    updateCount();
+                }
+
+            } catch (error) {
+                console.error('Error loading news:', error);
+                showEmpty('Wystąpił błąd podczas ładowania aktualności.');
+            }
+        }
+
+        // Render news cards
+        function renderNews(news) {
+            newsLoading.style.display = 'none';
+            newsEmpty.style.display = 'none';
+            newsPagination.style.display = 'flex';
+
+            newsGrid.innerHTML = news.map(item => {
+                const category = item.category || { name: 'Aktualności', color: '#1a56db' };
+                const date = formatDatePL(item.published_at || item.created_at);
+
+                return `
+                    <article class="news-card">
+                        ${item.image_url
+                        ? `<img src="${item.image_url}" alt="${item.title}" class="news-card__image" loading="lazy">`
+                        : `<div class="news-card__image"></div>`
+                    }
+                        <div class="news-card__content">
+                            <div class="news-card__meta">
+                                <span class="news-card__category" style="background-color: ${category.color}">${category.name}</span>
+                                <span class="news-card__date">${date}</span>
+                            </div>
+                            <h3 class="news-card__title">${item.title}</h3>
+                            <p class="news-card__excerpt">${item.excerpt || ''}</p>
+                            <a href="artykul.html?slug=${item.slug || item.id}" class="news-card__link">
+                                Czytaj więcej
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+            if (totalPages <= 1) {
+                newsPagination.style.display = 'none';
+                return;
+            }
+
+            let html = '';
+
+            // Previous button
+            html += `
+                <button class="news-pagination__btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+            `;
+
+            // Page numbers
+            const maxVisible = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+
+            if (endPage - startPage < maxVisible - 1) {
+                startPage = Math.max(1, endPage - maxVisible + 1);
+            }
+
+            if (startPage > 1) {
+                html += `<button class="news-pagination__btn" onclick="goToPage(1)">1</button>`;
+                if (startPage > 2) {
+                    html += `<span class="news-pagination__ellipsis">...</span>`;
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                html += `
+                    <button class="news-pagination__btn ${i === currentPage ? 'is-active' : ''}" onclick="goToPage(${i})">
+                        ${i}
+                    </button>
+                `;
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    html += `<span class="news-pagination__ellipsis">...</span>`;
+                }
+                html += `<button class="news-pagination__btn" onclick="goToPage(${totalPages})">${totalPages}</button>`;
+            }
+
+            // Next button
+            html += `
+                <button class="news-pagination__btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            `;
+
+            newsPagination.innerHTML = html;
+            newsPagination.style.display = 'flex';
+        }
+
+        // Update count text
+        function updateCount() {
+            const start = (currentPage - 1) * ITEMS_PER_PAGE + 1;
+            const end = Math.min(currentPage * ITEMS_PER_PAGE, totalItems);
+            newsCount.textContent = `Wyświetlanie ${start}-${end} z ${totalItems} artykułów`;
+        }
+
+        // Show loading state
+        function showLoading() {
+            newsGrid.innerHTML = '';
+            newsGrid.appendChild(newsLoading);
+            newsLoading.style.display = 'flex';
+            newsEmpty.style.display = 'none';
+            newsPagination.style.display = 'none';
+        }
+
+        // Show empty state
+        function showEmpty(message = null) {
+            newsLoading.style.display = 'none';
+            newsGrid.innerHTML = '';
+            newsEmpty.style.display = 'block';
+            newsPagination.style.display = 'none';
+            newsCount.textContent = '0 artykułów';
+
+            if (message) {
+                newsEmptyText.textContent = message;
+            } else if (currentSearch) {
+                newsEmptyText.textContent = `Nie znaleziono artykułów dla "${currentSearch}"`;
+            } else if (currentCategory !== 'all') {
+                const cat = categories.find(c => c.slug === currentCategory);
+                newsEmptyText.textContent = `Brak artykułów w kategorii "${cat?.name || currentCategory}"`;
+            } else {
+                newsEmptyText.textContent = 'Nie znaleziono żadnych artykułów.';
+            }
+        }
+
+        // Filter by category
+        function filterByCategory(category) {
+            currentCategory = category;
+            currentPage = 1;
+
+            // Update active state
+            document.querySelectorAll('.news-filters__category').forEach(btn => {
+                btn.classList.toggle('is-active', btn.dataset.category === category);
+            });
+
+            loadNews();
+        }
+
+        // Go to page
+        function goToPage(page) {
+            const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+            if (page < 1 || page > totalPages) return;
+
+            currentPage = page;
+            loadNews();
+
+            // Scroll to top of grid
+            newsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Reset filters
+        function resetFilters() {
+            currentCategory = 'all';
+            currentSearch = '';
+            currentPage = 1;
+            searchInput.value = '';
+
+            document.querySelectorAll('.news-filters__category').forEach(btn => {
+                btn.classList.toggle('is-active', btn.dataset.category === 'all');
+            });
+
+            loadNews();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Category filter buttons
+            categoryFilters.querySelector('[data-category="all"]').addEventListener('click', () => filterByCategory('all'));
+
+            // Search input
+            let searchTimeout;
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    currentSearch = e.target.value.trim();
+                    currentPage = 1;
+                    loadNews();
+                }, 300);
+            });
+
+            // Sort select
+            sortSelect.addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                loadNews();
+            });
+        }
+    </script>
+</body>
+
+</html>

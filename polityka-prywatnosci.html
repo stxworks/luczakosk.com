@@ -1,0 +1,1419 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Polityka prywatności OSK Łuczak - dowiedz się, jak przetwarzamy Twoje dane osobowe zgodnie z RODO. Szkoła Jazdy Piła, Poznań.">
+    <meta name="keywords"
+        content="polityka prywatności, RODO, ochrona danych osobowych, OSK Łuczak, szkoła jazdy, prywatność">
+    <meta name="author" content="OSK Łuczak">
+    <meta name="robots" content="index, follow">
+    <title>Polityka Prywatności | OSK Łuczak - Szkoła Jazdy</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oskluczak.pl/polityka-prywatnosci.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/polityka-prywatnosci.html">
+    <meta property="og:title" content="Polityka Prywatności | OSK Łuczak">
+    <meta property="og:description"
+        content="Polityka prywatności OSK Łuczak - dowiedz się, jak przetwarzamy Twoje dane osobowe zgodnie z RODO.">
+    <meta property="og:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oskluczak.pl/polityka-prywatnosci.html">
+    <meta name="twitter:title" content="Polityka Prywatności | OSK Łuczak">
+    <meta name="twitter:description"
+        content="Polityka prywatności OSK Łuczak - dowiedz się, jak przetwarzamy Twoje dane osobowe zgodnie z RODO.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a56db">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <style>
+        /* ===================================
+           PRIVACY POLICY PAGE STYLES
+        =================================== */
+        .page-hero {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, var(--osk-blue) 50%, #1e40af 100%);
+            padding-top: 120px;
+            padding-bottom: var(--spacing-16);
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(249, 204, 24, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Background Elements */
+        .page-hero__bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .page-hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatCircle 20s ease-in-out infinite;
+        }
+
+        .page-hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--osk-yellow), transparent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .page-hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .page-hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 40%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 10px) scale(1.02);
+            }
+        }
+
+        /* Steering Wheel Decoration */
+        .page-hero__steering {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            opacity: 0.06;
+            animation: rotateWheel 60s linear infinite;
+        }
+
+        .page-hero__steering svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Icons */
+        .page-hero__float-icon {
+            position: absolute;
+            opacity: 0.12;
+            animation: floatIcon 15s ease-in-out infinite;
+        }
+
+        .page-hero__float-icon--1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__float-icon--2 {
+            bottom: 25%;
+            right: 25%;
+            animation-delay: -5s;
+        }
+
+        .page-hero__float-icon--3 {
+            top: 15%;
+            right: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.12;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.18;
+            }
+        }
+
+        /* Road Lines Decoration */
+        .page-hero__road-lines {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            opacity: 0.1;
+        }
+
+        .page-hero__road-line {
+            position: absolute;
+            bottom: 20px;
+            height: 4px;
+            background: var(--osk-yellow);
+            border-radius: 2px;
+            animation: roadLine 3s linear infinite;
+        }
+
+        .page-hero__road-line--1 {
+            width: 60px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__road-line--2 {
+            width: 80px;
+            left: 30%;
+            animation-delay: -1s;
+        }
+
+        .page-hero__road-line--3 {
+            width: 50px;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .page-hero__road-line--4 {
+            width: 70px;
+            left: 70%;
+            animation-delay: -0.5s;
+        }
+
+        .page-hero__road-line--5 {
+            width: 55px;
+            left: 90%;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes roadLine {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+        }
+
+        .page-hero__container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--spacing-12) var(--container-padding);
+            text-align: center;
+        }
+
+        .page-hero__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-6);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-hero__title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-6);
+            line-height: 1.1;
+        }
+
+        .page-hero__title-accent {
+            color: var(--osk-yellow);
+        }
+
+        .page-hero__subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===================================
+           PRIVACY CONTENT SECTION
+        =================================== */
+        .privacy-content {
+            padding: var(--spacing-24) 0;
+            background: var(--color-white);
+        }
+
+        .privacy-content__container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .privacy-section {
+            margin-bottom: var(--spacing-12);
+            padding-bottom: var(--spacing-12);
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .privacy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .privacy-section__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+
+        .privacy-section__title svg {
+            color: var(--osk-blue);
+            flex-shrink: 0;
+        }
+
+        .privacy-section__text {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-4);
+        }
+
+        .privacy-section__text:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-section__list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--spacing-4) 0;
+        }
+
+        .privacy-section__list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-3);
+            padding: var(--spacing-3) 0;
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        .privacy-section__list li svg {
+            color: var(--osk-blue);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .privacy-section__list--nested {
+            margin-left: var(--spacing-8);
+            margin-top: var(--spacing-2);
+        }
+
+        /* Info Box */
+        .privacy-info-box {
+            background: linear-gradient(135deg, var(--color-primary-50), rgba(39, 100, 234, 0.05));
+            border: 1px solid var(--color-primary-200);
+            border-left: 4px solid var(--osk-blue);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+        }
+
+        .privacy-info-box__title {
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-2);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .privacy-info-box__title svg {
+            color: var(--osk-blue);
+        }
+
+        .privacy-info-box__text {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+
+        /* Warning Box */
+        .privacy-warning-box {
+            background: linear-gradient(135deg, #fef3c7, rgba(245, 158, 11, 0.1));
+            border: 1px solid #f59e0b;
+            border-left: 4px solid #d97706;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            margin: var(--spacing-6) 0;
+        }
+
+        .privacy-warning-box__title {
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-2);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+
+        .privacy-warning-box__title svg {
+            color: #d97706;
+        }
+
+        .privacy-warning-box__text {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-700);
+            line-height: 1.6;
+        }
+
+        /* Table of Contents */
+        .privacy-toc {
+            background: var(--color-gray-50);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-6);
+            margin-bottom: var(--spacing-12);
+        }
+
+        .privacy-toc__title {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .privacy-toc__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-2);
+        }
+
+        .privacy-toc__list li a {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-2) var(--spacing-3);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+        }
+
+        .privacy-toc__list li a:hover {
+            background: var(--color-primary-50);
+            color: var(--osk-blue);
+        }
+
+        .privacy-toc__list li a svg {
+            color: var(--osk-blue);
+            flex-shrink: 0;
+        }
+
+        /* Contact Card */
+        .privacy-contact {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: var(--radius-2xl);
+            padding: var(--spacing-10);
+            text-align: center;
+            color: white;
+            margin-top: var(--spacing-12);
+        }
+
+        .privacy-contact__icon {
+            width: 60px;
+            height: 60px;
+            background: var(--osk-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-6);
+        }
+
+        .privacy-contact__icon svg {
+            color: var(--color-gray-900);
+        }
+
+        .privacy-contact__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--spacing-3);
+        }
+
+        .privacy-contact__text {
+            font-size: var(--font-size-base);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-6);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .privacy-contact__email {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            color: var(--osk-yellow);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .privacy-contact__email:hover {
+            opacity: 0.8;
+        }
+
+        /* Last Update Badge */
+        .privacy-update {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-2) var(--spacing-4);
+            background: var(--color-gray-100);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-600);
+            margin-bottom: var(--spacing-8);
+        }
+
+        .privacy-update svg {
+            color: var(--osk-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: auto;
+                padding-top: 100px;
+            }
+
+            .privacy-toc__list {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-contact {
+                padding: var(--spacing-8);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header placeholder - loaded via JS -->
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <!-- Animated Background Elements -->
+        <div class="page-hero__bg-elements">
+            <!-- Floating circles -->
+            <div class="page-hero__bg-circle page-hero__bg-circle--1"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--2"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--3"></div>
+
+            <!-- Rotating steering wheel -->
+            <div class="page-hero__steering">
+                <svg viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+                    <circle cx="50" cy="50" r="45" />
+                    <circle cx="50" cy="50" r="15" />
+                    <line x1="50" y1="5" x2="50" y2="35" />
+                    <line x1="10.7" y1="72.5" x2="37.5" y2="57.5" />
+                    <line x1="89.3" y1="72.5" x2="62.5" y2="57.5" />
+                </svg>
+            </div>
+
+            <!-- Floating icons -->
+            <div class="page-hero__float-icon page-hero__float-icon--1">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+            </div>
+
+            <!-- Animated road lines -->
+            <div class="page-hero__road-lines">
+                <div class="page-hero__road-line page-hero__road-line--1"></div>
+                <div class="page-hero__road-line page-hero__road-line--2"></div>
+                <div class="page-hero__road-line page-hero__road-line--3"></div>
+                <div class="page-hero__road-line page-hero__road-line--4"></div>
+                <div class="page-hero__road-line page-hero__road-line--5"></div>
+            </div>
+        </div>
+
+        <div class="page-hero__container">
+            <span class="page-hero__badge">Ochrona Danych</span>
+            <h1 class="page-hero__title">
+                Polityka <span class="page-hero__title-accent">Prywatności</span>
+            </h1>
+            <p class="page-hero__subtitle">
+                Dowiedz się, jak chronimy Twoje dane osobowe i jakie masz prawa zgodnie z RODO.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- PRIVACY CONTENT -->
+    <section class="privacy-content">
+        <div class="privacy-content__container">
+
+            <!-- Last Update -->
+            <div class="privacy-update">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                Ostatnia aktualizacja: 25 grudnia 2025
+            </div>
+
+            <!-- Table of Contents -->
+            <nav class="privacy-toc">
+                <h2 class="privacy-toc__title">Spis treści</h2>
+                <ol class="privacy-toc__list">
+                    <li>
+                        <a href="#administrator">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Administrator danych
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#zakres">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Zakres zbieranych danych
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cele">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Cele przetwarzania
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#podstawy">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Podstawy prawne
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#odbiorcy">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Odbiorcy danych
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#przechowywanie">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Okres przechowywania
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#prawa">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Twoje prawa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cookies">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                            Pliki cookies i logi
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Section 1: Administrator -->
+            <div id="administrator" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    1. Administrator danych osobowych
+                </h2>
+                <p class="privacy-section__text">
+                    Administratorem Twoich danych osobowych jest:
+                </p>
+                <div class="privacy-info-box">
+                    <p class="privacy-info-box__title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6" />
+                        </svg>
+                        Ośrodek Szkolenia Kierowców "Łuczak"
+                    </p>
+                    <p class="privacy-info-box__text">
+                        <strong>Właściciel:</strong> Wojciech Łuczak<br>
+                        <strong>Adres:</strong> Piła, Wielkopolskie, Polska<br>
+                        <strong>Telefon:</strong> +48 795 499 047<br>
+                        <strong>E-mail:</strong> kontakt@luczakosk.com
+                    </p>
+                </div>
+                <p class="privacy-section__text">
+                    Administrator odpowiada za bezpieczeństwo Twoich danych osobowych i przestrzeganie przepisów
+                    Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO).
+                </p>
+            </div>
+
+            <!-- Section 2: Zakres danych -->
+            <div id="zakres" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                    2. Zakres zbieranych danych
+                </h2>
+                <p class="privacy-section__text">
+                    W ramach prowadzonej działalności zbieramy następujące kategorie danych osobowych:
+                </p>
+
+                <h3
+                    style="font-size: var(--font-size-base); font-weight: 700; color: var(--color-gray-800); margin: var(--spacing-4) 0 var(--spacing-2);">
+                    Dane podawane dobrowolnie:
+                </h3>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Imię i nazwisko
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Adres e-mail
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Numer telefonu
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Numer PESEL (wymagany do realizacji kursu)
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Numer PKK (Profil Kandydata na Kierowcę)
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Treść wiadomości przesłanych przez formularz kontaktowy
+                    </li>
+                </ul>
+
+                <h3
+                    style="font-size: var(--font-size-base); font-weight: 700; color: var(--color-gray-800); margin: var(--spacing-4) 0 var(--spacing-2);">
+                    Dane zbierane automatycznie:
+                </h3>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Adres IP (przechowywany przez 30 dni)
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Informacje o przeglądarce i systemie operacyjnym
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Data i godzina wizyty na stronie
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Odwiedzone podstrony serwisu
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 3: Cele przetwarzania -->
+            <div id="cele" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                    3. Cele przetwarzania danych
+                </h2>
+                <p class="privacy-section__text">
+                    Twoje dane osobowe przetwarzamy w następujących celach:
+                </p>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Realizacja usług szkoleniowych</strong> - przeprowadzenie kursu prawa jazdy,
+                            wydanie zaświadczeń, zgłoszenie do egzaminu państwowego</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Obsługa zapytań</strong> - odpowiadanie na wiadomości przesłane przez formularz
+                            kontaktowy lub e-mail</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Wykonanie umowy</strong> - przetwarzanie danych niezbędnych do zawarcia i
+                            wykonania umowy o szkolenie</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Obowiązki prawne</strong> - prowadzenie dokumentacji szkoleniowej wymaganej
+                            przepisami prawa</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Bezpieczeństwo serwisu</strong> - analiza logów serwera w celu zapewnienia
+                            bezpieczeństwa i wykrywania nadużyć</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Statystyki</strong> - anonimowa analiza ruchu na stronie w celu jej
+                            ulepszania</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 4: Podstawy prawne -->
+            <div id="podstawy" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    4. Podstawy prawne przetwarzania (RODO)
+                </h2>
+                <p class="privacy-section__text">
+                    Przetwarzanie Twoich danych osobowych odbywa się na podstawie:
+                </p>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Art. 6 ust. 1 lit. a RODO</strong> - Twoja zgoda (np. na kontakt
+                            marketingowy)</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Art. 6 ust. 1 lit. b RODO</strong> - wykonanie umowy o szkolenie lub podjęcie
+                            działań przed jej zawarciem</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Art. 6 ust. 1 lit. c RODO</strong> - wypełnienie obowiązku prawnego (np.
+                            prowadzenie dokumentacji szkoleniowej)</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Art. 6 ust. 1 lit. f RODO</strong> - prawnie uzasadniony interes administratora
+                            (np. bezpieczeństwo serwisu, dochodzenie roszczeń)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 5: Odbiorcy danych -->
+            <div id="odbiorcy" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    5. Odbiorcy danych
+                </h2>
+                <p class="privacy-section__text">
+                    Twoje dane osobowe mogą być przekazywane następującym kategoriom odbiorców:
+                </p>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Wojewódzkie Ośrodki Ruchu Drogowego (WORD)</strong> - w celu zgłoszenia do
+                            egzaminu państwowego</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Starostwa Powiatowe</strong> - w zakresie wymaganym przepisami o szkoleniu
+                            kierowców</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Dostawca hostingu</strong> - firma obsługująca serwer, na którym działa
+                            strona</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Biuro rachunkowe</strong> - w zakresie niezbędnym do prowadzenia
+                            księgowości</span>
+                    </li>
+                </ul>
+                <div class="privacy-info-box">
+                    <p class="privacy-info-box__title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                        </svg>
+                        Ważna informacja
+                    </p>
+                    <p class="privacy-info-box__text">
+                        Twoje dane nie są przekazywane do państw trzecich (poza Europejski Obszar Gospodarczy) ani
+                        organizacji międzynarodowych. Nie podlegają również zautomatyzowanemu podejmowaniu decyzji, w
+                        tym profilowaniu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 6: Okres przechowywania -->
+            <div id="przechowywanie" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    6. Okres przechowywania danych
+                </h2>
+                <p class="privacy-section__text">
+                    Twoje dane osobowe przechowujemy przez czas niezbędny do realizacji celów, dla których zostały
+                    zebrane:
+                </p>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Dokumentacja szkoleniowa</strong> - 10 lat od zakończenia kursu (zgodnie z
+                            wymogami prawa)</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Dane z formularza kontaktowego</strong> - do czasu zakończenia korespondencji lub
+                            cofnięcia zgody</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Dane księgowe i fakturowe</strong> - 5 lat od końca roku podatkowego</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Logi serwera (adresy IP)</strong> - 30 dni</span>
+                    </li>
+                </ul>
+                <div class="privacy-warning-box">
+                    <p class="privacy-warning-box__title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                            <line x1="12" y1="9" x2="12" y2="13" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                        Przechowywanie adresów IP
+                    </p>
+                    <p class="privacy-warning-box__text">
+                        Adresy IP odwiedzających są przechowywane w logach serwera przez okres 30 dni w celach
+                        bezpieczeństwa i diagnostycznych. Po tym czasie są automatycznie usuwane lub anonimizowane.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 7: Prawa użytkownika -->
+            <div id="prawa" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    7. Twoje prawa (zgodnie z RODO)
+                </h2>
+                <p class="privacy-section__text">
+                    W związku z przetwarzaniem Twoich danych osobowych przysługują Ci następujące prawa:
+                </p>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo dostępu</strong> - możesz uzyskać informację, jakie dane przetwarzamy i w
+                            jakim celu</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo do sprostowania</strong> - możesz żądać poprawienia nieprawidłowych lub
+                            uzupełnienia niekompletnych danych</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo do usunięcia ("bycia zapomnianym")</strong> - możesz żądać usunięcia
+                            danych, gdy nie są już niezbędne</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo do ograniczenia przetwarzania</strong> - możesz żądać ograniczenia
+                            przetwarzania w określonych sytuacjach</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo do przenoszenia danych</strong> - możesz otrzymać dane w formacie
+                            umożliwiającym ich przeniesienie</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo do sprzeciwu</strong> - możesz sprzeciwić się przetwarzaniu opartemu na
+                            prawnie uzasadnionym interesie</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo do cofnięcia zgody</strong> - możesz w każdej chwili cofnąć zgodę na
+                            przetwarzanie (nie wpływa to na legalność wcześniejszego przetwarzania)</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Prawo do skargi</strong> - możesz wnieść skargę do Prezesa Urzędu Ochrony Danych
+                            Osobowych (PUODO)</span>
+                    </li>
+                </ul>
+                <div class="privacy-info-box">
+                    <p class="privacy-info-box__title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        Jak skorzystać ze swoich praw?
+                    </p>
+                    <p class="privacy-info-box__text">
+                        Aby skorzystać z przysługujących Ci praw, wyślij wiadomość e-mail na adres
+                        <strong>kontakt@luczakosk.com</strong> lub skontaktuj się telefonicznie pod numerem
+                        <strong>+48 795 499 047</strong>. Odpowiemy na Twoje żądanie w ciągu 30 dni.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 8: Cookies i logi -->
+            <div id="cookies" class="privacy-section">
+                <h2 class="privacy-section__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <line x1="3" y1="9" x2="21" y2="9" />
+                        <line x1="9" y1="21" x2="9" y2="9" />
+                    </svg>
+                    8. Pliki cookies i logi serwera
+                </h2>
+                <p class="privacy-section__text">
+                    Nasza strona internetowa wykorzystuje pliki cookies (ciasteczka) oraz zbiera logi serwera w celu
+                    zapewnienia prawidłowego działania serwisu i bezpieczeństwa.
+                </p>
+
+                <h3
+                    style="font-size: var(--font-size-base); font-weight: 700; color: var(--color-gray-800); margin: var(--spacing-4) 0 var(--spacing-2);">
+                    Rodzaje wykorzystywanych cookies:
+                </h3>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Cookies niezbędne</strong> - wymagane do prawidłowego funkcjonowania strony (np.
+                            zapamiętanie sesji)</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Cookies funkcjonalne</strong> - zapamiętują preferencje użytkownika (np. wybrane
+                            ustawienia)</span>
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Cookies analityczne</strong> - pomagają zrozumieć, jak użytkownicy korzystają ze
+                            strony (anonimowe statystyki)</span>
+                    </li>
+                </ul>
+
+                <h3
+                    style="font-size: var(--font-size-base); font-weight: 700; color: var(--color-gray-800); margin: var(--spacing-4) 0 var(--spacing-2);">
+                    Logi serwera:
+                </h3>
+                <p class="privacy-section__text">
+                    Serwer automatycznie zapisuje w logach następujące informacje:
+                </p>
+                <ul class="privacy-section__list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Adres IP urządzenia
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Data i czas żądania
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Typ i wersja przeglądarki
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Adres URL żądanej strony
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Strona, z której nastąpiło przekierowanie (referer)
+                    </li>
+                </ul>
+
+                <div class="privacy-warning-box">
+                    <p class="privacy-warning-box__title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        Zarządzanie cookies
+                    </p>
+                    <p class="privacy-warning-box__text">
+                        Możesz w każdej chwili zmienić ustawienia cookies w swojej przeglądarce lub je całkowicie
+                        zablokować. Pamiętaj jednak, że wyłączenie niektórych cookies może wpłynąć na funkcjonalność
+                        strony.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="privacy-contact">
+                <div class="privacy-contact__icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                </div>
+                <h3 class="privacy-contact__title">Masz pytania dotyczące prywatności?</h3>
+                <p class="privacy-contact__text">
+                    Jeśli masz jakiekolwiek pytania dotyczące przetwarzania Twoich danych osobowych lub chcesz
+                    skorzystać ze swoich praw, skontaktuj się z nami.
+                </p>
+                <a href="mailto:kontakt@luczakosk.com" class="privacy-contact__email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    kontakt@luczakosk.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer placeholder - loaded via JS -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="js/components.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+</body>
+
+</html>

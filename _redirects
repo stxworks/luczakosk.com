@@ -1,0 +1,55 @@
+# ================================================================
+# ADMIN SUBDOMAIN (admin.luczakosk.com)
+# ================================================================
+
+# Assets first (must be before catch-all)
+/css/*               /css/:splat         200  Host=admin.luczakosk.com
+/js/*                /js/:splat          200  Host=admin.luczakosk.com
+/assets/*            /assets/:splat      200  Host=admin.luczakosk.com
+
+# Admin panel
+/admin/panel         /admin/panel.html   200  Host=admin.luczakosk.com
+
+# Admin login and everything else
+/*                   /admin/index.html   200  Host=admin.luczakosk.com
+
+# ================================================================
+# MAIN SITE - Admin Clean URLs 
+# ================================================================
+
+/admin/index.html    /admin/             301
+/admin/panel.html    /admin/panel        301
+/admin/panel         /admin/panel.html   200
+/admin/              /admin/index.html   200
+/admin               /admin/             301
+
+# ================================================================
+# MAIN SITE - Clean URLs
+# ================================================================
+
+# Clean URL redirects (301 permanent redirects for SEO)
+/o-szkole.html       /o-szkole          301
+/oferta.html         /oferta            301
+/kategoria-b.html    /kategoria-b       301
+/kategoria-b-e.html  /kategoria-b-e     301
+/zapisy.html         /zapisy            301
+/kontakt.html        /kontakt           301
+/opinie.html         /opinie            301
+/aktualnosci.html    /aktualnosci       301
+/artykul.html        /artykul           301
+/regulamin.html      /regulamin         301
+/polityka-prywatnosci.html  /polityka-prywatnosci  301
+/404.html            /404               301
+
+# Rewrites (serve .html files for clean URLs)
+/o-szkole            /o-szkole.html          200
+/oferta              /oferta.html            200
+/kategoria-b         /kategoria-b.html       200
+/kategoria-b-e       /kategoria-b-e.html     200
+/zapisy              /zapisy.html            200
+/kontakt             /kontakt.html           200
+/opinie              /opinie.html            200
+/aktualnosci         /aktualnosci.html       200
+/artykul             /artykul.html           200
+/regulamin           /regulamin.html         200
+/polityka-prywatnosci /polityka-prywatnosci.html 200

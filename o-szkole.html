@@ -1,0 +1,1443 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Poznaj OSK Łuczak - szkołę jazdy z ponad 15-letnim doświadczeniem. Indywidualne podejście, profesjonalne szkolenie i wysoka zdawalność. Piła, Poznań.">
+    <meta name="keywords"
+        content="o nas, szkoła jazdy, OSK Łuczak, instruktor nauki jazdy, doświadczenie, historia, Piła, Poznań">
+    <meta name="author" content="OSK Łuczak">
+    <meta name="robots" content="index, follow">
+    <title>O Szkole | OSK Łuczak - Szkoła Jazdy</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oskluczak.pl/o-szkole.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/o-szkole.html">
+    <meta property="og:title" content="O Szkole | OSK Łuczak">
+    <meta property="og:description"
+        content="Poznaj OSK Łuczak - szkołę jazdy z ponad 15-letnim doświadczeniem. Indywidualne podejście i profesjonalne szkolenie.">
+    <meta property="og:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oskluczak.pl/o-szkole.html">
+    <meta name="twitter:title" content="O Szkole | OSK Łuczak">
+    <meta name="twitter:description"
+        content="Poznaj OSK Łuczak - szkołę jazdy z ponad 15-letnim doświadczeniem. Indywidualne podejście i profesjonalne szkolenie.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a56db">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <style>
+        /* ===================================
+           ABOUT PAGE - PAGE HERO
+        =================================== */
+        .page-hero {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, var(--osk-blue) 50%, #1e40af 100%);
+            padding-top: 120px;
+            padding-bottom: var(--spacing-16);
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(249, 204, 24, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Background Elements */
+        .page-hero__bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .page-hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatCircle 20s ease-in-out infinite;
+        }
+
+        .page-hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--osk-yellow), transparent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .page-hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .page-hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 40%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 10px) scale(1.02);
+            }
+        }
+
+        /* Steering Wheel Decoration */
+        .page-hero__steering {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            height: 350px;
+            opacity: 0.06;
+            animation: rotateWheel 60s linear infinite;
+        }
+
+        .page-hero__steering svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Icons */
+        .page-hero__float-icon {
+            position: absolute;
+            opacity: 0.12;
+            animation: floatIcon 15s ease-in-out infinite;
+        }
+
+        .page-hero__float-icon--1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__float-icon--2 {
+            bottom: 25%;
+            right: 25%;
+            animation-delay: -5s;
+        }
+
+        .page-hero__float-icon--3 {
+            top: 15%;
+            right: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.12;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.18;
+            }
+        }
+
+        /* Road Lines Decoration */
+        .page-hero__road-lines {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            opacity: 0.1;
+        }
+
+        .page-hero__road-line {
+            position: absolute;
+            bottom: 20px;
+            height: 4px;
+            background: var(--osk-yellow);
+            border-radius: 2px;
+            animation: roadLine 3s linear infinite;
+        }
+
+        .page-hero__road-line--1 {
+            width: 60px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__road-line--2 {
+            width: 80px;
+            left: 30%;
+            animation-delay: -1s;
+        }
+
+        .page-hero__road-line--3 {
+            width: 50px;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .page-hero__road-line--4 {
+            width: 70px;
+            left: 70%;
+            animation-delay: -0.5s;
+        }
+
+        .page-hero__road-line--5 {
+            width: 55px;
+            left: 90%;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes roadLine {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+        }
+
+        .page-hero__container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--spacing-12) var(--container-padding);
+            text-align: center;
+        }
+
+        .page-hero__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-6);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-hero__title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-6);
+            line-height: 1.1;
+        }
+
+        .page-hero__title-accent {
+            color: var(--osk-yellow);
+        }
+
+        .page-hero__subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Hero Stats */
+        .page-hero__stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-12);
+            flex-wrap: wrap;
+        }
+
+        .page-hero__stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: var(--spacing-5);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(10px);
+            min-width: 130px;
+            transition: all 0.3s ease;
+        }
+
+        .page-hero__stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .page-hero__stat-number {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--osk-yellow);
+        }
+
+        .page-hero__stat-label {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        /* ===================================
+           ABOUT SECTION - STORY
+        =================================== */
+        .about-story {
+            padding: var(--spacing-24) 0;
+            background: var(--color-white);
+        }
+
+        .about-story__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .about-story__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-16);
+            align-items: center;
+        }
+
+        .about-story__content {
+            padding-right: var(--spacing-8);
+        }
+
+        .about-story__lead {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            margin-bottom: var(--spacing-6);
+            line-height: 1.8;
+        }
+
+        .about-story__text {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-5);
+        }
+
+        .about-story__image {
+            position: relative;
+        }
+
+        .about-story__image-wrapper {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-story__image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(135deg, var(--osk-blue), var(--osk-yellow));
+            border-radius: var(--radius-2xl);
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .about-story__img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-2xl);
+        }
+
+        .about-story__image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-gray-100), var(--color-gray-200));
+            border-radius: var(--radius-2xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: var(--spacing-4);
+        }
+
+        .about-story__image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            color: var(--color-gray-400);
+        }
+
+        .about-story__image-placeholder span {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+            font-weight: 600;
+        }
+
+        /* ===================================
+           VALUES SECTION - reusing why-us styles
+        =================================== */
+
+        /* ===================================
+           INSTRUCTOR SECTION
+        =================================== */
+        .instructor {
+            padding: var(--spacing-24) 0;
+            background: var(--color-white);
+        }
+
+        .instructor__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .instructor__grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: var(--spacing-12);
+            align-items: center;
+        }
+
+        .instructor__image {
+            position: relative;
+        }
+
+        .instructor__image-wrapper {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.2);
+        }
+
+        .instructor__image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 50%);
+        }
+
+        .instructor__img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .instructor__image-placeholder {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--osk-blue), #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: var(--spacing-4);
+        }
+
+        .instructor__image-placeholder svg {
+            width: 100px;
+            height: 100px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .instructor__badge-floating {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-4);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            z-index: 1;
+        }
+
+        .instructor__badge-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--osk-yellow);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .instructor__badge-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-gray-900);
+        }
+
+        .instructor__badge-text {
+            flex: 1;
+        }
+
+        .instructor__badge-title {
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--color-gray-900);
+        }
+
+        .instructor__badge-subtitle {
+            font-size: var(--font-size-xs);
+            color: var(--color-gray-500);
+        }
+
+        .instructor__content {
+            padding-left: var(--spacing-8);
+        }
+
+        .instructor__name {
+            font-size: var(--font-size-xl);
+            color: var(--osk-blue);
+            font-weight: 700;
+            margin-bottom: var(--spacing-6);
+        }
+
+        .instructor__bio {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-6);
+        }
+
+        .instructor__qualifications {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-3);
+            margin-bottom: var(--spacing-8);
+        }
+
+        .instructor__qual-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            font-size: var(--font-size-base);
+            color: var(--color-gray-700);
+        }
+
+        .instructor__qual-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--osk-blue);
+            flex-shrink: 0;
+        }
+
+        .instructor__cta {
+            display: flex;
+            gap: var(--spacing-4);
+            flex-wrap: wrap;
+        }
+
+        /* ===================================
+           TIMELINE SECTION
+        =================================== */
+        .timeline {
+            padding: var(--spacing-24) 0;
+            background: linear-gradient(135deg, var(--color-gray-900) 0%, #1e293b 100%);
+            color: white;
+        }
+
+        .timeline__container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .timeline__header {
+            text-align: center;
+            margin-bottom: var(--spacing-16);
+        }
+
+        .timeline__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-4);
+            background: rgba(249, 204, 24, 0.2);
+            color: var(--osk-yellow);
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-full);
+            margin-bottom: var(--spacing-4);
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        .timeline__badge:hover {
+            background: rgba(39, 100, 234, 0.3);
+            color: #93c5fd;
+        }
+
+        .timeline__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-4);
+        }
+
+        .timeline__subtitle {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .timeline__items {
+            position: relative;
+        }
+
+        .timeline__items::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--osk-yellow), var(--osk-blue));
+        }
+
+        .timeline__item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-10);
+        }
+
+        .timeline__item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline__item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline__item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline__item:nth-child(odd) .timeline__content {
+            text-align: right;
+            padding-right: var(--spacing-10);
+        }
+
+        .timeline__item:nth-child(even) .timeline__content {
+            text-align: left;
+            padding-left: var(--spacing-10);
+        }
+
+        .timeline__content {
+            flex: 1;
+        }
+
+        .timeline__dot {
+            width: 20px;
+            height: 20px;
+            background: var(--osk-yellow);
+            border-radius: 50%;
+            border: 4px solid var(--color-gray-900);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(249, 204, 24, 0.5);
+        }
+
+        .timeline__year {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--osk-yellow);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .timeline__desc {
+            font-size: var(--font-size-base);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* ===================================
+           RESPONSIVE - About Page
+        =================================== */
+        @media (max-width: 1024px) {
+            .about-story__grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-12);
+            }
+
+            .about-story__content {
+                padding-right: 0;
+            }
+
+            .instructor__grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-8);
+            }
+
+            .instructor__image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .instructor__content {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .instructor__qualifications {
+                align-items: center;
+            }
+
+            .instructor__cta {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: auto;
+                padding-top: 100px;
+            }
+
+            .page-hero__stats {
+                gap: var(--spacing-4);
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .page-hero__stat {
+                min-width: unset;
+                padding: var(--spacing-4);
+            }
+
+            .timeline__items::before {
+                left: 20px;
+            }
+
+            .timeline__item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+
+            .timeline__content {
+                text-align: left !important;
+                padding: 0 !important;
+            }
+
+            .timeline__dot {
+                left: 20px;
+            }
+
+            /* Values section - stack on mobile */
+            .why-us__grid {
+                grid-template-columns: 1fr !important;
+                gap: var(--spacing-4);
+            }
+
+            /* Process steps - stack on mobile */
+            .process [style*="grid-template-columns: repeat(3"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header placeholder - loaded via JS -->
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <!-- Animated Background Elements -->
+        <div class="page-hero__bg-elements">
+            <!-- Floating circles -->
+            <div class="page-hero__bg-circle page-hero__bg-circle--1"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--2"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--3"></div>
+
+            <!-- Rotating steering wheel -->
+            <div class="page-hero__steering">
+                <svg viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+                    <circle cx="50" cy="50" r="45" />
+                    <circle cx="50" cy="50" r="15" />
+                    <line x1="50" y1="5" x2="50" y2="35" />
+                    <line x1="10.7" y1="72.5" x2="37.5" y2="57.5" />
+                    <line x1="89.3" y1="72.5" x2="62.5" y2="57.5" />
+                </svg>
+            </div>
+
+            <!-- Floating car icons -->
+            <div class="page-hero__float-icon page-hero__float-icon--1">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+            </div>
+
+            <!-- Animated road lines -->
+            <div class="page-hero__road-lines">
+                <div class="page-hero__road-line page-hero__road-line--1"></div>
+                <div class="page-hero__road-line page-hero__road-line--2"></div>
+                <div class="page-hero__road-line page-hero__road-line--3"></div>
+                <div class="page-hero__road-line page-hero__road-line--4"></div>
+                <div class="page-hero__road-line page-hero__road-line--5"></div>
+            </div>
+        </div>
+        <div class="page-hero__container">
+            <span class="page-hero__badge">O Szkole Jazdy</span>
+            <h1 class="page-hero__title">
+                Poznaj <span class="page-hero__title-accent">OSK Łuczak</span>
+            </h1>
+            <p class="page-hero__subtitle">
+                To jednoosobowa szkoła jazdy, która stawia na jakość, indywidualne podejście i pełne
+                zaangażowanie w sukces każdego kursanta.
+            </p>
+
+            <div class="page-hero__stats">
+                <div class="page-hero__stat">
+                    <span class="page-hero__stat-number" data-count="15">15+</span>
+                    <span class="page-hero__stat-label">lat doświadczenia</span>
+                </div>
+                <div class="page-hero__stat">
+                    <span class="page-hero__stat-number" data-count="500">500+</span>
+                    <span class="page-hero__stat-label">zadowolonych kursantów</span>
+                </div>
+                <div class="page-hero__stat">
+                    <span class="page-hero__stat-number">Wysoka</span>
+                    <span class="page-hero__stat-label">zdawalność</span>
+                </div>
+                <div class="page-hero__stat">
+                    <span class="page-hero__stat-number" data-count="2">2</span>
+                    <span class="page-hero__stat-label">miasta</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- ABOUT STORY SECTION -->
+    <section class="about-story">
+        <div class="about-story__container">
+            <div class="about-story__grid">
+                <div class="about-story__content">
+                    <span class="why-us__badge">Nasza historia</span>
+                    <h2 class="why-us__title">Szkoła jazdy z <span class="text-yellow">pasją</span></h2>
+                    <p class="about-story__lead">
+                        OSK Łuczak to nie jest kolejna anonimowa szkoła jazdy. To miejsce, gdzie każdy kursant jest
+                        traktowany indywidualnie, a nauka odbywa się w spokojnej, przyjaznej atmosferze.
+                    </p>
+                    <p class="about-story__text">
+                        Od ponad 15 lat szkolę przyszłych kierowców w Wielkopolsce. Zaczęło się od jednego samochodu
+                        i pasji do motoryzacji. Dzisiaj działam w dwóch miastach: Pile i Poznaniu,
+                        zachowując to, co najważniejsze: osobiste podejście do każdego kursanta.
+                    </p>
+                    <p class="about-story__text">
+                        Wierzę, że nauka jazdy to nie tylko opanowanie manewrów i zasad ruchu drogowego.
+                        To przede wszystkim budowanie pewności siebie za kierownicą i przygotowanie do bezpiecznego
+                        poruszania się po drogach przez całe życie.
+                    </p>
+                </div>
+                <div class="about-story__image">
+                    <div class="about-story__image-wrapper">
+                        <img src="assets/images/samochod.jpg" alt="Samochód szkoleniowy OSK Łuczak"
+                            class="about-story__img" loading="lazy" width="4096" height="2304">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- VALUES SECTION - using why-us styles from index -->
+    <section class="why-us">
+        <div class="why-us__container">
+            <div class="why-us__header reveal">
+                <span class="courses__badge">Moje wartości</span>
+                <h2 class="why-us__title">Co mnie <span class="text-accent">wyróżnia</span></h2>
+                <p class="why-us__subtitle">
+                    Trzy filary, na których buduję każdy kurs i każdą relację z kursantem.
+                </p>
+            </div>
+
+            <div class="why-us__grid" style="grid-template-columns: repeat(3, 1fr);">
+                <!-- Value 1: Individual approach -->
+                <div class="why-us__card reveal reveal--delay-1">
+                    <div class="why-us__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </div>
+                    <h3 class="why-us__card-title">Indywidualne podejście</h3>
+                    <p class="why-us__card-text">
+                        Jeden instruktor = pełna uwaga. Nie jesteś numerem w kolejce. Dopasowuję tempo nauki do
+                        Twoich potrzeb i możliwości.
+                    </p>
+                </div>
+
+                <!-- Value 2: Calm atmosphere -->
+                <div class="why-us__card reveal reveal--delay-2">
+                    <div class="why-us__icon why-us__icon--accent">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <polyline points="9 12 11 14 15 10" />
+                        </svg>
+                    </div>
+                    <h3 class="why-us__card-title">Spokój i cierpliwość</h3>
+                    <p class="why-us__card-text">
+                        Żadnego stresu i pośpiechu. Uczysz się w swoim tempie, bez presji i nerwowej atmosfery.
+                        Błędy to normalna część nauki.
+                    </p>
+                </div>
+
+                <!-- Value 3: Professionalism -->
+                <div class="why-us__card reveal reveal--delay-3">
+                    <div class="why-us__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="why-us__card-title">Profesjonalizm</h3>
+                    <p class="why-us__card-text">
+                        Ponad 15 lat doświadczenia. Setki przeszkolonych kursantów. Wiem, czego wymaga egzaminator
+                        i jak Cię do tego przygotować.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- PROCESS SECTION - Jak wygląda nauka? -->
+    <section class="process"
+        style="padding: var(--spacing-24) 0; background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);">
+        <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding);">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-16);">
+                <span class="why-us__badge">Etapy kursu</span>
+                <h2 class="why-us__title">Jak wygląda <span class="text-yellow">nauka jazdy</span>?</h2>
+                <p class="why-us__subtitle">Od zapisu do prawa jazdy, krok po kroku</p>
+            </div>
+
+            <!-- Process Steps -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-6);">
+                <!-- Step 1 -->
+                <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-gray-100); text-align: center; transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+                    <div
+                        style="width: 50px; height: 50px; background: var(--osk-yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-4); font-size: var(--font-size-xl); font-weight: 800; color: var(--color-gray-900);">
+                        1</div>
+                    <h3
+                        style="font-size: var(--font-size-lg); font-weight: 700; color: var(--color-gray-900); margin-bottom: var(--spacing-2);">
+                        Zapisy</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); line-height: 1.6;">
+                        Kontaktujesz się ze mną, omawiamy szczegóły i ustalamy termin rozpoczęcia kursu.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-gray-100); text-align: center; transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+                    <div
+                        style="width: 50px; height: 50px; background: var(--osk-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-4); font-size: var(--font-size-xl); font-weight: 800; color: white;">
+                        2</div>
+                    <h3
+                        style="font-size: var(--font-size-lg); font-weight: 700; color: var(--color-gray-900); margin-bottom: var(--spacing-2);">
+                        Teoria</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); line-height: 1.6;">30 godzin
+                        zajęć teoretycznych online (e-learning) lub w sali wykładowej.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-gray-100); text-align: center; transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+                    <div
+                        style="width: 50px; height: 50px; background: var(--osk-yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-4); font-size: var(--font-size-xl); font-weight: 800; color: var(--color-gray-900);">
+                        3</div>
+                    <h3
+                        style="font-size: var(--font-size-lg); font-weight: 700; color: var(--color-gray-900); margin-bottom: var(--spacing-2);">
+                        Praktyka</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); line-height: 1.6;">30 godzin
+                        jazd praktycznych, od podstaw na placu manewrowym po jazdę w ruchu miejskim.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-gray-100); text-align: center; transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+                    <div
+                        style="width: 50px; height: 50px; background: var(--osk-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-4); font-size: var(--font-size-xl); font-weight: 800; color: white;">
+                        4</div>
+                    <h3
+                        style="font-size: var(--font-size-lg); font-weight: 700; color: var(--color-gray-900); margin-bottom: var(--spacing-2);">
+                        Egzamin wewnętrzny</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); line-height: 1.6;">Sprawdzam
+                        Twoje umiejętności i potwierdzam gotowość do egzaminu państwowego.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div style="background: white; padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-gray-100); text-align: center; transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+                    <div
+                        style="width: 50px; height: 50px; background: var(--osk-yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-4); font-size: var(--font-size-xl); font-weight: 800; color: var(--color-gray-900);">
+                        5</div>
+                    <h3
+                        style="font-size: var(--font-size-lg); font-weight: 700; color: var(--color-gray-900); margin-bottom: var(--spacing-2);">
+                        Egzamin WORD</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); line-height: 1.6;">Egzamin
+                        państwowy w Wojewódzkim Ośrodku Ruchu Drogowego (teoria + praktyka).</p>
+                </div>
+
+                <!-- Step 6 -->
+                <div style="background: linear-gradient(135deg, var(--osk-yellow) 0%, #f59e0b 100%); padding: var(--spacing-6); border-radius: var(--radius-xl); box-shadow: 0 10px 30px rgba(249, 204, 24, 0.3); text-align: center; transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px) scale(1.02)'; this.style.boxShadow='0 20px 50px rgba(249, 204, 24, 0.4)';"
+                    onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 30px rgba(249, 204, 24, 0.3)';">
+                    <div
+                        style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-4);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--osk-blue)"
+                            stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <h3
+                        style="font-size: var(--font-size-lg); font-weight: 700; color: var(--color-gray-900); margin-bottom: var(--spacing-2);">
+                        Prawo jazdy!</h3>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-800); line-height: 1.6;">
+                        Gratulacje! Odbierasz prawo jazdy i ruszasz w świat jako pewny kierowca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" style="padding: var(--spacing-24) 0; background: var(--color-white);">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 var(--container-padding);">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto var(--spacing-12);">
+                <span class="courses__badge">FAQ</span>
+                <h2 class="why-us__title">Często zadawane <span class="text-accent">pytania</span></h2>
+                <p class="why-us__subtitle">Odpowiedzi na najczęstsze pytania kursantów</p>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <details class="faq-item">
+                    <summary>
+                        <span>Ile trwa kurs na prawo jazdy kategorii B?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Standardowy kurs trwa około 2-3 miesięcy, w zależności od dostępności terminów. Oferuję
+                            również <strong>kursy ekspresowe (16 dni)</strong> dla osób, które chcą szybciej zdobyć
+                            prawo jazdy. Tempo nauki zawsze dostosowuję do indywidualnych potrzeb kursanta.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="faq-item">
+                    <summary>
+                        <span>Jakie dokumenty są potrzebne do zapisania się na kurs?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Do zapisu potrzebujesz: <strong>dowód osobisty</strong>, <strong>zdjęcie do prawa
+                                jazdy</strong>, <strong>zaświadczenie lekarskie</strong> o braku przeciwwskazań do
+                            kierowania pojazdami (otrzymasz je u lekarza medycyny pracy) oraz <strong>numer PKK</strong>
+                            (Profil Kandydata na Kierowcę), wyrabiany w Starostwie Powiatowym.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="faq-item">
+                    <summary>
+                        <span>Czy mogę płacić za kurs w ratach?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Tak! Oferuję możliwość <strong>płatności ratalnej</strong>. Szczegóły ustalamy indywidualnie
+                            podczas zapisu. Staram się wychodzić naprzeciw potrzebom kursantów w kwestii rozłożenia
+                            kosztów.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="faq-item">
+                    <summary>
+                        <span>Czy mogę jeździć w weekendy lub wieczorami?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Oczywiście! Jako jednoosobowa szkoła jazdy jestem bardzo <strong>elastyczny z
+                                terminami</strong>. Dopasowuję grafik jazd do Twoich możliwości: rano, popołudniu,
+                            wieczorem, a także w weekendy.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details class="faq-item">
+                    <summary>
+                        <span>Co jeśli nie zdam egzaminu za pierwszym razem?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Nie każdemu udaje się za pierwszym razem, to normalne. Oferuję możliwość dokupienia
+                            <strong>dodatkowych jazd doszkalających kategorii B</strong> po preferencyjnej cenie dla
+                            moich kursantów
+                            (110 zł/h zamiast 120 zł/h). Przeanalizujemy błędy i przygotujemy Cię do kolejnego
+                            podejścia.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 6 -->
+                <details class="faq-item">
+                    <summary>
+                        <span>W których miastach prowadzisz szkolenia?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Prowadzę szkolenia w dwóch miastach: <strong>Piła</strong> i <strong>Poznań</strong>. W
+                            każdym z tych miejsc znam trasy egzaminacyjne i mogę Cię do nich
+                            profesjonalnie przygotować.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- FAQ CTA -->
+            <div style="text-align: center; margin-top: var(--spacing-10);">
+                <p style="color: var(--color-gray-600); margin-bottom: var(--spacing-4);">Nie znalazłeś odpowiedzi na
+                    swoje pytanie? Napisz do mnie!</p>
+                <a href="/kontakt" class="btn btn--accent"
+                    style="font-size: var(--font-size-lg); padding: var(--spacing-4) var(--spacing-8); gap: var(--spacing-3);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Chętnie odpowiem!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- INSTRUCTOR SECTION -->
+    <section class="instructor" style="
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    ">
+        <!-- Subtle pattern background -->
+        <div
+            style="position: absolute; inset: 0; pointer-events: none; background: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.03&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+        <div class="instructor__container">
+            <div class="instructor__grid" style="grid-template-columns: 1fr; text-align: center;">
+
+                <div class="instructor__content">
+                    <!-- Stylized 3D L Plate Decoration -->
+                    <div style="display: flex; justify-content: center; margin-bottom: var(--spacing-10);">
+                        <svg width="180" height="200" viewBox="0 0 180 200"
+                            style="filter: drop-shadow(0 15px 30px rgba(0,0,0,0.25));">
+                            <!-- Mount/Base -->
+                            <path d="M40 180 L60 155 L120 155 L140 180 Z" fill="#2d3748" />
+                            <ellipse cx="90" cy="185" rx="55" ry="12" fill="#1a202c" />
+
+                            <!-- Plate shadow -->
+                            <rect x="35" y="30" width="115" height="115" rx="8" fill="rgba(0,0,0,0.2)"
+                                transform="translate(5, 5)" />
+
+                            <!-- Main plate (white frame) -->
+                            <rect x="30" y="25" width="120" height="120" rx="10" fill="white" stroke="#e2e8f0"
+                                stroke-width="2" />
+
+                            <!-- Blue inner area -->
+                            <rect x="40" y="35" width="100" height="100" rx="6" fill="#1a56db" />
+
+                            <!-- Corner screws -->
+                            <circle cx="45" cy="40" r="3" fill="#94a3b8" />
+                            <circle cx="135" cy="40" r="3" fill="#94a3b8" />
+                            <circle cx="45" cy="130" r="3" fill="#94a3b8" />
+                            <circle cx="135" cy="130" r="3" fill="#94a3b8" />
+
+                            <!-- L Letter -->
+                            <text x="90" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="70"
+                                font-weight="700" fill="white">L</text>
+                        </svg>
+                    </div>
+                    <span class="why-us__badge">Twój instruktor</span>
+                    <h2 class="why-us__title" style="color: white;">Poznaj osobę, która Cię przeszkoli</h2>
+                    <p class="instructor__name" style="color: var(--osk-yellow);">Wojciech Łuczak</p>
+                    <p class="instructor__bio" style="color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-4);">
+                        Jestem instruktorem nauki jazdy z wieloletnim doświadczeniem. Przez lata przeszkoliłem setki
+                        osób, od zupełnych początkujących po osoby potrzebujące tylko odświeżenia umiejętności.
+                        Moje podejście opiera się na spokoju, cierpliwości i indywidualnym traktowaniu każdego
+                        kursanta.
+                    </p>
+                    <p class="instructor__bio" style="color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-6);">
+                        Wierzę, że każdy może nauczyć się dobrze jeździć. Kluczem jest odpowiednie tempo,
+                        zrozumienie i konstruktywna informacja zwrotna. Moim celem jest nie tylko przygotowanie
+                        Cię do egzaminu, ale przede wszystkim wykształcenie pewnego i bezpiecznego kierowcy.
+                    </p>
+
+                    <div class="instructor__qualifications"
+                        style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-4); margin-bottom: var(--spacing-8);">
+                        <div class="instructor__qual-item" style="color: rgba(255,255,255,0.9);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--osk-yellow)" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Uprawnienia do szkolenia kategorii B i B+E</span>
+                        </div>
+                        <div class="instructor__qual-item" style="color: rgba(255,255,255,0.9);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--osk-yellow)" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Regularne szkolenia i aktualizacje przepisów</span>
+                        </div>
+                        <div class="instructor__qual-item" style="color: rgba(255,255,255,0.9);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--osk-yellow)" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Ponad 500 przeszkolonych kursantów</span>
+                        </div>
+                        <div class="instructor__qual-item" style="color: rgba(255,255,255,0.9);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--osk-yellow)" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Wysoka zdawalność za pierwszym podejściem</span>
+                        </div>
+                    </div>
+
+                    <div class="instructor__cta"
+                        style="display: flex; justify-content: center; gap: var(--spacing-4); flex-wrap: wrap;">
+                        <a href="/kontakt" class="btn btn--primary">
+                            Napisz do mnie
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="tel:+48795499047" class="btn btn--secondary"
+                            style="background: white; color: var(--color-gray-900); border-color: white;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            Zadzwoń
+                        </a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer placeholder - loaded via JS -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="js/components.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,966 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31L58VR31F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-31L58VR31F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Regulamin świadczenia usług szkoleniowych OSK Łuczak. Warunki współpracy, prawa i obowiązki kursantów.">
+    <meta name="keywords" content="regulamin, warunki, szkoła jazdy, OSK Łuczak, kurs prawa jazdy, umowa szkoleniowa">
+    <meta name="author" content="OSK Łuczak">
+    <meta name="robots" content="index, follow">
+    <title>Regulamin | OSK Łuczak - Szkoła Jazdy</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oskluczak.pl/regulamin.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oskluczak.pl/regulamin.html">
+    <meta property="og:title" content="Regulamin | OSK Łuczak">
+    <meta property="og:description"
+        content="Regulamin świadczenia usług szkoleniowych OSK Łuczak. Warunki współpracy, prawa i obowiązki kursantów.">
+    <meta property="og:image" content="https://oskluczak.pl/assets/images/og-image.svg">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oskluczak.pl/regulamin.html">
+    <meta name="twitter:title" content="Regulamin | OSK Łuczak">
+    <meta name="twitter:description"
+        content="Regulamin świadczenia usług szkoleniowych OSK Łuczak. Warunki współpracy, prawa i obowiązki.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a56db">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical Styles (blocking) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Non-critical Styles (async loading) -->
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/cookies.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/cookies.css">
+    </noscript>
+
+    <style>
+        /* ===================================
+           LEGAL PAGE - PAGE HERO
+        =================================== */
+        .page-hero {
+            position: relative;
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, var(--osk-blue) 50%, #1e40af 100%);
+            padding-top: 120px;
+            padding-bottom: var(--spacing-16);
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(249, 204, 24, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        @keyframes heroGlow {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Background Elements */
+        .page-hero__bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .page-hero__bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: floatCircle 20s ease-in-out infinite;
+        }
+
+        .page-hero__bg-circle--1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--osk-yellow), transparent);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .page-hero__bg-circle--2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, transparent);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .page-hero__bg-circle--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 40%;
+            right: 15%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatCircle {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 10px) scale(1.02);
+            }
+        }
+
+        /* Steering Wheel Decoration */
+        .page-hero__steering {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            opacity: 0.06;
+            animation: rotateWheel 60s linear infinite;
+        }
+
+        .page-hero__steering svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Icons */
+        .page-hero__float-icon {
+            position: absolute;
+            opacity: 0.12;
+            animation: floatIcon 15s ease-in-out infinite;
+        }
+
+        .page-hero__float-icon--1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__float-icon--2 {
+            bottom: 25%;
+            right: 25%;
+            animation-delay: -5s;
+        }
+
+        .page-hero__float-icon--3 {
+            top: 15%;
+            right: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.12;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 0.18;
+            }
+        }
+
+        /* Road Lines Decoration */
+        .page-hero__road-lines {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            overflow: hidden;
+            opacity: 0.1;
+        }
+
+        .page-hero__road-line {
+            position: absolute;
+            bottom: 20px;
+            height: 4px;
+            background: var(--osk-yellow);
+            border-radius: 2px;
+            animation: roadLine 3s linear infinite;
+        }
+
+        .page-hero__road-line--1 {
+            width: 60px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .page-hero__road-line--2 {
+            width: 80px;
+            left: 30%;
+            animation-delay: -1s;
+        }
+
+        .page-hero__road-line--3 {
+            width: 50px;
+            left: 50%;
+            animation-delay: -2s;
+        }
+
+        .page-hero__road-line--4 {
+            width: 70px;
+            left: 70%;
+            animation-delay: -0.5s;
+        }
+
+        .page-hero__road-line--5 {
+            width: 55px;
+            left: 90%;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes roadLine {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+        }
+
+        .page-hero__container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--spacing-12) var(--container-padding);
+            text-align: center;
+        }
+
+        .page-hero__badge {
+            display: inline-block;
+            padding: var(--spacing-2) var(--spacing-5);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-6);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-hero__title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-6);
+            line-height: 1.1;
+        }
+
+        .page-hero__title-accent {
+            color: var(--osk-yellow);
+        }
+
+        .page-hero__subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===================================
+           LEGAL CONTENT SECTION
+        =================================== */
+        .legal-content {
+            padding: var(--spacing-24) 0;
+            background: var(--color-white);
+        }
+
+        .legal-content__container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .legal-content__meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-10);
+            padding: var(--spacing-4) var(--spacing-6);
+            background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--osk-blue);
+        }
+
+        .legal-content__meta-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--osk-blue);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .legal-content__meta-icon svg {
+            color: white;
+        }
+
+        .legal-content__meta-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .legal-content__meta-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+
+        .legal-content__meta-value {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--color-gray-900);
+        }
+
+        .legal-section {
+            margin-bottom: var(--spacing-10);
+        }
+
+        .legal-section__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+
+        .legal-section__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--osk-blue), #3b82f6);
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            flex-shrink: 0;
+        }
+
+        .legal-section__content {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            line-height: 1.8;
+        }
+
+        .legal-section__content p {
+            margin-bottom: var(--spacing-4);
+        }
+
+        .legal-section__content ul,
+        .legal-section__content ol {
+            margin-bottom: var(--spacing-4);
+            padding-left: var(--spacing-6);
+        }
+
+        .legal-section__content li {
+            margin-bottom: var(--spacing-2);
+            position: relative;
+        }
+
+        .legal-section__content ul li::before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background: var(--osk-blue);
+            border-radius: 50%;
+        }
+
+        .legal-section__content strong {
+            color: var(--color-gray-900);
+        }
+
+        /* Business Data Box */
+        .business-data {
+            background: var(--color-gray-50);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-6);
+            margin-bottom: var(--spacing-6);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .business-data__title {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+
+        .business-data__title svg {
+            color: var(--osk-blue);
+        }
+
+        .business-data__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-4);
+        }
+
+        .business-data__item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .business-data__label {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+
+        .business-data__value {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--color-gray-900);
+        }
+
+        /* CTA Section */
+        .legal-cta {
+            margin-top: var(--spacing-12);
+            padding: var(--spacing-8);
+            background: linear-gradient(135deg, var(--color-gray-900) 0%, #1e293b 100%);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+        }
+
+        .legal-cta__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--spacing-3);
+        }
+
+        .legal-cta__text {
+            font-size: var(--font-size-base);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .legal-cta__buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-4);
+            flex-wrap: wrap;
+        }
+
+        /* ===================================
+           RESPONSIVE
+        =================================== */
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: auto;
+                padding-top: 100px;
+            }
+
+            .business-data__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-content__meta {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header placeholder - loaded via JS -->
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <!-- Animated Background Elements -->
+        <div class="page-hero__bg-elements">
+            <!-- Floating circles -->
+            <div class="page-hero__bg-circle page-hero__bg-circle--1"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--2"></div>
+            <div class="page-hero__bg-circle page-hero__bg-circle--3"></div>
+
+            <!-- Rotating steering wheel -->
+            <div class="page-hero__steering">
+                <svg viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+                    <circle cx="50" cy="50" r="45" />
+                    <circle cx="50" cy="50" r="15" />
+                    <line x1="50" y1="5" x2="50" y2="35" />
+                    <line x1="10.7" y1="72.5" x2="37.5" y2="57.5" />
+                    <line x1="89.3" y1="72.5" x2="62.5" y2="57.5" />
+                </svg>
+            </div>
+
+            <!-- Floating icons -->
+            <div class="page-hero__float-icon page-hero__float-icon--1">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </div>
+            <div class="page-hero__float-icon page-hero__float-icon--3">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+            </div>
+
+            <!-- Animated road lines -->
+            <div class="page-hero__road-lines">
+                <div class="page-hero__road-line page-hero__road-line--1"></div>
+                <div class="page-hero__road-line page-hero__road-line--2"></div>
+                <div class="page-hero__road-line page-hero__road-line--3"></div>
+                <div class="page-hero__road-line page-hero__road-line--4"></div>
+                <div class="page-hero__road-line page-hero__road-line--5"></div>
+            </div>
+        </div>
+
+        <div class="page-hero__container">
+            <span class="page-hero__badge">Dokumenty prawne</span>
+            <h1 class="page-hero__title">
+                Regulamin <span class="page-hero__title-accent">serwisu</span>
+            </h1>
+            <p class="page-hero__subtitle">
+                Zasady korzystania z usług szkoleniowych OSK Łuczak. Prosimy o zapoznanie się z poniższymi warunkami.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider" aria-hidden="true">
+        <div class="section-divider__line section-divider__line--1"></div>
+        <div class="section-divider__line section-divider__line--2"></div>
+        <div class="section-divider__line section-divider__line--3"></div>
+    </div>
+
+    <!-- LEGAL CONTENT -->
+    <section class="legal-content">
+        <div class="legal-content__container">
+            <!-- Last updated info -->
+            <div class="legal-content__meta">
+                <div class="legal-content__meta-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                </div>
+                <div class="legal-content__meta-text">
+                    <span class="legal-content__meta-label">Data ostatniej aktualizacji</span>
+                    <span class="legal-content__meta-value">25 grudnia 2025 r.</span>
+                </div>
+            </div>
+
+            <!-- Business Data -->
+            <div class="business-data">
+                <h2 class="business-data__title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Dane usługodawcy
+                </h2>
+                <div class="business-data__grid">
+                    <div class="business-data__item">
+                        <span class="business-data__label">Pełna nazwa firmy</span>
+                        <span class="business-data__value">OSK ŁUCZAK WOJCIECH ŁUCZAK</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">Właściciel</span>
+                        <span class="business-data__value">Wojciech Łuczak</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">NIP</span>
+                        <span class="business-data__value">7841280958</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">REGON</span>
+                        <span class="business-data__value">634301883</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">Adres siedziby</span>
+                        <span class="business-data__value">Wilkowyja 18, 62-270 Kłecko</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">Telefon kontaktowy</span>
+                        <span class="business-data__value">+48 795 499 047</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">Adres e-mail</span>
+                        <span class="business-data__value">kontakt@luczakosk.com</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">Obszar działania</span>
+                        <span class="business-data__value">Piła, Poznań</span>
+                    </div>
+                    <div class="business-data__item">
+                        <span class="business-data__label">Godziny otwarcia</span>
+                        <span class="business-data__value">Pon: 8-18, Wt-Pt: 9-19, Sob: 8-13, Nd: zamknięte</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§1</span>
+                    Postanowienia ogólne
+                </h2>
+                <div class="legal-section__content">
+                    <p>1. Niniejszy regulamin określa zasady świadczenia usług szkoleniowych przez Ośrodek Szkolenia
+                        Kierowców Łuczak (dalej: OSK Łuczak), prowadzony przez Wojciecha Łuczaka.</p>
+                    <p>2. Regulamin jest udostępniany nieodpłatnie na stronie internetowej <strong>oskluczak.pl</strong>
+                        w sposób umożliwiający zapoznanie się z jego treścią przed zawarciem umowy.</p>
+                    <p>3. Korzystanie z usług OSK Łuczak oznacza akceptację niniejszego regulaminu.</p>
+                    <p>4. OSK Łuczak prowadzi działalność szkoleniową w zakresie nauki jazdy zgodnie z obowiązującymi
+                        przepisami prawa, w szczególności z ustawą o kierujących pojazdami.</p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§2</span>
+                    Zakres usług
+                </h2>
+                <div class="legal-section__content">
+                    <p>OSK Łuczak świadczy następujące usługi szkoleniowe:</p>
+                    <ul>
+                        <li>Kursy na prawo jazdy kategorii B (samochód osobowy do 3,5 tony)</li>
+                        <li>Kursy na prawo jazdy kategorii B+E (samochód z przyczepami powyżej 750 kg)</li>
+                        <li>Kursy standardowe i ekspresowe (16-dniowe)</li>
+                        <li>Jazdy doszkalające dla osób posiadających prawo jazdy</li>
+                        <li>Szkolenia teoretyczne i praktyczne</li>
+                        <li>Egzaminy wewnętrzne przygotowujące do egzaminu państwowego</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§3</span>
+                    Warunki zapisu na kurs
+                </h2>
+                <div class="legal-section__content">
+                    <p>1. Warunkiem zapisu na kurs prawa jazdy kategorii B jest:</p>
+                    <ul>
+                        <li>Ukończenie 17 lat i 9 miesięcy (w przypadku osoby niepełnoletniej wymagana jest zgoda
+                            rodzica lub opiekuna prawnego)</li>
+                        <li>Posiadanie ważnego numeru PKK (Profil Kandydata na Kierowcę)</li>
+                        <li>Posiadanie orzeczenia lekarskiego o braku przeciwwskazań zdrowotnych do kierowania pojazdami
+                        </li>
+                    </ul>
+                    <p>2. Warunkiem zapisu na kurs prawa jazdy kategorii B+E jest posiadanie ważnego prawa jazdy
+                        kategorii B.</p>
+                    <p>3. Zapisu na kurs można dokonać:</p>
+                    <ul>
+                        <li>Przez formularz kontaktowy na stronie internetowej</li>
+                        <li>Telefonicznie pod numerem +48 795 499 047</li>
+                        <li>Mailowo na adres kontakt@luczakosk.com</li>
+                        <li>Osobiście w siedzibie firmy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§4</span>
+                    Przebieg szkolenia
+                </h2>
+                <div class="legal-section__content">
+                    <p>1. Kurs prawa jazdy kategorii B obejmuje:</p>
+                    <ul>
+                        <li>30 godzin zajęć teoretycznych</li>
+                        <li>30 godzin zajęć praktycznych (jazdy)</li>
+                        <li>Egzamin wewnętrzny (teoretyczny i praktyczny)</li>
+                    </ul>
+                    <p>2. Kurs prawa jazdy kategorii B+E obejmuje 15 godzin zajęć praktycznych.</p>
+                    <p>3. Terminy zajęć ustalane są indywidualnie z kursantem, z uwzględnieniem jego możliwości
+                        czasowych.</p>
+                    <p>4. Kursant ma prawo do odwołania zaplanowanej jazdy, pod warunkiem poinformowania instruktora z
+                        minimum 24-godzinnym wyprzedzeniem.</p>
+                    <p>5. W przypadku nieodwołania jazdy w terminie określonym w pkt. 4, OSK Łuczak zastrzega sobie
+                        prawo do jej rozliczenia.</p>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§5</span>
+                    Płatności
+                </h2>
+                <div class="legal-section__content">
+                    <p>1. Aktualne ceny kursów dostępne są na stronie <a href="/oferta"
+                            style="color: var(--osk-blue); text-decoration: underline;">oskluczak.pl/oferta</a>.</p>
+                    <p>2. Płatność za kurs może być dokonana:</p>
+                    <ul>
+                        <li>Jednorazowo przed rozpoczęciem szkolenia</li>
+                        <li>W ratach, po indywidualnym ustaleniu warunków z instruktorem</li>
+                    </ul>
+                    <p>3. Formy płatności: gotówka, przelew bankowy.</p>
+                    <p>4. Jazdy doszkalające rozliczane są według stawki godzinowej. Kursanci OSK Łuczak korzystają z
+                        preferencyjnej ceny.</p>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§6</span>
+                    Prawa i obowiązki kursanta
+                </h2>
+                <div class="legal-section__content">
+                    <p><strong>Kursant ma prawo do:</strong></p>
+                    <ul>
+                        <li>Szkolenia prowadzonego zgodnie z obowiązującymi przepisami</li>
+                        <li>Indywidualnego dostosowania tempa nauki do jego możliwości</li>
+                        <li>Informacji o postępach w szkoleniu</li>
+                        <li>Zmiany terminu zajęć zgodnie z §4 pkt. 4</li>
+                        <li>Złożenia reklamacji w przypadku niezadowolenia z usług</li>
+                    </ul>
+                    <p><strong>Kursant zobowiązany jest do:</strong></p>
+                    <ul>
+                        <li>Punktualnego stawiania się na zajęcia</li>
+                        <li>Przystępowania do jazd w stanie trzeźwości i bez wpływu środków odurzających</li>
+                        <li>Posiadania podczas jazd ważnego dokumentu tożsamości</li>
+                        <li>Stosowania się do poleceń instruktora</li>
+                        <li>Terminowego regulowania płatności za kurs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 7 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§7</span>
+                    Prawa i obowiązki OSK Łuczak
+                </h2>
+                <div class="legal-section__content">
+                    <p><strong>OSK Łuczak zobowiązuje się do:</strong></p>
+                    <ul>
+                        <li>Prowadzenia szkolenia zgodnie z programem określonym w przepisach</li>
+                        <li>Zapewnienia sprawnego technicznie pojazdu szkoleniowego</li>
+                        <li>Profesjonalnego i kulturalnego traktowania kursantów</li>
+                        <li>Rzetelnego przygotowania kursantów do egzaminu państwowego</li>
+                    </ul>
+                    <p><strong>OSK Łuczak ma prawo do:</strong></p>
+                    <ul>
+                        <li>Odmowy przeprowadzenia jazdy w przypadku pojawienia się kursanta w stanie nietrzeźwości lub
+                            pod wpływem środków odurzających</li>
+                        <li>Przerwania współpracy z kursantem w przypadku rażącego naruszenia regulaminu</li>
+                        <li>Zmiany terminu jazdy z przyczyn losowych (z obowiązkiem uzgodnienia nowego terminu)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§8</span>
+                    Rezygnacja z kursu
+                </h2>
+                <div class="legal-section__content">
+                    <p>1. Kursant ma prawo zrezygnować z kursu w dowolnym momencie.</p>
+                    <p>2. W przypadku rezygnacji, kursant otrzymuje zwrot wpłaconych środków pomniejszonych o koszty
+                        wykorzystanych godzin szkoleniowych.</p>
+                    <p>3. Zwrot środków następuje w terminie 14 dni od złożenia pisemnej rezygnacji.</p>
+                    <p>4. W przypadku kursów ekspresowych, rezygnacja po rozpoczęciu szkolenia nie uprawnia do zwrotu
+                        różnicy między kursem ekspresowym a standardowym.</p>
+                </div>
+            </div>
+
+            <!-- Section 9 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§10</span>
+                    Ochrona danych osobowych
+                </h2>
+                <div class="legal-section__content">
+                    <p>1. Administratorem danych osobowych kursantów jest Wojciech Łuczak, prowadzący działalność pod
+                        nazwą Ośrodek Szkolenia Kierowców Łuczak.</p>
+                    <p>2. Dane osobowe przetwarzane są zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE)
+                        2016/679 (RODO).</p>
+                    <p>3. Szczegółowe informacje dotyczące przetwarzania danych osobowych znajdują się w <a
+                            href="/polityka-prywatnosci">Polityce prywatności</a>.</p>
+                </div>
+            </div>
+
+            <!-- Section 11 -->
+            <div class="legal-section">
+                <h2 class="legal-section__title">
+                    <span class="legal-section__number">§11</span>
+                    Postanowienia końcowe
+                </h2>
+                <div class="legal-section__content">
+                    <p>1. OSK Łuczak zastrzega sobie prawo do zmiany niniejszego regulaminu. Zmiany wchodzą w życie z
+                        dniem ich publikacji na stronie internetowej.</p>
+                    <p>2. Kursanci, którzy zawarli umowę przed zmianą regulaminu, zostaną poinformowani o zmianach drogą
+                        elektroniczną.</p>
+                    <p>3. W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy Kodeksu
+                        cywilnego oraz ustawy o kierujących pojazdami.</p>
+                    <p>4. Wszelkie spory wynikające z realizacji umowy strony będą rozwiązywać polubownie. W przypadku
+                        braku porozumienia, spory rozstrzygane będą przez sąd właściwy dla siedziby OSK Łuczak.</p>
+                    <p>5. Regulamin wchodzi w życie z dniem 25 grudnia 2025 roku.</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="legal-cta">
+                <h3 class="legal-cta__title">Masz pytania dotyczące regulaminu?</h3>
+                <p class="legal-cta__text">Skontaktuj się z nami, chętnie wyjaśnimy wszelkie wątpliwości.</p>
+                <div class="legal-cta__buttons">
+                    <a href="/kontakt" class="btn btn--primary">
+                        Kontakt
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="tel:+48795499047" class="btn btn--secondary"
+                        style="background: white; color: var(--color-gray-900); border-color: white;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        Zadzwoń
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer placeholder - loaded via JS -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="js/components.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cookies.js" defer></script>
+</body>
+
+</html>

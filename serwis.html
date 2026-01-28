@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OSK Łuczak | Prace serwisowe</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #2764EA;
+            --primary-dark: #1e40af;
+            --accent: #F9CC18;
+            --accent-light: #fde047;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --white: #ffffff;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --warning: #ef4444;
+            --warning-light: #fca5a5;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 50%, var(--primary-dark) 100%);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(2) {
+            left: 20%;
+            top: 60%;
+            animation-delay: 2s;
+            animation-duration: 18s;
+        }
+
+        .particle:nth-child(3) {
+            left: 35%;
+            top: 30%;
+            animation-delay: 4s;
+            animation-duration: 14s;
+        }
+
+        .particle:nth-child(4) {
+            left: 50%;
+            top: 70%;
+            animation-delay: 1s;
+            animation-duration: 16s;
+        }
+
+        .particle:nth-child(5) {
+            left: 65%;
+            top: 40%;
+            animation-delay: 3s;
+            animation-duration: 20s;
+        }
+
+        .particle:nth-child(6) {
+            left: 80%;
+            top: 25%;
+            animation-delay: 5s;
+            animation-duration: 13s;
+        }
+
+        .particle:nth-child(7) {
+            left: 90%;
+            top: 55%;
+            animation-delay: 2.5s;
+            animation-duration: 17s;
+        }
+
+        .particle:nth-child(8) {
+            left: 5%;
+            top: 80%;
+            animation-delay: 1.5s;
+            animation-duration: 15s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+
+            25% {
+                transform: translateY(-30px) translateX(20px) scale(1.2);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(-15px) translateX(-15px) scale(0.8);
+                opacity: 0.4;
+            }
+
+            75% {
+                transform: translateY(-40px) translateX(10px) scale(1.1);
+                opacity: 0.35;
+            }
+        }
+
+        /* Gear animations */
+        @keyframes rotateCW {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateCCW {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo - clean without circle */
+        .logo {
+            width: 160px;
+            height: auto;
+            margin: 0 auto 2rem;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.4));
+        }
+
+        /* Card */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+        }
+
+        /* Gears Container - profesjonalne */
+        .gears-wrapper {
+            width: 140px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .gear {
+            position: absolute;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .gear-large {
+            width: 80px;
+            height: 80px;
+            left: 0;
+            top: 10px;
+            animation: rotateCW 8s linear infinite;
+        }
+
+        .gear-small {
+            width: 55px;
+            height: 55px;
+            right: 10px;
+            top: 0;
+            animation: rotateCCW 5.5s linear infinite;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 .accent {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Warning notice */
+        .notice {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .notice svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            stroke: var(--warning);
+            fill: none;
+            margin-top: 2px;
+        }
+
+        .notice p {
+            font-size: 0.95rem;
+            color: var(--gray-200);
+            line-height: 1.5;
+        }
+
+        .notice strong {
+            color: var(--warning-light);
+        }
+
+        /* Progress bar */
+        .progress-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--gray-300);
+        }
+
+        .progress-percentage {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        /* Status info */
+        .status-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+
+        .status-item svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent);
+            fill: none;
+        }
+
+        /* Contact */
+        .contact {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+
+        .contact a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 2rem 1.5rem;
+            }
+
+            .notice {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .gears-wrapper {
+                width: 110px;
+                height: 80px;
+            }
+
+            .gear-large {
+                width: 60px;
+                height: 60px;
+            }
+
+            .gear-small {
+                width: 42px;
+                height: 42px;
+            }
+
+            .logo {
+                width: 130px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="assets/images/logoosk.png" alt="Logo OSK Łuczak" width="160" height="121">
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+            <!-- Profesjonalne zębatki z Lucide Icons -->
+            <div class="gears-wrapper">
+                <!-- Duża zębatka (Lucide settings icon) -->
+                <svg class="gear gear-large" viewBox="0 0 24 24">
+                    <path
+                        d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+
+                <!-- Mała zębatka -->
+                <svg class="gear gear-small" viewBox="0 0 24 24">
+                    <path
+                        d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+            </div>
+
+            <!-- Heading -->
+            <h1>Strona w trakcie <span class="accent">budowy</span></h1>
+
+            <p class="subtitle">
+                Trwają prace nad witryną. Przepraszamy za utrudnienia.
+            </p>
+
+            <!-- Warning Notice -->
+            <div class="notice">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                    <line x1="12" y1="9" x2="12" y2="13" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+                <p>
+                    <strong>Uwaga!</strong> Strona nie została jeszcze oficjalnie uruchomiona.
+                    Wkrótce będzie dostępna pełna wersja witryny.
+                </p>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-label">
+                    <span>Postęp prac</span>
+                    <span class="progress-percentage" id="progress-text">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Status Info -->
+            <div class="status-info">
+                <div class="status-item">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span>Pracujemy nad uruchomieniem strony</span>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact">
+                Masz pytania? Zadzwoń: <a href="tel:+48795499047">+48 795 499 047</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2026 OSK Łuczak. Wszystkie prawa zastrzeżone.
+        </div>
+    </div>
+
+    <script>
+        const PROGRESS_PERCENT = 85;
+
+        function animateProgress() {
+            const progressFill = document.getElementById('progress-fill');
+            const progressText = document.getElementById('progress-text');
+
+            let currentProgress = 0;
+            const duration = 2000;
+            const interval = 20;
+            const steps = duration / interval;
+            const increment = PROGRESS_PERCENT / steps;
+
+            const timer = setInterval(() => {
+                currentProgress += increment;
+                if (currentProgress >= PROGRESS_PERCENT) {
+                    currentProgress = PROGRESS_PERCENT;
+                    clearInterval(timer);
+                }
+
+                progressFill.style.width = currentProgress + '%';
+                progressText.textContent = Math.round(currentProgress) + '%';
+            }, interval);
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(animateProgress, 500);
+        });
+    </script>
+</body>
+
+</html>
