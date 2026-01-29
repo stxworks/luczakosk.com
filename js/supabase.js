@@ -1047,6 +1047,60 @@ function formatDateForInput(dateString) {
     return `${year}-${month}-${day}T${hours}:${minutes}`;
 }
 
+// ============================================
+// VERIFICATION CODES HELPERS
+// ============================================
+
+/**
+ * Fetch all verification codes (for admin)
+ */
+async function fetchAllVerificationCodes() {
+    const client = getSupabase();
+    if (!client) throw new Error('Supabase not configured');
+
+    const { data, error, count } = await client
+        .from('verification_codes')
+        .select('*', { count: 'exact' })
+        .order('created_at', { ascending: false });
+
+    if (error) throw error;
+    return { data, count };
+}
+
+/**
+ * Create new verification code
+ * @param {Object} codeData - Code data with code, student_name, course_category, status, expires_at
+ */
+async function createVerificationCode(codeData) {
+    const client = getSupabase();
+    if (!client) throw new Error('Supabase not configured');
+
+    const { data, error } = await client
+        .from('verification_codes')
+        .insert([codeData])
+        .select()
+        .single();
+
+    if (error) throw error;
+    return data;
+}
+
+/**
+ * Delete verification code
+ * @param {string} id - Code ID
+ */
+async function deleteVerificationCode(id) {
+    const client = getSupabase();
+    if (!client) throw new Error('Supabase not configured');
+
+    const { error } = await client
+        .from('verification_codes')
+        .delete()
+        .eq('id', id);
+
+    if (error) throw error;
+}
+
 // Export for module usage (if needed)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
